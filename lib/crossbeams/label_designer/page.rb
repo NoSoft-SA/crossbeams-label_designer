@@ -1,6 +1,6 @@
 module Crossbeams
   module LabelDesigner
-    class LabelDesigner
+    class Page
       def initialize(file_to_load=nil)
         # set up config here for url paths etc.
         @file_to_load = file_to_load || 'new'
