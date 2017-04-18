@@ -1,18 +1,20 @@
 module Crossbeams
   module LabelDesigner
     class Page
-      def initialize(file_to_load=nil)
+      def initialize(file_to_load = nil)
         @file_to_load = file_to_load || 'new'
       end
 
-      # Use something like these 2 methods if we need to be able to override in the host app.
+      # Use something like these 2 methods if we need to be able to override
+      # in the host app.
       # - might be required in a multitenancy app, but probably not otherwise.
-      def json_load_path=(value)
-        @json_load_path = value
-      end
-      def json_load_path
-        @json_load_path || Config.config.json_load_path
-      end
+      # def json_load_path=(value)
+      #   @json_load_path = value
+      # end
+      #
+      # def json_load_path
+      #   @json_load_path || Config.config.json_load_path
+      # end
 
       # This can be changed to load the html from a file
       # and then use erb to apply the config:
@@ -67,7 +69,7 @@ module Crossbeams
           color:black;
         }
         .blue {
-          color: blue;
+          color: purple;
         }
         .green {
           color: green;

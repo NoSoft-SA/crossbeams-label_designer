@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['James Silberbauer']
   spec.email         = ['jamessil@telkomsa.net']
 
-  spec.summary       = %q{Label designer.}
-  spec.description   = %q{Label design environment to be loaded by Ruby code.}
+  spec.summary       = 'Label designer.'
+  spec.description   = 'Label design environment to be loaded by Ruby code.'
   spec.homepage      = 'https://github.com/JMT-SA'
   spec.license       = 'MIT'
 
@@ -23,10 +23,10 @@ Gem::Specification.new do |spec|
       'public gem pushes.'
   end
 
+  spec.bindir        = 'exe'
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
-  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
