@@ -1,0 +1,198 @@
+/*Overall Label designer cover*/
+
+/*@apple: #ABE38D;*/
+/*@green: #17301C;*/
+/*@orange: #E55934;*/
+/*@turqoise: #42F2F7 ;*/
+/*@slate_grey: #717C89;*/
+/*@dark_puce: #443742;*/
+/*@mellow_apricot: #FCB97D;*/
+/*@pastel_red: #EF6461;*/
+/*@rich_black: #051014;*/
+/*@light_black: #2E2F2F;*/
+/*@oxford_blue: #0A2342;*/
+/*@deep_pink: #F9627D;*/
+/*@light_pink: #F9ADA0;*/
+
+
+body{
+  margin: 0px;
+}
+.designer-container{
+  overflow: scroll;
+  display: block;
+  height: 100%;
+}
+.toolbar{
+  padding:1em;
+  width: 250px;
+  background-color: lightgrey;
+  height: 99999px;
+}
+.paper-wrapper{
+  border: 1px solid black;
+  padding-top: 1px;
+  padding-left: 1px;
+  background-color: darkgrey;
+}
+div.image-container{
+  background-color: white;
+  box-shadow:0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/*Styling for Canvas resizing*/
+.ui-resizable-e:after, .ui-resizable-s:after, #paper:after{
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: lightgrey;
+  z-index: 999;
+  position: absolute;
+}
+.ui-resizable-e:after{
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.ui-resizable-s:after{
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+#paper:after{
+  left: 100%;
+  top: calc(100% + 9px);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+#paper .ui-icon{
+  background-image: none;
+}
+
+
+
+
+/*.resize-drag{
+  position: relative;
+  fill: none;
+  pointer-events: all;
+  cursor: move !important;
+  z-index: 5;
+  box-sizing: border-box;
+}
+.selected{
+  stroke: #ff1a1a;
+  stroke-width: 5;
+  stroke-linejoin: round;
+  stroke-opacity: 0.70;
+}
+.resize-drag:hover{
+  fill: grey;
+}
+.resize-handle-sw {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: lightgrey;
+  z-index: 999;
+  bottom: -5px;
+  left: -5px;
+  cursor: sw-resize !important;
+}*/
+/*.unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+
+
+     Introduced in IE 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+
+   -ms-user-select: none;
+   user-select: none;
+}
+*/
+
+
+/*Standard styles*/
+.pull-left{
+  float: left !important;
+}
+.pull-right{
+  float: right !important;
+}
+.hidden{
+  display: none;
+}
+.css-height {
+  margin-bottom: -999999px;
+  padding-bottom: 999999px;
+}
+.css-width {
+  margin-right: -999999px;
+  padding-right: 999999px;
+}
+.full-width{
+  width: 100%;
+}
+
+/*Application layout*/
+.wrap{
+
+}
+.main-content{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 57px);
+  /*float: none;*/
+  margin-top: 57px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.navbar{
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  height: 25px;
+  padding: 1rem;
+  background-color: #99ccff;
+  text-align: center;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  padding: 1rem;
+  background-color: #99ccff;
+  text-align: center;
+}
+
+button.selected{
+  background-color: gray;
+}
+
+.editing{
+  border-style: dashed;
+}
+
+
+input[type=number]{
+  width: 50px;
+}
