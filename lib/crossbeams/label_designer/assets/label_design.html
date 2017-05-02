@@ -20,37 +20,31 @@
           <div class="toolbar pull-left css-height">
             <h2>Label Design</h2>
             <label for="canvas_width">Set Canvas size:</label>
+            w:
             <input type="number" id="canvas_width" title="Set canvas width" placeholder="700">
+            h:
             <input type="number" id="canvas_height" title="Set canvas height" placeholder="500">
-            <br>
+            <hr>
 
             <button type="button" name="pointer" title="pointer" class='btn btn-default btn-md pointer'><i class="fa fa-mouse-pointer" aria-hidden="true"></i></button>
+            <button type="button" name="text-box" title="Add a text box" class='btn btn-default btn-md text-box'><b style="font-family:'Times New Roman';">A</b></button>
+            <button type="button" name="variable-box" title="Add a variable box" class='btn btn-default btn-md variable-box'><b style="font-family:'Computer Modern';"><i>x</i></b></button>
+            <button type="button" name="line" title="line" class='btn btn-default btn-md line'><i class="fa fa-minus" aria-hidden="true"></i></button>
+            <button type="button" name="rectangle" title="rectangle" class='btn btn-default btn-md rectangle'><i class="fa fa-square-o" aria-hidden="true"></i></button>
+            <button type="button" name="ellipse" title="ellipse" class='btn btn-default btn-md ellipse'><i class="fa fa-circle-o" aria-hidden="true"></i></button>
             <!--
               I'm going to merge this functionality into the pointer or ignore it completely
 
               <button type="button" name="select" class='btn btn-default btn-md select'><i class="fa fa-mouse-pointer" aria-hidden="true"></i></button>
              -->
-            <button type="button" name="move" title="move" class='btn btn-default btn-md move'><i class="fa fa-arrows" aria-hidden="true"></i></button>
-            <button type="button" name="resize" title="resize" class='btn btn-default btn-md resize'><i class="fa fa-external-link fa-flip-vertical"></i></button>
-            <button type="button" name="remove" title="remove" class='btn btn-default btn-md remove'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-            <button type="button" name="image" title="image" class='btn btn-default btn-md image'><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-            <!-- <button type="button" name="text-box" title="text-box" class='btn btn-default btn-md text-box'><b>Aa</b></button> -->
             <hr>
-
-            <button type="button" name="text-box" title="Add a text box" class='btn btn-default btn-md text-box'><b style="font-family:'Times New Roman';">A</b></button>
-            <button type="button" name="variable-box" title="Add a variable box" class='btn btn-default btn-md variable-box'><b style="font-family:'Computer Modern';"><i>x</i></b></button>
-            <button type="button" name="line-width" title="line-width" class='btn btn-default btn-md line-width'><i class="fa fa-pencil" aria-hidden="true"></i></button>
+            <button disabled=disabled type="button" name="move" title="move" class='btn btn-default btn-md move'><i class="fa fa-arrows" aria-hidden="true"></i></button>
+            <button disabled=disabled type="button" name="resize" title="resize" class='btn btn-default btn-md resize'><i class="fa fa-external-link fa-flip-vertical"></i></button>
+            <button disabled=disabled type="button" name="remove" title="remove" class='btn btn-default btn-md remove'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+            <button disabled=disabled type="button" name="image" title="image" class='btn btn-default btn-md image'><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+            <!-- <button disabled=disabled type="button" name="text-box" title="text-box" class='btn btn-default btn-md text-box'><b>Aa</b></button> -->
+            <button disabled=disabled type="button" name="line-width" title="line-width" class='btn btn-default btn-md line-width'><i class="fa fa-pencil" aria-hidden="true"></i></button>
             <hr>
-            <button type="button" name="line" title="line" class='btn btn-default btn-md line'><i class="fa fa-minus" aria-hidden="true"></i></button>
-            <button type="button" name="rectangle" title="rectangle" class='btn btn-default btn-md rectangle'><i class="fa fa-square-o" aria-hidden="true"></i></button>
-            <button type="button" name="circle" title="circle" class='btn btn-default btn-md circle'><i class="fa fa-circle-o" aria-hidden="true"></i></button>
-            <hr>
-
-
-            <hr>
-
-
-
 
             <div class="text-popup -hidden">
               <input type="text" name="textbox" title="Insert text here" placeholder="Insert text">
@@ -78,36 +72,35 @@
               </select>
               <br>
               <select class="selectpicker" id="font-size" name="font-size">
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="35">35</option>
-                <option value="40">40</option>
-                <option value="45">45</option>
-                <option value="50">50</option>
+                <option value="8">6</option>
+                <option value="9">7</option>
+                <option value="11">8</option>
+                <option value="12">9</option>
+                <option value="13">10</option>
+                <option value="15">11</option>
+                <option value="16">12</option>
+                <option value="17">13</option>
+                <option value="19">14</option>
+                <option selected="selected" value="21">15</option>
+                <option value="22">16</option>
+                <option value="23">17</option>
+                <option value="24">18</option>
+                <option value="25">19</option>
+                <option value="26">20</option>
+                <option value="28">21</option>
+                <option value="29">22</option>
+                <option value="31">23</option>
+                <option value="32">24</option>
+                <option value="33">25</option>
+                <option value="35">26</option>
+                <option value="36">27</option>
+                <option value="37">28</option>
+                <option value="39">29</option>
+                <option value="40">30</option>
+                <option value="47">35</option>
+                <option value="53">40</option>
+                <option value="60">45</option>
+                <option value="67">50</option>
               </select>
               <!-- draw text box
                 type text
@@ -121,13 +114,13 @@
 
 
             <div class="variable-popup -hidden">
-              <label for="textdemo">Example text:</label>
-              <input type="text" name="textdemo" title="Insert text here for demo purposes only. This will not be saved or displayed in the final label design." placeholder="Demo text">
               <!-- <br>
               <button type="button" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="fa fa-bold" aria-hidden="true"></i></button>
               <button type="button" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="fa fa-underline" aria-hidden="true"></i></button>
               <button type="button" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="fa fa-italic" aria-hidden="true"></i></button>
               <button type="button" name="rotate" title="rotate" class='btn btn-default btn-md rotate'><i class="fa fa-rotate-right" aria-hidden="true"></i></button> -->
+              <label for="textdemo">Example text:</label>
+              <input type="text" name="textdemo" title="Insert text here for demo purposes only. This will not be saved or displayed in the final label design." placeholder="Demo text">
               <br>
               <label for="vars">Variable type:</label>
               <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
@@ -150,8 +143,8 @@
               <br>
               <label for="barcode_bool">Is this a barcode?</label>
               <select class="form-control" id="orientation" name="orientation">
-                <option value="horizontal" selected="selected">horizontal</option>
-                <option value="vertical">vertical</option>
+                <option value="horizontal" selected="selected">false</option>
+                <option value="vertical">true</option>
               </select>
               <br>
               <label for="barcode_margin">Margin size:</label>
@@ -226,7 +219,7 @@
               <hr>
               <button type="button" class='btn btn-default btn-md btn-download-image'><i class="fa fa-download" aria-hidden="true"></i> Download IMG</button>
               <a class='hidden' href="#" id="btn-download-image"></a>
-              <button type="button" class='btn btn-default btn-md btn-download-xml'><i class="fa fa-download" aria-hidden="true"></i> Download XML</button>
+              <button type="button" class='btn btn-default btn-md btn-download-xml'><i class="fa fa-download" aria-hidden="true"></i> Generate XML</button>
               <a class='hidden' href="#" id="btn-download-xml"></a>
 
               <br>
