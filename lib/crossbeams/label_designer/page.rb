@@ -36,7 +36,6 @@ module Crossbeams
 
       def css
         file = File.join(File.dirname(__FILE__), 'assets/label_design.css')
-        #File.read(file)
         <<-EOS.freeze
         <style>
           #{File.read(file)}
