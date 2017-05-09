@@ -6,6 +6,31 @@ require 'crossbeams/label_designer/page'
 
 module Crossbeams
   module LabelDesigner
-    # Your code goes here...
+    # routing, roda and radicalness?
+
+
+
+
+    def duplicate_label(image_only=false)
+      
+    end
+
+    def generate_xml_document
+
+    end
+
+    def export_image_xml_pair
+      # get png image
+      # get xml document
+      # package and send to Johan
+    end
+
+    def to_json
+      
+    end
+
+    def import_from_json(existing_label_json)
+      
+    end
   end
 end
