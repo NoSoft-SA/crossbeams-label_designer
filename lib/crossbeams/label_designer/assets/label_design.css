@@ -25,9 +25,12 @@ body{
 }
 .toolbar{
   padding:1em;
-  width: 250px;
+  width: 300px;
   background-color: lightgrey;
-  height: 99999px;
+  /* height: 99999px; */
+}
+.variable-popup {
+  margin-bottom: 5em;
 }
 .paper-wrapper{
   border: 1px solid black;
@@ -184,8 +187,8 @@ div.image-container{
   text-align: center;
 }
 
-button.selected{
-  background-color: gray;
+div.toolbar button.selected{
+  background-color: dimgray;
 }
 
 .editing{
@@ -193,6 +196,14 @@ button.selected{
 }
 
 
-input[type=number]{
-  width: 50px;
+#canvas_width, #canvas_height {
+  width: 4em;
+}
+
+div.toolbar button {
+  min-height: 2em;
+  min-width: 2em;
+}
+div.toolbar {
+  font-size: 0.85em;
 }
