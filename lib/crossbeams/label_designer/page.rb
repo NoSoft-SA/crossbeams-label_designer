@@ -27,7 +27,8 @@ module Crossbeams
 
       def javascript
         file = File.join(File.dirname(__FILE__), 'assets/label_design.js')
-        <<-EOS.freeze
+        @json_save_path = Config.config.json_save_path
+        eval(Erubi::Engine.new(<<-EOS).src).freeze
         <script type="text/javascript">
           #{File.read(file)}
         </script>

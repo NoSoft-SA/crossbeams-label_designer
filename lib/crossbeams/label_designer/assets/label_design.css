@@ -15,9 +15,6 @@
 /*@light_pink: #F9ADA0;*/
 
 
-body{
-  margin: 0px;
-}
 .designer-container{
   overflow: scroll;
   display: block;
@@ -156,35 +153,6 @@ div.image-container{
 /*Application layout*/
 .wrap{
 
-}
-.main-content{
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 57px);
-  /*float: none;*/
-  margin-top: 57px;
-  padding-left: 0;
-  padding-right: 0;
-}
-.navbar{
-  position: absolute;
-  right: 0;
-  top: 0;
-  left: 0;
-  height: 25px;
-  padding: 1rem;
-  background-color: #99ccff;
-  text-align: center;
-}
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 25px;
-  padding: 1rem;
-  background-color: #99ccff;
-  text-align: center;
 }
 
 div.toolbar button.selected{
