@@ -30,6 +30,17 @@ module Crossbeams
         @json_save_path = Config.config.json_save_path
         eval(Erubi::Engine.new(<<-EOS).src).freeze
         <script type="text/javascript">
+          var lblJsonSaveUrl = '#{Config.config.json_save_path}';
+          var demoJsonData = {ajson_config: {a: 1, b: 2},
+                              animage: '<someSVG>',
+                              the_vars: '<someXML>'
+                              };
+          function saveBtnPressed() {
+            var request = new XMLHttpRequest();
+            request.open('POST', lblJsonSaveUrl, true);
+            request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            request.send(JSON.stringify(demoJsonData));
+          }
           #{File.read(file)}
         </script>
         EOS
