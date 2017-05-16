@@ -129,9 +129,9 @@ div.image-container{
 
 
 /*Standard styles*/
-.pull-left{
+/*.pull-left{
   float: left !important;
-}
+}*/
 .pull-right{
   float: right !important;
 }
