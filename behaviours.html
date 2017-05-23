@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+    <title>button behaviour</title>
+
+    <style>
+      #ldContainer {
+        display: flex;
+      }
+
+      #ldTools {
+        background-color: #ccc;
+        padding: 1em;
+      }
+
+      #ldDisplay {
+        border: thin solid black;
+        padding: 1em;
+        min-width: 30em;
+      }
+
+      *[disabled] { background-color: #ccc; color: gray; }
+      .ldBtnDown {
+        background-color: #72afb3;
+        color: navy;
+      }
+
+      .ldSelectables {
+        border: thin solid green;
+        padding: 2px;
+      }
+
+      .ldSelectedObj {
+        background-color: lightblue;
+      }
+      .screenTooSmall {
+        display: none;
+        color: orange;
+        padding: 2em;
+        border: thin solid green;
+        font-size: 1.2em;
+      }
+      @media (max-width: 800px) {
+        .screenTooSmall {
+         display: block;
+        }
+        #ldTools, #ldDisplay {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="ldContainer">
+      <p class="screenTooSmall">This screen size is too small to effectively work with the label designer.</p>
+      <div id="ldTools">
+        <p>
+          <button id="ldSelect" class="ldCmd-button" data-mode="select" data-action="select">SEL</button>
+          <button class="ldCmd-button" data-mode="draw" data-action="Line">LINE</button>
+          <button class="ldCmd-button" data-mode="draw" data-action="Circle">CIRCLE</button>
+          <button class="ldCmd-button" data-mode="draw" data-action="Rect">RECT</button>
+          <button class="ldCmd-button" data-mode="draw" data-action="Text">TEXT</button>
+        </p>
+
+        <p>
+          <button class="ldCmd-button" data-mode="arrange" data-action="resize">RESIZE</button>
+          <button class="ldCmd-button" data-mode="arrange" data-action="move">MOVE</button>
+          <button class="ldCmd-button" data-mode="arrange" data-action="rotate">ROTATE</button>
+        </p>
+
+        <p>
+          <button class="ldCmd-button" data-mode="variable" data-action="addvar">DRAW VARIABLE</button>
+        </p>
+
+        <p>
+          <button id="ldDelButton" onclick="deleteCurrentObject()" disabled>DELETE</button>
+        </p>
+
+        <p>
+          <fieldset>
+            <legend>Text attributes</legend>
+            Text <input type="text" id="textin" data-grouping="Text" disabled />
+            <button id="ldTextBold" data-grouping="Text" disabled>B</button>
+          </fieldset>
+        </p>
+
+        <p>
+          <fieldset>
+            <legend>Variables</legend>
+            Eg. text: <input type="text" name="textdemo" data-grouping="Variable" placeholder="Demo text" disabled>
+            <br>
+            Var type: <select data-grouping="Variable" disabled>
+              <option value="0" data-hidden="true">Please select</option>
+              <option>Commodity</option>
+              <option>Variety</option>
+              <option>PUC</option>
+              <option>Class</option>
+              <option>Size</option>
+              <option>PHC</option>
+              <option>Date Code</option>
+              <option>Orchard</option>
+            </select>
+          </fieldset>
+        </p>
+      </div>
+
+      <div id="ldDisplay">
+        <div id='selLine' class="ldSelectables">LINE</div>
+        <div id='selCircle' class="ldSelectables">CIRCLE</div>
+        <div id='selRect' class="ldSelectables">RECT</div>
+        <div id='selText' class="ldSelectables">TEXT</div>
+        <div id='selVariable' class="ldSelectables">VARIABLE</div>
+        <ul id="ul-display">
+        </ul>
+      </div>
+
+    </div>
+
+    <script type="text/javascript">
+      (function () {
+          "use strict";
+
+          let currentMode = "select";
+          let currentAction = "select";
+          let currentObject = null;
+          let displayList = document.getElementById("ldDisplay");
+          let selectButton = document.getElementById("ldSelect");
+
+          // MOCK - log events.
+          function addLog(text) {
+              let e = document.createElement("li");
+              e.textContent = text;
+              displayList.appendChild(e);
+          }
+
+          // Helper to apply a function to a selected list.
+          function selectAndLoop(selector, fn) {
+              const elements = document.querySelectorAll(selector);
+              elements.forEach(function (element) {
+                  fn(element);
+              });
+          }
+
+          // MOCK - select an object on the canvas...
+          // Selects a random object, but can also select a specific one.
+          function randomSelect(override) {
+              const arr = ["Text", "Line", "Variable", "Circle", "Rect"];
+              let choice;
+              if (override === undefined) {
+                  choice = arr[Math.floor(arr.length * Math.random())];
+              } else {
+                  choice = override;
+              }
+              selectAndLoop(".ldSelectables", function (element) {
+                  element.classList.remove("ldSelectedObj");
+              });
+              document.getElementById("sel" + choice).classList.add("ldSelectedObj");
+              selectAndLoop("[data-grouping='Text']", function (element) {
+                  element.disabled = choice !== "Text";
+              });
+              selectAndLoop("[data-grouping='Variable']", function (element) {
+                  element.disabled = choice !== "Variable";
+              });
+              return choice;
+          }
+
+          // Command button click.
+          // - Set the mode.
+          // - Set the action.
+          // - Highlight the pressed button.
+          function cmdButtonClick(event) {
+              let node = event.target;
+              currentMode = node.dataset.mode;
+              currentAction = node.dataset.action;
+
+              selectAndLoop(".ldCmd-button", function (element) {
+                  element.classList.remove("ldBtnDown");
+              });
+              node.classList.add("ldBtnDown");
+          }
+
+          // Delete the selected object.
+          function deleteCurrentObject() {
+              if (confirm("Are you sure?")) {
+                  addLog(currentObject + " deleted");
+                  currentObject = null;
+                  selectAndLoop(".ldCmd-button", function (element) {
+                      element.classList.remove("ldBtnDown");
+                  });
+              } else {
+                  addLog("delete cancelled");
+              }
+          }
+
+          // MOCK - act like canvas mousedown event.
+          displayList.onmousedown = function () {
+              if (currentMode === "select") {
+                  addLog("mouse down - select");
+              }
+              if (currentMode === "draw") {
+                  addLog("mouse down - draw " + currentAction);
+              }
+              if (currentMode === "variable") {
+                  addLog("mouse down - draw a variable");
+              }
+              if (currentMode === "arrange") {
+                  addLog("mouse down - start " + currentAction + ".");
+              }
+          };
+
+          // MOCK - MouseUp events for various action types (select, draw, variable, arrange).
+          let mouseUps = {
+              selectMouseUp: function () {
+                  currentObject = randomSelect();
+                  addLog("object selected: " + currentObject);
+                  document.getElementById("ldDelButton").disabled = false;
+              },
+              drawMouseUp: function () {
+                  selectAndLoop(".ldCmd-button[data-action='" + currentAction + "']", function (element) {
+                      element.classList.remove("ldBtnDown");
+                  });
+                  selectButton.classList.add("ldBtnDown");
+                  // select a drawable object...
+                  addLog("draw " + currentAction + " ended - object selected.");
+                  currentMode = "select";
+                  currentObject = randomSelect(currentAction);
+              },
+              variableMouseUp: function () {
+                  selectAndLoop(".ldCmd-button[data-action='" + currentAction + "']", function (element) {
+                      element.classList.remove("ldBtnDown");
+                  });
+                  currentObject = randomSelect("Variable");
+                  addLog("draw var ended - variable selected.");
+                  currentMode = "select";
+                  currentAction = "fillvar";
+              },
+              arrangeMouseUp: function () {
+                  addLog(currentAction + "d the selected " + currentObject);
+              }
+          };
+
+          // MOCK - act like canvas mouseup event.
+          displayList.onmouseup = function () {
+              mouseUps[currentMode + "MouseUp"]();
+          };
+
+          // LOAD: Assign click event for all command buttons.
+          selectAndLoop(".ldCmd-button", function (element) {
+              element.onclick = cmdButtonClick;
+          });
+
+          // LOAD: Assign click event for delete.
+          document.getElementById("ldDelButton").onclick = deleteCurrentObject;
+
+      }());
+    </script>
+  </body>
+
+</html>
