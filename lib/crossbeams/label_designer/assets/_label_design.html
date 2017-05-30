@@ -3,24 +3,23 @@
     <h2>Label Design</h2>
     <label for="canvas_width">Set Canvas size:</label>
     <br>
-    w:
+    Width:
     <input type="number" id="canvas_width" title="Set canvas width" placeholder="700">
-    h:
+    Height:
     <input type="number" id="canvas_height" title="Set canvas height" placeholder="500">
     <hr>
 
     <button type="button" name="Pointer" title="pointer" class='btn btn-default btn-md pointer'><i class="fa fa-mouse-pointer" aria-hidden="true"></i></button>
-    <button type="button" name="TextBox" title="Add a text box" class='btn btn-default btn-md text-box'><b style="font-family:'Times New Roman';">A</b></button>
-    <button type="button" name="VariableBox" title="Add a variable box" class='btn btn-default btn-md variable-box'><b style="font-family:'Computer Modern';"><i>x</i></b></button>
+    <button type="button" name="image" title="Add image" class='btn btn-default btn-md image'><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+    <button type="button" name="remove" title="remove" class='btn btn-default btn-md remove'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+    <button type="button" name="rotate" title="rotate" class='btn btn-default btn-md rotate'><i class="fa fa-rotate-right" aria-hidden="true"></i></button>
+    <button type="button" name="line-width" title="line-width" class='btn btn-default btn-md line-width'><i class="fa fa-pencil" aria-hidden="true"></i></button>
+    <hr>
+    <button type="button" name="TextBox" title="Add a text box" class='btn btn-default btn-md text-box'><i class="fa fa-font" aria-hidden="true"></i></button>
+    <button type="button" name="VariableBox" title="Add a variable box" class='btn btn-default btn-md variable-box'><i class="fa fa-barcode" aria-hidden="true"></i></button>
     <button type="button" name="Line" title="line" class='btn btn-default btn-md line'><i class="fa fa-minus" aria-hidden="true"></i></button>
     <button type="button" name="Rectangle" title="rectangle" class='btn btn-default btn-md rectangle'><i class="fa fa-square-o" aria-hidden="true"></i></button>
     <button type="button" name="Ellipse" title="ellipse" class='btn btn-default btn-md ellipse'><i class="fa fa-circle-o" aria-hidden="true"></i></button>
-    <hr>
-    <button disabled=disabled type="button" name="resize" title="resize" class='btn btn-default btn-md resize'><i class="fa fa-external-link fa-flip-vertical"></i></button>
-    <button disabled=disabled type="button" name="remove" title="remove" class='btn btn-default btn-md remove'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-    <button disabled=disabled type="button" name="image" title="image" class='btn btn-default btn-md image'><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-    <!-- <button disabled=disabled type="button" name="text-box" title="text-box" class='btn btn-default btn-md text-box'><b>Aa</b></button> -->
-    <button disabled=disabled type="button" name="line-width" title="line-width" class='btn btn-default btn-md line-width'><i class="fa fa-pencil" aria-hidden="true"></i></button>
     <hr>
 
     <div class="text-popup -hidden">
@@ -29,10 +28,12 @@
       <button type="button" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="fa fa-bold" aria-hidden="true"></i></button>
       <button type="button" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="fa fa-underline" aria-hidden="true"></i></button>
       <button type="button" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="fa fa-italic" aria-hidden="true"></i></button>
-      <button type="button" name="rotate" title="rotate" class='btn btn-default btn-md rotate'><i class="fa fa-rotate-right" aria-hidden="true"></i></button>
+    <button disabled=disabled type="button" name="border" title="add border" class='btn btn-default btn-md rectangle'><i class="fa fa-square-o" aria-hidden="true"></i></button>
+      <!-- <button type="button" name="border" title="add border" class='btn btn-default btn-md rectangle'><i class="fa fa-square-o" aria-hidden="true"></i></button> -->
       <br>
       <select class="selectpicker" id="font-family" name="font-family">
         <!-- https://www.w3schools.com/cssref/css_websafe_fonts.asp -->
+        <!-- TODO: Only some of the fonts work -->
         <option value="'Times New Roman', Times, serif">Times New Roman</option>
         <option value="'Georgia', serif">Georgia</option>
         <option value="'Palatino Linotype', 'Book Antiqua', Palatino, serif">Palatino Linotype</option>
@@ -48,6 +49,7 @@
         <option value="'Lucida Console', Monaco, monospace">Lucida Console</option>
       </select>
       <br>
+      <label for='font-size'>Font size:</label>
       <select class="selectpicker" id="font-size" name="font-size">
         <option value="8">6</option>
         <option value="9">7</option>
@@ -80,6 +82,7 @@
         <option value="67">50</option>
       </select>
       <br>
+      <label for='stroke-width'>Line Thickness:</label>
       <select class="selectpicker" id="stroke-width" name="stroke-width">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -235,7 +238,21 @@
         <button type="button" class='btn btn-default btn-md btn-save-label'><i class="fa fa-save" aria-hidden="true"></i> Save Label</button>
       </form>
     </div>
+    <div id="dialog-form" title="Upload image">
+      <form class="upload-image">
+        <fieldset>
+          <p class='notice hidden'>You have not selected a file.</p>
+          <label for="upload-image">Upload image</label>
+          <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+
+          <!-- Allow form submission with keyboard without duplicating the dialog button -->
+          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+        </fieldset>
+      </form>
+    </div>
   </div>
+
+
   <div class='pull-left'>
     <div id="paper-wrapper" class="paper-wrapper css-height css-width">
       <div id='paper' class="image-container resizable">
