@@ -13,22 +13,62 @@
 /*@oxford_blue: #0A2342;*/
 /*@deep_pink: #F9627D;*/
 /*@light_pink: #F9ADA0;*/
-
-
 .designer-container{
   overflow: scroll;
   display: flex;
-  /*height: 100%;*/
 }
-.toolbar{
+.designer-container button, select, input, textarea{
+  outline: none;
+}
+.labeldesigner-sidebar table.options th, td{
+  padding: 0.2em;
+  text-align: left;
+}
+.labeldesigner-sidebar{
   padding:1em;
   width: 300px;
-  background-color: lightgrey;
+  background-color: #D9DCD6; /*lightgrey;*/
+  font-size: 0.85em;
   /* height: 99999px; */
 }
-.variable-popup {
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 4px;
+}
+.clearfix {
+  display: inline-block;
+}
+.labeldesigner-actions button{
+  margin-top: 1.5em;
+  padding: 1em;
+  border: none;
+  font-weight: bold;
+  color: white;
+}
+.btn-download-image{
+  background-color: #16425B;
+}
+.btn-save-label{
+  background-color: #188FA7;
+}
+.labeldesigner-sidebar input, textarea{
+  padding: 0.3em;
+  width: 80%;
+  margin: 0.2em;
+  /*font-size: 0.85em;*/
+  border: none;
+}
+#canvas_width, #canvas_height {
+  width: 4em;
+}
+.labeldesigner-actions {
   margin-bottom: 5em;
 }
+/*Application layout*/
 .paper-wrapper{
   border: 1px solid black;
   padding-top: 1px;
@@ -40,7 +80,64 @@ div.image-container{
   box-shadow:0 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
 }
-
+div.labeldesigner-toolbar button, .labeldesigner-sidebar .text-toolbar button{
+  margin: 0px;
+  float: left;
+  background-color: #D9DCD6;
+  /*#adadeb;*/
+  border:none;
+  min-height: 2em;
+  width: 1.85em;
+}
+div.labeldesigner-toolbar select, .labeldesigner-sidebar .text-toolbar select{
+  margin: 0px;
+  background-color: white;
+  border: none;
+  min-height: 2em;
+  min-width: 1em;
+}
+div.labeldesigner-toolbar button:hover, .labeldesigner-sidebar .text-toolbar button:hover{
+  background-color: #81C3D7;
+}
+div.labeldesigner-toolbar button.selected, .labeldesigner-sidebar .text-toolbar button.selected{
+  background-color: #188FA7;
+}
+div.labeldesigner-toolbar button:disabled, select:disabled{
+  cursor: not-allowed;
+}
+.labeldesigner-sidebar .text-popup label, .variable-popup label{
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  margin: 0.2em;
+  clear: both;
+  display: block;
+}
+.variable-popup select{
+  background-color: white;
+  margin: 0.2em;
+  border: none;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  min-width: 5em;
+}
+/*Standard styles*/
+.pull-right{
+  float: right !important;
+}
+.hidden{
+  display: none;
+}
+.css-height {
+  margin-bottom: -999999px;
+  padding-bottom: 999999px;
+}
+.css-width {
+  margin-right: -999999px;
+  padding-right: 999999px;
+}
+.full-width{
+  width: 100%;
+}
 /*Styling for Canvas resizing*/
 .ui-resizable-e:after, .ui-resizable-s:after, #paper:after{
   content: '';
@@ -80,98 +177,4 @@ div.image-container{
 }
 #paper .ui-icon{
   background-image: none;
-}
-
-
-
-
-/*.resize-drag{
-  position: relative;
-  fill: none;
-  pointer-events: all;
-  cursor: move !important;
-  z-index: 5;
-  box-sizing: border-box;
-}
-.selected{
-  stroke: #ff1a1a;
-  stroke-width: 5;
-  stroke-linejoin: round;
-  stroke-opacity: 0.70;
-}
-.resize-drag:hover{
-  fill: grey;
-}
-.resize-handle-sw {
-  position: absolute;
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: lightgrey;
-  z-index: 999;
-  bottom: -5px;
-  left: -5px;
-  cursor: sw-resize !important;
-}*/
-/*.unselectable {
-   -moz-user-select: -moz-none;
-   -khtml-user-select: none;
-   -webkit-user-select: none;
-
-
-     Introduced in IE 10.
-     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
-
-   -ms-user-select: none;
-   user-select: none;
-}
-*/
-
-
-/*Standard styles*/
-/*.pull-left{
-  float: left !important;
-}*/
-.pull-right{
-  float: right !important;
-}
-.hidden{
-  display: none;
-}
-.css-height {
-  margin-bottom: -999999px;
-  padding-bottom: 999999px;
-}
-.css-width {
-  margin-right: -999999px;
-  padding-right: 999999px;
-}
-.full-width{
-  width: 100%;
-}
-
-/*Application layout*/
-.wrap{
-
-}
-
-div.toolbar button.selected{
-  background-color: dimgray;
-}
-
-.editing{
-  border-style: dashed;
-}
-
-
-#canvas_width, #canvas_height {
-  width: 4em;
-}
-
-div.toolbar button {
-  min-height: 2em;
-  min-width: 2em;
-}
-div.toolbar {
-  font-size: 0.85em;
 }
