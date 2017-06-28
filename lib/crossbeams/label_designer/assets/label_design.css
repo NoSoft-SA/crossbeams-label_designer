@@ -55,6 +55,9 @@
 .btn-save-label{
   background-color: #188FA7;
 }
+.labeldesigner-form{
+  height: 420px;
+}
 .labeldesigner-sidebar input, textarea{
   padding: 0.3em;
   width: 80%;
@@ -87,7 +90,7 @@ div.labeldesigner-toolbar button, .labeldesigner-sidebar .text-toolbar button{
   /*#adadeb;*/
   border:none;
   min-height: 2em;
-  width: 1.85em;
+  width: 1.7em;
 }
 div.labeldesigner-toolbar select, .labeldesigner-sidebar .text-toolbar select{
   margin: 0px;
@@ -142,8 +145,8 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
 .ui-resizable-e:after, .ui-resizable-s:after, #paper:after{
   content: '';
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background: lightgrey;
   z-index: 999;
   position: absolute;

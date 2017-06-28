@@ -26,11 +26,22 @@ module Crossbeams
       end
 
       def javascript
-        file = File.join(File.dirname(__FILE__), 'assets/label_design.js')
         @json_save_path = Config.config.json_save_path
+        file_content = ''
+        file_paths = [
+          'assets/undo_engine.js',
+          'assets/label_design.js'
+          # 'assets/draw_shape.js'
+        ].each do |filename|
+          file = File.join(File.dirname(__FILE__), filename)
+          file_content << File.read(file)
+        end
         eval(Erubi::Engine.new(<<-EOS).src).freeze
         <script type="text/javascript">
-          #{File.read(file)}
+          (function() {
+
+            #{file_content}
+          })();
         </script>
         EOS
       end
