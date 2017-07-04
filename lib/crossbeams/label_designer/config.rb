@@ -13,12 +13,7 @@ module Crossbeams
                                  { 'varname' => 'Variety',
                                    'test_value' => 'Golden Delicious' }]
 
-      setting :label_config,  {
-                                labelState: 'new', # new, edit, copy, preview
-                                labelName: 'xxx',
-                                labelJSON: {},
-                                savePath: '/xyz'
-                              }
+      setting :label_config
     end
   end
 end
