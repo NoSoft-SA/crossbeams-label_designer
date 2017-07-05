@@ -13,6 +13,77 @@
 /*@oxford_blue: #0A2342;*/
 /*@deep_pink: #F9627D;*/
 /*@light_pink: #F9ADA0;*/
+@font-face {
+  font-family: 'Alice';
+  src: url(/fonts/alice.woff) format('woff');
+}
+@font-face {
+  font-family: 'Arial';
+  src: url(/fonts/arial.woff) format('woff');
+}
+@font-face {
+  font-family: 'Arial';
+  font-weight: bold;
+  font-style: bold;
+  src: url(/fonts/arialbd.woff) format('woff');
+}
+@font-face {
+  font-family: 'Arial';
+  font-weight: normal;
+  font-style: bold-italic;
+  src: url(/fonts/arialbi.woff) format('woff');
+}
+@font-face {
+  font-family: 'Arial';
+  font-weight: normal;
+  font-style: italic;
+  src: url(/fonts/ariali.woff) format('woff');
+}
+@font-face {
+  font-family: 'Courier New';
+  src: url(/fonts/cour.woff) format('woff');
+}
+@font-face {
+  font-family: 'Courier New';
+  font-weight: bold;
+  font-style: bold;
+  src: url(/fonts/courbd.woff) format('woff');
+}
+@font-face {
+  font-family: 'Courier New';
+  font-weight: normal;
+  font-style: bold-italic;
+  src: url(/fonts/courbi.woff) format('woff');
+}
+@font-face {
+  font-family: 'Courier New';
+  font-weight: normal;
+  font-style: italic;
+  src: url(/fonts/couri.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNRB';
+  font-weight: bold;
+  font-style: bold;
+  src: url(/fonts/timesbd.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNRBI';
+  font-weight: normal;
+  font-style: bold-italic;
+  src: url(/fonts/timesbi.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNRI';
+  font-weight: normal;
+  font-style: italic;
+  src: url(/fonts/timesi.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNR';
+  src: url(/fonts/times.woff) format('woff');
+}
+
 .designer-container{
   overflow: scroll;
   display: flex;
@@ -142,7 +213,7 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
   width: 100%;
 }
 /*Styling for Canvas resizing*/
-.ui-resizable-e:after, .ui-resizable-s:after, #paper:after{
+#paper-wrapper .ui-resizable-e:after, #paper-wrapper .ui-resizable-s:after, #paper-wrapper #paper:after{
   content: '';
   display: block;
   width: 8px;
@@ -151,21 +222,21 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
   z-index: 999;
   position: absolute;
 }
-.ui-resizable-e:after{
+#paper-wrapper .ui-resizable-e:after{
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-.ui-resizable-s:after{
+#paper-wrapper .ui-resizable-s:after{
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
 }
-#paper:after{
+#paper-wrapper #paper:after{
   left: 100%;
   top: calc(100% + 9px);
   -webkit-transform: translateX(-100%);
@@ -178,6 +249,6 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
 }
-#paper .ui-icon{
+#paper-wrapper #paper .ui-icon{
   background-image: none;
 }
