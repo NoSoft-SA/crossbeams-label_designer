@@ -14,74 +14,52 @@
 /*@deep_pink: #F9627D;*/
 /*@light_pink: #F9ADA0;*/
 @font-face {
-  font-family: 'Alice';
-  src: url(/fonts/alice.woff) format('woff');
-}
-@font-face {
   font-family: 'Arial';
   src: url(/fonts/arial.woff) format('woff');
 }
 @font-face {
-  font-family: 'Arial';
-  font-weight: bold;
-  font-style: bold;
+  font-family: 'ArialB';
   src: url(/fonts/arialbd.woff) format('woff');
 }
 @font-face {
-  font-family: 'Arial';
-  font-weight: normal;
-  font-style: bold-italic;
+  font-family: 'ArialBI';
   src: url(/fonts/arialbi.woff) format('woff');
 }
 @font-face {
-  font-family: 'Arial';
-  font-weight: normal;
-  font-style: italic;
+  font-family: 'ArialI';
   src: url(/fonts/ariali.woff) format('woff');
 }
 @font-face {
-  font-family: 'Courier New';
+  font-family: 'Cour';
   src: url(/fonts/cour.woff) format('woff');
 }
 @font-face {
-  font-family: 'Courier New';
-  font-weight: bold;
-  font-style: bold;
+  font-family: 'CourB';
   src: url(/fonts/courbd.woff) format('woff');
 }
 @font-face {
-  font-family: 'Courier New';
-  font-weight: normal;
-  font-style: bold-italic;
+  font-family: 'CourBI';
   src: url(/fonts/courbi.woff) format('woff');
 }
 @font-face {
-  font-family: 'Courier New';
-  font-weight: normal;
-  font-style: italic;
+  font-family: 'CourI';
   src: url(/fonts/couri.woff) format('woff');
-}
-@font-face {
-  font-family: 'TNRB';
-  font-weight: bold;
-  font-style: bold;
-  src: url(/fonts/timesbd.woff) format('woff');
-}
-@font-face {
-  font-family: 'TNRBI';
-  font-weight: normal;
-  font-style: bold-italic;
-  src: url(/fonts/timesbi.woff) format('woff');
-}
-@font-face {
-  font-family: 'TNRI';
-  font-weight: normal;
-  font-style: italic;
-  src: url(/fonts/timesi.woff) format('woff');
 }
 @font-face {
   font-family: 'TNR';
   src: url(/fonts/times.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNRB';
+  src: url(/fonts/timesbd.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNRBI';
+  src: url(/fonts/timesbi.woff) format('woff');
+}
+@font-face {
+  font-family: 'TNRI';
+  src: url(/fonts/timesi.woff) format('woff');
 }
 
 .designer-container{
