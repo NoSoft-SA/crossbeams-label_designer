@@ -28,6 +28,8 @@ module Crossbeams
       def javascript
         @json_save_path = Config.config.label_config['save_path']
         @label_config = Config.config.label_config
+        @label_sizes = Config.config.label_sizes
+
         file_content = ''
         file_paths = [
           'assets/undo_engine.js',
