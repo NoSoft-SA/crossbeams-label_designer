@@ -75,7 +75,7 @@
 }
 .labeldesigner-sidebar{
   padding:1em;
-  width: 300px;
+  width: 320px;
   background-color: #D9DCD6; /*lightgrey;*/
   font-size: 0.85em;
   /* height: 99999px; */
@@ -139,7 +139,7 @@ div.labeldesigner-toolbar button, .labeldesigner-sidebar .text-toolbar button{
   /*#adadeb;*/
   border:none;
   min-height: 2em;
-  width: 1.7em;
+  width: 1.6em;
 }
 div.labeldesigner-toolbar select, .labeldesigner-sidebar .text-toolbar select{
   margin: 0px;
