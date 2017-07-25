@@ -1,9 +1,11 @@
 var test = require('tape');
-var LabelDesigner = require('../../lib/crossbeams/label_designer/assets/javascripts/label_design.js');
+var undoEngine = require('../../lib/crossbeams/label_designer/assets/javascripts/undo_engine.js');
+var undoModule = require('../../lib/crossbeams/label_designer/assets/javascripts/undo_redo_module.js');
 
 
 test('timing test', function (t) {
-    console.log(LabelDesigner);
+    console.log(undoEngine);
+    console.log(undoModule);
     t.plan(2);
 
     t.equal(typeof Date.now, 'function');
