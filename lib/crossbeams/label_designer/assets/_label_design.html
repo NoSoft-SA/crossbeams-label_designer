@@ -14,9 +14,9 @@
         <button type="button" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md ellipse'><i class="fa fa-circle-o" aria-hidden="true"></i></button>
         <button type="button" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         <button type="button" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'><i class="fa fa-rotate-right" aria-hidden="true"></i></button>
-
         <button type="button" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
         <button type="button" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        &nbsp;
         <select title='Set stroke width' class="selectpicker disabled" id="stroke-width" name="stroke-width" disabled=disabled>
           <option selected="selected" value="2">2</option>
           <option value="3">3</option>
@@ -36,6 +36,9 @@
             <button type="button" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="fa fa-bold" aria-hidden="true"></i></button>
             <button type="button" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="fa fa-underline" aria-hidden="true"></i></button>
             <button type="button" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="fa fa-italic" aria-hidden="true"></i></button>
+            <button type="button" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><b>L</b></button>
+            <button type="button" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><b>C</b></button>
+            <button type="button" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><b>R</b></button>
             <select class="selectpicker" id="font-family" title='font family' name="font-family">
               <option selected="selected" value="Arial">Arial</option>
               <option value="Courier New">Courier New</option>
