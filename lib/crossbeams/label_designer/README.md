@@ -35,3 +35,9 @@ This is a simple html file with no framework
 * "jquery-ui-1.12.1.min.js"
 * "konva.min.js"
 * "font-awesome-cdn-config.js"
+
+
+#### Label Designer Usage Tips: ####
+
+* Add variables first, they don't have to be exact as you can always move and resize them later to be exact.
+* When variable rotation is prevented by overlap, make it smaller first, rotate and then resize it again to fit the space.
