@@ -33,8 +33,9 @@ module Crossbeams
         file_content = ''
         file_paths = [
           'assets/javascripts/undo_engine.js',
-          'assets/javascripts/label_design.js',
-          'assets/javascripts/undo_redo_module.js'
+          'assets/javascripts/undo_redo_module.js',
+          'assets/javascripts/canvas.js',
+          'assets/javascripts/label_design.js'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
           file_content << File.read(file)
