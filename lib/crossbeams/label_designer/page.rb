@@ -47,6 +47,15 @@ module Crossbeams
         eval(Erubi::Engine.new(<<-EOS).src).freeze
         <script type="text/javascript">
           (function() {
+            "use strict";
+            let myLabel, labelSet;
+            const labelConfig = <%= @label_config %>;
+
+            const drawEnv = {
+              shifted: false,
+              controlled: false,
+            };
+
             #{file_content}
           })();
         </script>
