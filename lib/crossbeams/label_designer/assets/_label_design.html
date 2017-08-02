@@ -8,19 +8,19 @@
       <h3 class="labelname">New Label</h3>
 
       <div class="labeldesigner-toolbar clearfix">
-        <button type="button" name="Pointer" title="pointer" class='btn btn-default btn-md pointer'><i class="fa fa-mouse-pointer" aria-hidden="true"></i></button>
-        <button type="button" name="TextBox" title="Add a text box" class='btn btn-default btn-md text-box'><i class="fa fa-font" aria-hidden="true"></i></button>
-        <button type="button" name="VariableBox" title="Add a variable box" class='btn btn-default btn-md variable-box'><i class="fa fa-barcode" aria-hidden="true"></i></button>
-        <button type="button" name="image" title="Add image" class='btn btn-default btn-md image'><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-        <button type="button" name="Line" title="Draw a line" class='btn btn-default btn-md line'><i class="fa fa-minus" aria-hidden="true"></i></button>
-        <button type="button" name="Rect" title="Draw a rectangle" class='btn btn-default btn-md rectangle'><i class="fa fa-square-o" aria-hidden="true"></i></button>
-        <button type="button" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md ellipse'><i class="fa fa-circle-o" aria-hidden="true"></i></button>
-        <button type="button" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-        <button type="button" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'><i class="fa fa-rotate-right" aria-hidden="true"></i></button>
-        <button type="button" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-        <button type="button" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-pointer="Pointer" name="Pointer" title="pointer" class='btn btn-default btn-md'><i class="fa fa-mouse-pointer" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-drawtype="TextBox" name="TextBox" title="Add a text box" class='btn btn-default btn-md'><i class="fa fa-font" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-drawtype="VariableBox" name="VariableBox" title="Add a variable box" class='btn btn-default btn-md'><i class="fa fa-barcode" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-drawtype="image" name="image" title="Add image" class='btn btn-default btn-md'><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-drawtype="Line" name="Line" title="Draw a line" class='btn btn-default btn-md'><i class="fa fa-minus" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-drawtype="Rect" name="Rect" title="Draw a rectangle" class='btn btn-default btn-md'><i class="fa fa-square-o" aria-hidden="true"></i></button>
+        <button type="button" data-chosen="false" data-drawtype="Ellipse" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md'><i class="fa fa-circle-o" aria-hidden="true"></i></button>
+        <button type="button" data-action="remove" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+        <button type="button" data-action="rotate" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'><i class="fa fa-rotate-right" aria-hidden="true"></i></button>
+        <button type="button" data-action="undo" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button type="button" data-action="redo" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
         &nbsp;
-        <select title='Set stroke width' class="selectpicker disabled" id="stroke-width" name="stroke-width" disabled=disabled>
+        <select title='Set stroke width' class="selectpicker disabled" id="stroke-width" data-option="stroke-width" name="stroke-width" disabled=disabled>
           <option selected="selected" value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -36,18 +36,18 @@
       <form class='variable-info-form'>
         <div class="text-popup">
           <div class="text-toolbar">
-            <button type="button" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="fa fa-bold" aria-hidden="true"></i></button>
-            <button type="button" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="fa fa-underline" aria-hidden="true"></i></button>
-            <button type="button" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="fa fa-italic" aria-hidden="true"></i></button>
+            <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="fa fa-bold" aria-hidden="true"></i></button>
+            <button type="button" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="fa fa-underline" aria-hidden="true"></i></button>
+            <button type="button" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="fa fa-italic" aria-hidden="true"></i></button>
             <button type="button" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><b>L</b></button>
             <button type="button" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><b>C</b></button>
             <button type="button" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><b>R</b></button>
-            <select class="selectpicker" id="font-family" title='font family' name="font-family">
+            <select class="selectpicker" id="font-family" title='font family' data-option="font-family" name="font-family">
               <option selected="selected" value="Arial">Arial</option>
               <option value="Courier New">Courier New</option>
               <option value="Times New Roman">Times New Roman</option>
             </select>
-            <select class="selectpicker" id="font-size" title='font size' name="font-size">
+            <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
               <option value="8">6</option>
               <option value="9">7</option>
               <option value="11">8</option>
@@ -80,7 +80,7 @@
             </select>
           </div>
           <label for='textinput'>Text options:</label>
-          <td><textarea type="text" id="textinput" title="Insert text here" placeholder="Insert text"></textarea></td>
+          <td><textarea type="text" id="textinput" data-option="textinput" title="Insert text here" placeholder="Insert text"></textarea></td>
         </div>
 
         <div class="variable-popup clearfix">

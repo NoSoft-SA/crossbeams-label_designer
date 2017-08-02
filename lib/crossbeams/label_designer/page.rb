@@ -32,12 +32,13 @@ module Crossbeams
 
         file_content = ''
         file_paths = [
-          # 'assets/javascripts/label.js', #Why do these have to be first?
-          # 'assets/javascripts/shapes/shape.js',
           'assets/javascripts/undo_engine.js',
           'assets/javascripts/undo_redo_module.js',
           'assets/javascripts/canvas.js',
           'assets/javascripts/positioner.js',
+          'assets/javascripts/draw_app.js',
+          # 'assets/javascripts/label.js',
+          # 'assets/javascripts/shapes/shape.js',
           'assets/javascripts/label_design.js'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)

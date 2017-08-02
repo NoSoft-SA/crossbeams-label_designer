@@ -151,8 +151,8 @@ div.labeldesigner-toolbar select, .labeldesigner-sidebar .text-toolbar select{
 div.labeldesigner-toolbar button:hover, .labeldesigner-sidebar .text-toolbar button:hover{
   background-color: #81C3D7;
 }
-div.labeldesigner-toolbar button.selected, .labeldesigner-sidebar .text-toolbar button.selected{
-  background-color: #188FA7;
+[data-chosen='true'] {
+  background-color: #188FA7 !important;
 }
 div.labeldesigner-toolbar button:disabled, select:disabled{
   cursor: not-allowed;
