@@ -32,6 +32,7 @@ module Crossbeams
 
         file_content = ''
         file_paths = [
+          'assets/javascripts/library.js',
           'assets/javascripts/undo_engine.js',
           'assets/javascripts/undo_redo_module.js',
           'assets/javascripts/canvas.js',
