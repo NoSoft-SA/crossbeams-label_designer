@@ -230,3 +230,14 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
 #paper-wrapper #paper .ui-icon{
   background-image: none;
 }
+
+
+.left-ruler{
+  width: 25px;
+  background-color: #D9DCD6;
+  border-left: 1px solid darkgrey;
+}
+.top-ruler{
+  height: 25px;
+  background-color: #D9DCD6;
+}
