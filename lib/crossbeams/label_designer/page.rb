@@ -22,7 +22,11 @@ module Crossbeams
       #    str = Erubi::Engine.new(File.load(...))
       #    eval(str.src)
       def render
-        File.read(File.join(File.dirname(__FILE__), 'assets/_label_design.html'))
+        @barcode_types = Config.config.barcode_types
+        file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
+        eval(Erubi::Engine.new(<<-EOS).src).freeze
+          #{File.read(file)}
+        EOS
       end
 
       def javascript
@@ -53,10 +57,18 @@ module Crossbeams
       end
 
       def css
+        file_content = ''
+        file_paths = [
+          'assets/ruler.css',
+          'assets/label_design.css'
+        ].each do |filename|
+          file = File.join(File.dirname(__FILE__), filename)
+          file_content << File.read(file)
+        end
         file = File.join(File.dirname(__FILE__), 'assets/label_design.css')
         <<-EOS.freeze
         <style>
-          #{File.read(file)}
+          #{file_content}
         </style>
         EOS
       end

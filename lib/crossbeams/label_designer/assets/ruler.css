@@ -1,0 +1,75 @@
+.designer-container{
+  background-color: #D9DCD6;
+  position: relative;
+}
+.left-ruler{
+  width: 25px;
+  border-left: 1px solid darkgrey;
+}
+.left-ruler li{
+  height: 10px; /*per mm*/
+  border-bottom: 1px solid darkgrey;
+}
+.top-ruler{
+  padding-left: 25px;
+  height: 25px;
+  width: 99999px;
+  z-index: 100;
+  position: relative;
+}
+.top-ruler ul, .left-ruler ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.top-ruler li{
+  z-index: 200;
+  position: relative !important;
+  float: left;
+  display: inline;
+  text-align: center;
+  height: 25px;
+  width: 10px !important; /*per mm*/
+  border-right: 1px solid darkgrey;
+}
+.top-ruler .naught{
+  border-left: 2px solid darkgrey;
+}
+.left-ruler .naught{
+  border-top: 2px solid darkgrey;
+}
+.left-ruler .count{
+  border-bottom: 3px solid darkgrey;
+}
+.top-ruler .count{
+  border-right: 3px solid darkgrey;
+}
+.left-ruler .countfive{
+  border-bottom: 2px solid darkgrey;
+}
+.top-ruler .countfive{
+  border-right: 2px solid darkgrey;
+}
+.top-marker{
+  height: 25px;
+  position: absolute;
+  border-right: 1px solid black;
+  z-index: 400 !important;
+}
+.left-marker{
+  width: 25px;
+  position: absolute;
+  z-index: 400;
+  border-bottom: 1px solid black;
+}
+/*
+.unit, .px {
+  height: @unitHeight;
+  width: 100%;
+  outline: 1px solid @bodyBG;
+  background-image: linear-gradient(left, @unitLineColor 1px, transparent 0px);
+  background-repeat: repeat;
+  background-size: 2px 100%;
+  transition: all 0.1s ease-in;
+  position: relative;
+} */

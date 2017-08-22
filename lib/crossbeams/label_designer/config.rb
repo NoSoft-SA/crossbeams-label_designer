@@ -28,6 +28,22 @@ module Crossbeams
                                 labelDimension: '8464',
                                 id: 1
                               }
+
+      setting :barcode_types, {
+        CODE_39: 'CODE 39',
+        CODE_93: 'CODE 93',
+        CODE_128: 'CODE 128',
+        EAN_8: 'EAN8',
+        EAN_13: 'EAN13',
+        UPC_A: 'UPCa',
+        UPC_E: 'UPCe',
+        UPC_EAN_EXTENSION: 'UPC/EAN Extension',
+        RSS_14: 'RSS 14',
+        RSS_EXPANDED: 'RSS Expanded',
+        QR_CODE: 'QR code',
+        DATA_MATRIX: 'Data Matrix',
+        PDF_417: 'PDF 417'
+      }
     end
   end
 end

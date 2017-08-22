@@ -139,19 +139,9 @@
             </select>
             <label for="barcode_symbology">Barcode Symbology:</label>
             <select class="form-control" id="barcode_symbology" name="barcode_symbology">
-              <option value="CODE_39">CODE 39</option>
-              <option value="CODE_93">CODE 93</option>
-              <option value="CODE_128">CODE 128</option>
-              <option value="EAN_8">EAN8</option>
-              <option value="EAN_13">EAN13</option>
-              <option value="UPC_A">UPCa</option>
-              <option value="UPC_E">UPCe</option>
-              <option value="UPC_EAN_EXTENSION">UPC/EAN Extension</option>
-              <option value="RSS_14">RSS 14</option>
-              <option value="RSS_EXPANDED">RSS Expanded</option>
-              <option value="QR_CODE">QR code</option>
-              <option value="DATA_MATRIX">Data Matrix</option>
-              <option value="PDF_417">PDF 417</option>
+              <% @barcode_types.each do |bc_type| %>
+                <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
+              <% end %>
             </select>
           </div>
         </div>
@@ -190,12 +180,51 @@
     </div>
   </div>
 
-  <div class="left-ruler pull-left"></div>
+   <div class='pull-left'>
+    <div class="top-ruler">
+      <div class="top-marker"></div>
+      <ul>
+      <% 500.times do |counter| %>
+        <% if (counter == 0) %>
+          <li class="ruler naught">0</li>
+        <% elsif ((counter+1)%5 == 0) %>
+          <% display = (counter.to_f+1)/10 %>
+          <% if (display%1 == 0) %>
+            <li class="ruler count"><%= display.to_i %></li>
+          <% else %>
+            <li class="ruler countfive">&nbsp;</li>
+          <% end %>
+        <% else %>
+          <li class="ruler nocount">&nbsp;</li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+    <div class="left-ruler pull-left">
+      <div class="left-marker"></div>
+      <ul>
+      <% 500.times do |counter| %>
+        <% if (counter == 0) %>
+          <li class="ruler naught">0</li>
+        <% elsif ((counter+1)%5 == 0) %>
+          <% display = (counter.to_f+1)/10 %>
+          <% if (display%1 == 0) %>
+            <li class="ruler count"><%= display.to_i %></li>
+          <% else %>
+            <li class="ruler countfive">&nbsp;</li>
+          <% end %>
+        <% else %>
+          <li class="ruler nocount">&nbsp;</li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
 
-  <div class='pull-left'>
-    <div class="top-ruler"></div>
-    <div id="paper-wrapper" class="paper-wrapper css-height css-width">
-      <div id='paper' class="image-container resizable"></div>
+    <div class='pull-left'>
+      <div id="paper-wrapper" class="paper-wrapper css-height css-width">
+        <div id='paper' class="image-container resizable"></div>
+      </div>
     </div>
   </div>
+
 </div>
