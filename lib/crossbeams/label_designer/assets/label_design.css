@@ -139,7 +139,7 @@ div.labeldesigner-toolbar button, .labeldesigner-sidebar .text-toolbar button{
   /*#adadeb;*/
   border:none;
   min-height: 2em;
-  width: 1.6em;
+  min-width: 1.6em;
 }
 div.labeldesigner-toolbar select, .labeldesigner-sidebar .text-toolbar select{
   margin: 0px;
@@ -229,4 +229,25 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
 }
 #paper-wrapper #paper .ui-icon{
   background-image: none;
+}
+.select-group{
+  float: left;
+  display: inline-block;
+}
+.select-group button{
+  background-color: white !important;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 2px;
+  padding-right: 5px !important;
+  margin-right: 0px !important;
+}
+.select-group select{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 2px;
+  padding-left: 0px !important;
+  margin-left: -5px !important;
 }

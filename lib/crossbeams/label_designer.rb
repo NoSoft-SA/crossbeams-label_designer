@@ -7,9 +7,6 @@ require 'erubi'
 
 module Crossbeams
   module LabelDesigner
-    def test
-      'test'
-    end
 
   end
 end

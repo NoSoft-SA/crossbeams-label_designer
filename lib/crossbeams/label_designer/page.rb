@@ -59,13 +59,12 @@ module Crossbeams
       def css
         file_content = ''
         file_paths = [
-          'assets/ruler.css',
+          'assets/icons_sprite.css',
           'assets/label_design.css'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
           file_content << File.read(file)
         end
-        file = File.join(File.dirname(__FILE__), 'assets/label_design.css')
         <<-EOS.freeze
         <style>
           #{file_content}
