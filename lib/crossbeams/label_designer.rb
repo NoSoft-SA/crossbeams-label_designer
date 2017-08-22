@@ -7,6 +7,5 @@ require 'erubi'
 
 module Crossbeams
   module LabelDesigner
-
   end
 end

@@ -231,6 +231,7 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
   background-image: none;
 }
 .select-group{
+  float: left;
   display: inline-block;
 }
 .select-group button{
