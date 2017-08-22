@@ -59,6 +59,7 @@ module Crossbeams
       def css
         file_content = ''
         file_paths = [
+          'assets/ruler.css',
           'assets/icons_sprite.css',
           'assets/label_design.css'
         ].each do |filename|
