@@ -42,6 +42,7 @@ module Crossbeams
           'assets/javascripts/positioner.js',
           'assets/javascripts/draw_app.js',
           'assets/javascripts/clipboard.js',
+          'assets/javascripts/library.js',
           'assets/javascripts/label_design.js'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)

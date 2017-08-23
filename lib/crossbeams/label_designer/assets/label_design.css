@@ -115,7 +115,7 @@
   border: none;
 }
 #canvas_width, #canvas_height {
-  width: 4em;
+  width: 4.75em;
 }
 .labeldesigner-actions {
   margin-bottom: 5em;
@@ -238,18 +238,16 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
 }
 .select-group button{
   background-color: white !important;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 2px;
   padding-right: 5px !important;
   margin-right: 0px !important;
 }
 .select-group select{
-  border-top-left-radius: 0px;
-  border-top-right-radius: 2px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 2px;
   padding-left: 0px !important;
   margin-left: -5px !important;
+}
+.designer-container select, .designer-container button, .designer-container input, .designer-container textarea{
+  border-radius: 0px !important;
+}
+.labeldesigner-actions{
+  width: 270px;
 }

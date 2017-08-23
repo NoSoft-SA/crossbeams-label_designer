@@ -1,9 +1,5 @@
 <div class="designer-container">
   <div class="labeldesigner-sidebar pull-left css-height">
-    <div class="status pull-right">
-      <!-- <span class="extra-info">pointer</span> |  -->
-      <span class="currentCoords">(0, 0)</span>
-    </div>
     <div class="labeldesigner-form">
       <h3 class="labelname">New Label</h3>
 
@@ -50,7 +46,7 @@
       -->
 
       <form class='variable-info-form'>
-        <div class="text-popup">
+        <div class="text-popup" style="display:none;">
           <div class="text-toolbar">
             <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
             <button type="button" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
@@ -105,12 +101,22 @@
           <td><textarea type="text" id="textinput" data-option="textinput" title="Insert text here" placeholder="Insert text"></textarea></td>
         </div>
 
-        <div class="variable-popup clearfix">
+        <div class="variable-popup clearfix" style="display:none;">
           <label for="vars">Variable type:</label>
           <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
             <option value="0" data-hidden="true">Please select</option>
             <option value="Commodity">Commodity</option>
             <option value="Variety">Variety</option>
+            <option value="Grade">Grade</option>
+            <option value="GGN">GGN</option>
+            <option value="week">week</option>
+            <option value="CLS">CLS</option>
+            <option value="Line">Line</option>
+            <option value="CNT">CNT</option>
+            <option value="RMT">RMT</option>
+            <option value="Farm">Farm</option>
+            <option value="Run">Run</option>
+            <option value="Count">Count</option>
             <option value="PUC">PUC</option>
             <option value="Class">Class</option>
             <option value="Size">Size</option>
@@ -123,7 +129,7 @@
             <option value="false" selected="selected">No</option>
             <option value="true">Yes</option>
           </select>
-          <div class="barcode-options">
+          <div class="barcode-options" style="display:none;">
             <label for="barcode_margin">Margin size:</label>
             <select class="selectpicker" id="barcode_margin" name="barcode_margin">
               <option value="5">5</option>
@@ -180,23 +186,26 @@
       </table>
 
 
-      <div id="image-dialog-form" title="Upload image">
+      <div id="image-dialog-form" title="Upload image" style="display:none;">
         <form class="upload-image">
-          <fieldset>
-            <p class='notice hidden'>You have not selected a file.</p>
-            <label for="upload-image">Upload image</label>
-            <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+          <p class='notice hidden'>You have not selected a file.</p>
+          <label for="upload-image">Please select image to be uploaded:</label>
+          <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
 
-            <!-- Allow form submission with keyboard without duplicating the dialog button -->
-            <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-          </fieldset>
+          <!-- Allow form submission with keyboard without duplicating the dialog button -->
+          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
         </form>
       </div>
     </div>
     <div class="labeldesigner-actions">
+      <div class="status pull-right">
+        <!-- <span class="extra-info">pointer</span> |  -->
+        <span class="currentCoords">(0, 0)</span>
+      </div>
+      <br>
       <button type="button" class='btn btn-default btn-md btn-download-image'><i class="sprite sprite-download invert"></i>&nbsp;Download IMG</button>
       <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
-      <button type="button" class='btn btn-default btn-md btn-save-label'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
+      <button type="button" class='btn btn-default btn-md btn-save-label pull-right'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
     </div>
   </div>
 
