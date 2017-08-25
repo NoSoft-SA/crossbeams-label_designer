@@ -2,74 +2,194 @@
   background-color: #D9DCD6;
   position: relative;
 }
-.left-ruler{
-  width: 25px;
-  border-left: 1px solid darkgrey;
-}
-.left-ruler li{
-  height: 10px; /*per mm*/
-  border-bottom: 1px solid darkgrey;
-}
-.top-ruler{
-  padding-left: 25px;
-  height: 25px;
-  width: 99999px;
-  z-index: 100;
-  position: relative;
-}
-.top-ruler ul, .left-ruler ul{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.top-ruler li{
-  z-index: 200;
-  position: relative !important;
-  float: left;
-  display: inline;
-  text-align: center;
-  height: 25px;
-  width: 10px !important; /*per mm*/
-  border-right: 1px solid darkgrey;
-}
-.top-ruler .naught{
-  border-left: 2px solid darkgrey;
-}
-.left-ruler .naught{
-  border-top: 2px solid darkgrey;
-}
-.left-ruler .count{
-  border-bottom: 3px solid darkgrey;
-}
-.top-ruler .count{
-  border-right: 3px solid darkgrey;
-}
-.left-ruler .countfive{
-  border-bottom: 2px solid darkgrey;
-}
-.top-ruler .countfive{
-  border-right: 2px solid darkgrey;
-}
 .top-marker{
-  height: 25px;
+  height: 20px;
   position: absolute;
   border-right: 1px solid black;
   z-index: 400 !important;
 }
 .left-marker{
-  width: 25px;
+  width: 20px;
   position: absolute;
   z-index: 400;
   border-bottom: 1px solid black;
 }
-/*
-.unit, .px {
-  height: @unitHeight;
-  width: 100%;
-  outline: 1px solid @bodyBG;
-  background-image: linear-gradient(left, @unitLineColor 1px, transparent 0px);
-  background-repeat: repeat;
-  background-size: 2px 100%;
-  transition: all 0.1s ease-in;
+
+.top-ruler {
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(90deg,
+      rgba(73, 73, 73, 0.5) 0,
+      rgba(73, 73, 73, 0.5) 2%,
+      transparent 2%
+    ),
+    linear-gradient(180deg,
+      #ffffff 50%,
+      transparent 50%
+    ),
+    linear-gradient(90deg,
+      transparent 50%,
+      rgba(73, 73, 73, 0.5) 50%,
+      rgba(73, 73, 73, 0.5) 52%,
+      transparent 52%
+    ),
+    linear-gradient(180deg,
+      #ffffff 70%,
+      transparent 70%
+    ),
+    linear-gradient(90deg,
+      transparent 10%,
+      rgba(73, 73, 73, 0.4) 10%,
+      rgba(73, 73, 73, 0.4) 12%,
+      transparent 12%,
+
+      transparent 20%,
+      rgba(73, 73, 73, 0.4) 20%,
+      rgba(73, 73, 73, 0.4) 22%,
+      transparent 22%,
+
+      transparent 30%,
+      rgba(73, 73, 73, 0.4) 30%,
+      rgba(73, 73, 73, 0.4) 32%,
+      transparent 32%,
+
+      transparent 40%,
+      rgba(73, 73, 73, 0.4) 40%,
+      rgba(73, 73, 73, 0.4) 42%,
+      transparent 42%,
+
+      transparent 60%,
+      rgba(73, 73, 73, 0.4) 60%,
+      rgba(73, 73, 73, 0.4) 62%,
+      transparent 62%,
+
+      transparent 70%,
+      rgba(73, 73, 73, 0.4) 70%,
+      rgba(73, 73, 73, 0.4) 72%,
+      transparent 72%,
+
+      transparent 80%,
+      rgba(73, 73, 73, 0.4) 80%,
+      rgba(73, 73, 73, 0.4) 82%,
+      transparent 82%,
+
+      transparent 90%,
+      rgba(73, 73, 73, 0.4) 90%,
+      rgba(73, 73, 73, 0.4) 92%,
+      transparent 92%
+    );
+  background-size: 100px 20px;
+  background-repeat: repeat-x;
+  min-height: 20px;
+
+  /* only needed for labels */
+  white-space:nowrap;
+  font-size:0;
+  margin-left: 20px;
+  padding:0;
+  width: 99999px;
+  z-index: 100;
   position: relative;
-} */
+  border-top: 1px solid darkgrey;
+}
+.top-ruler label {
+  font-size:9px;
+  padding-top:2px;
+  display:inline-block;
+  width:100px;
+  text-indent:3px;
+}
+.ruler-placeholder{
+  width: 20px;
+  height: 20px;
+  display:inline-block;
+  border: 2px solid darkgrey;
+}
+
+.left-ruler {
+  border-top: 2px solid darkgrey;
+  background-color: #ffffff;
+  background-image:
+    linear-gradient(0deg,
+      rgba(73, 73, 73, 0.5) 0,
+      rgba(73, 73, 73, 0.5) 2%,
+      transparent 2%
+    ),
+    linear-gradient(90deg,
+      #ffffff 50%,
+      transparent 50%
+    ),
+    linear-gradient(0deg,
+      transparent 50%,
+      rgba(73, 73, 73, 0.5) 50%,
+      rgba(73, 73, 73, 0.5) 52%,
+      transparent 52%
+    ),
+    linear-gradient(90deg,
+      #ffffff 70%,
+      transparent 70%
+    ),
+    linear-gradient(0deg,
+      transparent 10%,
+      rgba(73, 73, 73, 0.4) 10%,
+      rgba(73, 73, 73, 0.4) 12%,
+      transparent 12%,
+
+      transparent 20%,
+      rgba(73, 73, 73, 0.4) 20%,
+      rgba(73, 73, 73, 0.4) 22%,
+      transparent 22%,
+
+      transparent 30%,
+      rgba(73, 73, 73, 0.4) 30%,
+      rgba(73, 73, 73, 0.4) 32%,
+      transparent 32%,
+
+      transparent 40%,
+      rgba(73, 73, 73, 0.4) 40%,
+      rgba(73, 73, 73, 0.4) 42%,
+      transparent 42%,
+
+      transparent 60%,
+      rgba(73, 73, 73, 0.4) 60%,
+      rgba(73, 73, 73, 0.4) 62%,
+      transparent 62%,
+
+      transparent 70%,
+      rgba(73, 73, 73, 0.4) 70%,
+      rgba(73, 73, 73, 0.4) 72%,
+      transparent 72%,
+
+      transparent 80%,
+      rgba(73, 73, 73, 0.4) 80%,
+      rgba(73, 73, 73, 0.4) 82%,
+      transparent 82%,
+
+      transparent 90%,
+      rgba(73, 73, 73, 0.4) 90%,
+      rgba(73, 73, 73, 0.4) 92%,
+      transparent 92%
+    );
+  background-size: 20px 100px;
+  background-repeat: repeat-y;
+  min-width: 20px;
+
+  /* only needed for labels */
+  white-space:nowrap;
+  font-size:0;
+  margin:0;
+  padding:0;
+  width: 20px;
+  border-left: 1px solid darkgrey;
+}
+.left-ruler label {
+  font-size:9px;
+  padding-left:2px;
+  display:inline-block;
+  height:100px;
+  writing-mode:vertical-lr;
+  -webkit-writing-mode:vertical-lr;
+}
+.left-ruler br {
+  height: 0px;
+}

@@ -209,43 +209,22 @@
   </div>
 
    <div class='pull-left'>
-    <div class="top-ruler">
-      <div class="top-marker"></div>
-      <ul>
-      <% 500.times do |counter| %>
-        <% if (counter == 0) %>
-          <li class="ruler naught">0</li>
-        <% elsif ((counter+1)%5 == 0) %>
-          <% display = (counter.to_f+1)/10 %>
-          <% if (display%1 == 0) %>
-            <li class="ruler count"><%= display.to_i %></li>
-          <% else %>
-            <li class="ruler countfive">&nbsp;</li>
-          <% end %>
-        <% else %>
-          <li class="ruler nocount">&nbsp;</li>
+    <div>
+      <div class="ruler-placeholder pull-left">&nbsp;</div>
+      <div class="top-ruler">
+        <div class="top-marker"></div>
+        <% (0..5000).step(100).each do |counter| %>
+          <label <%= "class=first" if counter == 0 %> ><%= counter %></label>
         <% end %>
-      <% end %>
-      </ul>
+      </div>
     </div>
+
     <div class="left-ruler pull-left">
       <div class="left-marker"></div>
-      <ul>
-      <% 500.times do |counter| %>
-        <% if (counter == 0) %>
-          <li class="ruler naught">0</li>
-        <% elsif ((counter+1)%5 == 0) %>
-          <% display = (counter.to_f+1)/10 %>
-          <% if (display%1 == 0) %>
-            <li class="ruler count"><%= display.to_i %></li>
-          <% else %>
-            <li class="ruler countfive">&nbsp;</li>
-          <% end %>
-        <% else %>
-          <li class="ruler nocount">&nbsp;</li>
-        <% end %>
+      <% (0..5000).step(100).each do |counter| %>
+        <label <%= "class=first" if counter == 0 %> ><%= counter %></label>
+        <br>
       <% end %>
-      </ul>
     </div>
 
     <div class='pull-left'>
