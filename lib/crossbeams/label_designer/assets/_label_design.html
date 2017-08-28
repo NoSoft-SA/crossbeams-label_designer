@@ -1,44 +1,108 @@
 <div class="designer-container">
+  <div class="top-toolbar clearfix">
+    <h3 class="labelname">New Label</h3>
+    <div class="labeldesigner-toolbar">
+      <button type="button" data-chosen="false" data-pointer="Pointer" name="Pointer" title="pointer" class='btn btn-default btn-md'><i class="sprite sprite-pointer"></i></button>
+      <button type="button" data-chosen="false" data-drawtype="TextBox" name="TextBox" title="Add a text box" class='btn btn-default btn-md'><i class="sprite sprite-textbox"></i></button>
+      <button type="button" data-chosen="false" data-drawtype="VariableBox" name="VariableBox" title="Add a variable box" class='btn btn-default btn-md'><i class="sprite sprite-variable"></i></button>
+      <button type="button" data-chosen="false" name="image" title="Add image" class='btn btn-default btn-md'><i class="sprite sprite-image"></i></button>
+      <button type="button" data-chosen="false" data-drawtype="Line" name="Line" title="Draw a line" class='btn btn-default btn-md'><i class="sprite sprite-line"></i></button>
+      <button type="button" data-chosen="false" data-drawtype="Rect" name="Rect" title="Draw a rectangle" class='btn btn-default btn-md'><i class="sprite sprite-square"></i></button>
+      <button type="button" data-chosen="false" data-drawtype="Ellipse" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md'><i class="sprite sprite-circle"></i></button>
+      <button type="button" data-action="remove" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'><i class="sprite sprite-trashcan"></i></button>
+      <button type="button" data-action="rotate" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'><i class="sprite sprite-rotate"></i></button>
+      <button type="button" data-action="undo" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'><i class="sprite sprite-undo"></i></button>
+      <button type="button" data-action="redo" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'><i class="sprite sprite-redo"></i></button>
+      <button type="button" data-action="copy" name="copy" title="copy" disabled=disabled class='btn btn-default btn-md label-designer-copy-button disabled'><i class="sprite sprite-copy"></i></button>
+      <button type="button" data-action="paste" name="paste" title="paste" disabled=disabled class='btn btn-default btn-md label-designer-paste-button disabled'><i class="sprite sprite-paste"></i></button>
+      &nbsp;
+      <div class="select-group">
+        <button title='Set stroke width'><i class="sprite sprite-stroke-width"></i></button>
+        <select title='Set stroke width' class="selectpicker disabled" id="stroke-width" data-option="stroke-width" name="stroke-width" disabled=disabled>
+          <option selected="selected" value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+    </div>
+    <span class="seperator">&nbsp;</span>
+    <div class="text-toolbar">
+      <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
+      <button type="button" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
+      <button type="button" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="sprite sprite-italic"></i></button>
+      <button type="button" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-left-align"></i></button>
+      <button type="button" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-center-align"></i></button>
+      <button type="button" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-right-align"></i></button>
+      <div class="select-group">
+        <button title='font size'><i class="sprite sprite-text-size"></i></button>
+        <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
+          <option value="8">6</option>
+          <option value="9">7</option>
+          <option value="11">8</option>
+          <option value="12">9</option>
+          <option value="13">10</option>
+          <option value="15">11</option>
+          <option value="16">12</option>
+          <option value="17">13</option>
+          <option value="19">14</option>
+          <option selected="selected" value="21">15</option>
+          <option value="22">16</option>
+          <option value="23">17</option>
+          <option value="24">18</option>
+          <option value="25">19</option>
+          <option value="26">20</option>
+          <option value="28">21</option>
+          <option value="29">22</option>
+          <option value="31">23</option>
+          <option value="32">24</option>
+          <option value="33">25</option>
+          <option value="35">26</option>
+          <option value="36">27</option>
+          <option value="37">28</option>
+          <option value="39">29</option>
+          <option value="40">30</option>
+          <option value="47">35</option>
+          <option value="53">40</option>
+          <option value="60">45</option>
+          <option value="67">50</option>
+        </select>
+      </div>
+      <div class="select-group">
+        <button title='font family'><i class="sprite sprite-font"></i></button>
+        <select class="selectpicker" id="font-family" title='font family' data-option="font-family" name="font-family">
+          <option selected="selected" value="Arial">Arial</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Times New Roman">Times New Roman</option>
+        </select>
+      </div>
+    </div>
+    <div class="labeldesigner-actions">
+      <button type="button" class='btn btn-default btn-md btn-download-image'><i class="sprite sprite-download invert"></i>&nbsp;Download IMG</button>
+      <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
+      <button type="button" class='btn btn-default btn-md btn-save-label pull-right'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
+    </div>
+    <table class="options">
+      <tr>
+        <td ><b>Canvas size(mm):</b></td>
+        <td style=''>W: <input type="number" id="canvas_width" title="Set canvas width" placeholder="700"></td>
+        <td style=''>H: <input type="number" id="canvas_height" title="Set canvas height" placeholder="500"></td>
+        <td ><b>Text input:</b></td>
+        <td><textarea type="text" id="textinput" data-option="textinput" title="Insert text here" placeholder="Insert text"></textarea></td>
+        <td ><!-- <span class="extra-info">pointer</span> |  --><span class="currentCoords">(0, 0)</span></td>
+      </tr>
+    </table>
+    <div class="text-popup" style="display:none;">
+    </div>
+  </div>
+
   <div class="labeldesigner-sidebar pull-left css-height">
     <div class="labeldesigner-form">
-      <div class="status pull-right">
-        <!-- <span class="extra-info">pointer</span> |  -->
-        <span class="currentCoords">(0, 0)</span>
-      </div>
-      <h3 class="labelname">New Label</h3>
-
-      <div class="labeldesigner-toolbar clearfix">
-        <button type="button" data-chosen="false" data-pointer="Pointer" name="Pointer" title="pointer" class='btn btn-default btn-md'><i class="sprite sprite-pointer"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="TextBox" name="TextBox" title="Add a text box" class='btn btn-default btn-md'><i class="sprite sprite-textbox"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="VariableBox" name="VariableBox" title="Add a variable box" class='btn btn-default btn-md'><i class="sprite sprite-variable"></i></button>
-        <button type="button" data-chosen="false" name="image" title="Add image" class='btn btn-default btn-md'><i class="sprite sprite-image"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="Line" name="Line" title="Draw a line" class='btn btn-default btn-md'><i class="sprite sprite-line"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="Rect" name="Rect" title="Draw a rectangle" class='btn btn-default btn-md'><i class="sprite sprite-square"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="Ellipse" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md'><i class="sprite sprite-circle"></i></button>
-        <button type="button" data-action="remove" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'><i class="sprite sprite-trashcan"></i></button>
-        <button type="button" data-action="rotate" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'><i class="sprite sprite-rotate"></i></button>
-        <br>
-        <button type="button" data-action="undo" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'><i class="sprite sprite-undo"></i></button>
-        <button type="button" data-action="redo" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'><i class="sprite sprite-redo"></i></button>
-        <button type="button" data-action="copy" name="copy" title="copy" disabled=disabled class='btn btn-default btn-md label-designer-copy-button disabled'><i class="sprite sprite-copy"></i></button>
-        <button type="button" data-action="paste" name="paste" title="paste" disabled=disabled class='btn btn-default btn-md label-designer-paste-button disabled'><i class="sprite sprite-paste"></i></button>
-        &nbsp;
-        <div class="select-group">
-          <button title='Set stroke width'><i class="sprite sprite-stroke-width"></i></button>
-          <select title='Set stroke width' class="selectpicker disabled" id="stroke-width" data-option="stroke-width" name="stroke-width" disabled=disabled>
-            <option selected="selected" value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-      </div>
-
       <!--  <p>
           Still to be built in
           <i class="sprite sprite-canvas-center-align"></i>
@@ -48,163 +112,6 @@
           <i class="sprite sprite-text-color"></i>
         </p>
       -->
-
-      <form class='variable-info-form'>
-        <div class="text-popup" style="display:none;">
-          <div class="text-toolbar">
-            <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
-            <button type="button" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
-            <button type="button" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="sprite sprite-italic"></i></button>
-            <button type="button" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-left-align"></i></button>
-            <button type="button" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-center-align"></i></button>
-            <button type="button" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-right-align"></i></button>
-            <div class="select-group">
-              <button title='font size'><i class="sprite sprite-text-size"></i></button>
-              <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
-                <option value="8">6</option>
-                <option value="9">7</option>
-                <option value="11">8</option>
-                <option value="12">9</option>
-                <option value="13">10</option>
-                <option value="15">11</option>
-                <option value="16">12</option>
-                <option value="17">13</option>
-                <option value="19">14</option>
-                <option selected="selected" value="21">15</option>
-                <option value="22">16</option>
-                <option value="23">17</option>
-                <option value="24">18</option>
-                <option value="25">19</option>
-                <option value="26">20</option>
-                <option value="28">21</option>
-                <option value="29">22</option>
-                <option value="31">23</option>
-                <option value="32">24</option>
-                <option value="33">25</option>
-                <option value="35">26</option>
-                <option value="36">27</option>
-                <option value="37">28</option>
-                <option value="39">29</option>
-                <option value="40">30</option>
-                <option value="47">35</option>
-                <option value="53">40</option>
-                <option value="60">45</option>
-                <option value="67">50</option>
-              </select>
-            </div>
-            <div class="select-group">
-              <button title='font family'><i class="sprite sprite-font"></i></button>
-              <select class="selectpicker" id="font-family" title='font family' data-option="font-family" name="font-family">
-                <option selected="selected" value="Arial">Arial</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Times New Roman">Times New Roman</option>
-              </select>
-            </div>
-          </div>
-          <label for='textinput'>Text options:</label>
-          <td><textarea type="text" id="textinput" data-option="textinput" title="Insert text here" placeholder="Insert text"></textarea></td>
-        </div>
-
-        <div class="variable-popup clearfix" style="display:none;">
-          <label for="vars">Variable type:</label>
-          <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
-            <option value="0" data-hidden="true">Please select</option>
-            <option value="Class">Class</option>
-            <option value="CLS">CLS</option>
-            <option value="Commodity">Commodity</option>
-            <option value="Count">Count</option>
-            <option value="Date Code">Date Code</option>
-            <option value="Farm">Farm</option>
-            <option value="GGN">GGN</option>
-            <option value="Grade">Grade</option>
-            <option value="Line">Line</option>
-            <option value="Orchard">Orchard</option>
-            <option value="Pallet Number">Pallet Number</option>
-            <option value="PHC">PHC</option>
-            <option value="PUC">PUC</option>
-            <option value="RMT">RMT</option>
-            <option value="Run">Run</option>
-            <option value="Size">Size</option>
-            <option value="Variety">Variety</option>
-            <option value="Week">Week</option>
-          </select>
-          <label for="barcode_bool">Is this a barcode?</label>
-          <select class="form-control" id="barcode_bool" name="orientation">
-            <option value="false" selected="selected">No</option>
-            <option value="true">Yes</option>
-          </select>
-          <div class="barcode-options" style="display:none;">
-            <label for="barcode_margin">Margin size:</label>
-            <select class="selectpicker" id="barcode_margin" name="barcode_margin">
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="35">35</option>
-              <option value="40">40</option>
-              <option value="45">45</option>
-              <option value="50">50</option>
-            </select>
-            <label for="barcode_symbology">Barcode Symbology:</label>
-            <select class="form-control" id="barcode_symbology" name="barcode_symbology">
-              <% @barcode_types.each do |bc_type| %>
-                <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
-              <% end %>
-            </select>
-          </div>
-        </div>
-      </form>
-
-      <table class="options">
-        <tr>
-          <th colspan='4'>Canvas size(mm):</th>
-        </tr>
-        <tr>
-          <td style='width:20%;'>Width:</td>
-          <td style='width:30%;'><input type="number" id="canvas_width" title="Set canvas width" placeholder="700"></td>
-          <td style='width:20%;'>Height:</td>
-          <td style='width:30%;'><input type="number" id="canvas_height" title="Set canvas height" placeholder="500"></td>
-        </tr>
-      </table>
-
-
-      <div id="image-dialog-form" title="Upload image" style="display:none;">
-        <form class="upload-image">
-          <p class='notice hidden'>You have not selected a file.</p>
-          <label for="upload-image">Please select image to be uploaded:</label>
-          <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
-
-          <!-- Allow form submission with keyboard without duplicating the dialog button -->
-          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-        </form>
-      </div>
-    </div>
-    <div class="labeldesigner-actions">
-      <button type="button" class='btn btn-default btn-md btn-download-image'><i class="sprite sprite-download invert"></i>&nbsp;Download IMG</button>
-      <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
-      <button type="button" class='btn btn-default btn-md btn-save-label pull-right'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
     </div>
   </div>
 
@@ -234,4 +141,93 @@
     </div>
   </div>
 
+  <div id="variable-info-form" title="Variable settings" style="display:none;">
+    <form class='variable-info-form'>
+      <p class='notice hidden'>You have not completed the form.</p>
+
+      <div class="variable-popup clearfix" style="display:none;">
+        <label for="vars">Variable type:</label>
+        <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+          <option value="0" data-hidden="true">Please select</option>
+          <option value="Class">Class</option>
+          <option value="CLS">CLS</option>
+          <option value="Commodity">Commodity</option>
+          <option value="Count">Count</option>
+          <option value="Date Code">Date Code</option>
+          <option value="Farm">Farm</option>
+          <option value="GGN">GGN</option>
+          <option value="Grade">Grade</option>
+          <option value="Line">Line</option>
+          <option value="Orchard">Orchard</option>
+          <option value="Pallet Number">Pallet Number</option>
+          <option value="PHC">PHC</option>
+          <option value="PUC">PUC</option>
+          <option value="RMT">RMT</option>
+          <option value="Run">Run</option>
+          <option value="Size">Size</option>
+          <option value="Variety">Variety</option>
+          <option value="Week">Week</option>
+        </select>
+        <label for="barcode_bool">Is this a barcode?</label>
+        <select class="form-control" id="barcode_bool" name="orientation">
+          <option value="false" selected="selected">No</option>
+          <option value="true">Yes</option>
+        </select>
+        <div class="barcode-options" style="display:none;">
+          <label for="barcode_margin">Margin size:</label>
+          <select class="selectpicker" id="barcode_margin" name="barcode_margin">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+          </select>
+          <label for="barcode_symbology">Barcode Symbology:</label>
+          <select class="form-control" id="barcode_symbology" name="barcode_symbology">
+            <% @barcode_types.each do |bc_type| %>
+              <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
+            <% end %>
+          </select>
+        </div>
+      </div>
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </form>
+  </div>
+
+  <div id="image-dialog-form" title="Upload image" style="display:none;">
+    <form class="upload-image">
+      <p class='notice hidden'>You have not selected a file.</p>
+      <label for="upload-image">Please select image to be uploaded:</label>
+      <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+
+      <!-- Allow form submission with keyboard without duplicating the dialog button -->
+      <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+    </form>
+  </div>
 </div>

@@ -64,8 +64,11 @@
 
 .designer-container{
   overflow: scroll;
-  display: flex;
+  width: 1500px;
+  height: 900px;
+  /*display: flex;*/
 }
+
 .designer-container button, select, input, textarea{
   outline: none;
 }
@@ -75,10 +78,13 @@
 }
 .labeldesigner-sidebar{
   padding:1em;
-  width: 405px;
+  /*width: 405px;*/
   background-color: #D9DCD6; /*lightgrey;*/
   font-size: 0.85em;
   /* height: 99999px; */
+}
+.clearfix {
+  display: inline-block;
 }
 .clearfix:after {
   visibility: hidden;
@@ -86,23 +92,6 @@
   font-size: 0;
   content: " ";
   clear: both;
-  height: 4px;
-}
-.clearfix {
-  display: inline-block;
-}
-.labeldesigner-actions button{
-  margin-top: 1.5em;
-  padding: 1em;
-  border: none;
-  font-weight: bold;
-  color: white;
-}
-.btn-download-image{
-  background-color: #16425B;
-}
-.btn-save-label{
-  background-color: #188FA7;
 }
 .labeldesigner-form{
   height: 460px;
@@ -117,9 +106,7 @@
 #canvas_width, #canvas_height {
   width: 4.75em;
 }
-.labeldesigner-actions {
-  margin-bottom: 5em;
-}
+
 /*Application layout*/
 .paper-wrapper{
   border: 1px solid black;
@@ -132,7 +119,7 @@ div.image-container{
   box-shadow:0 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
 }
-div.labeldesigner-toolbar button, .labeldesigner-sidebar .text-toolbar button{
+.labeldesigner-toolbar button, .text-toolbar button{
   margin: 0px;
   float: left;
   background-color: #D9DCD6;
@@ -141,23 +128,23 @@ div.labeldesigner-toolbar button, .labeldesigner-sidebar .text-toolbar button{
   min-height: 2em;
   min-width: 1.6em;
 }
-div.labeldesigner-toolbar select, .labeldesigner-sidebar .text-toolbar select{
+.labeldesigner-toolbar select, .text-toolbar select{
   margin: 0px;
   background-color: white;
   border: none;
   min-height: 2em;
   min-width: 1em;
 }
-div.labeldesigner-toolbar button:hover, .labeldesigner-sidebar .text-toolbar button:hover{
+.labeldesigner-toolbar button:hover, .text-toolbar button:hover{
   background-color: #81C3D7;
 }
 [data-chosen='true'] {
   background-color: #188FA7 !important;
 }
-div.labeldesigner-toolbar button:disabled, select:disabled{
+.labeldesigner-toolbar button:disabled, .labeldesigner-toolbar select:disabled{
   cursor: not-allowed;
 }
-.labeldesigner-sidebar .text-popup label, .variable-popup label{
+.text-popup label, .variable-popup label{
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   margin: 0.2em;
@@ -230,9 +217,11 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
 #paper-wrapper #paper .ui-icon{
   background-image: none;
 }
+
+
 .select-group{
-  margin-top:  -3px;
-  padding: 3px;
+  /*margin-top:  -3px;*/
+  /*padding: 3px;*/
   float: left;
   display: inline-block;
 }
@@ -241,13 +230,55 @@ div.labeldesigner-toolbar button:disabled, select:disabled{
   padding-right: 5px !important;
   margin-right: 0px !important;
 }
-.select-group select{
-  padding-left: 0px !important;
-  margin-left: -5px !important;
-}
 .designer-container select, .designer-container button, .designer-container input, .designer-container textarea{
   border-radius: 0px !important;
 }
+
+.designer-container .labeldesigner-toolbar, .designer-container .text-toolbar{
+  border: 2px solid #16425B;
+  /*padding: 4px;*/
+  /*height:35px;*/
+  float: left;
+}
+.designer-container .labeldesigner-toolbar{
+  display: inline-block;
+}
+.designer-container .labeldesigner-toolbar .clearfix:after{
+  height: 0px;
+}
+.designer-container h3.labelname{
+  margin-left: 25px;
+}
+.designer-container span.seperator{
+  border-left: 2px solid #16425B;
+  height: 36px;
+  display: inline-block;
+  float: left;
+  width: 0px;
+  padding: 0px;
+}
+.top-toolbar{
+  margin-left: 25px;
+}
 .labeldesigner-actions{
-  width: 270px;
+  display: inline-block;
+}
+.labeldesigner-actions button{
+  padding-top: 8px;
+  padding-bottom: 9px;
+  border: none;
+  font-weight: normal;
+  color: white;
+}
+.labeldesigner-actions .btn-download-image{
+  background-color: #16425B;
+}
+.labeldesigner-actions .btn-save-label{
+  background-color: #188FA7;
+}
+div.status{
+  width:1500px;
+  background-color: #D9DCD6; /*lightgrey;*/
+  position: absolute;
+  z-index: 400;
 }

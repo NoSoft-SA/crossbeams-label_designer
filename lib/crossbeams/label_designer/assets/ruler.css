@@ -187,8 +187,11 @@
   padding-left:2px;
   display:inline-block;
   height:100px;
-  writing-mode:vertical-lr;
-  -webkit-writing-mode:vertical-lr;
+  -ms-writing-mode: tb-lr;
+  -webkit-writing-mode: vertical-lr;
+  -moz-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
 }
 .left-ruler br {
   height: 0px;
