@@ -36,10 +36,13 @@ module Crossbeams
 
         file_content = ''
         file_paths = [
+          'assets/javascripts/variable_settings.js',
           'assets/javascripts/undo_engine.js',
           'assets/javascripts/undo_redo_module.js',
           'assets/javascripts/canvas.js',
           'assets/javascripts/positioner.js',
+          'assets/javascripts/shortcuts.js',
+          'assets/javascripts/label_options.js',
           'assets/javascripts/draw_app.js',
           'assets/javascripts/clipboard.js',
           'assets/javascripts/library.js',
@@ -50,7 +53,38 @@ module Crossbeams
         end
         eval(Erubi::Engine.new(<<-EOS).src).freeze
         <script type="text/javascript">
+          let myLabel,
+              Library,
+              Canvas,
+              Clipboard,
+              DrawApp,
+              Positioner,
+              UndoEngine,
+              UndoRedoModule,
+              LabelOptions,
+              Shortcuts,
+              VariableSettings;
+
           (function() {
+
+            const labelConfig = <%= @label_config %>;
+            const labelSizes = <%= @label_sizes %>;
+
+            // TODO: px/mm We need px per mm in labelConfig
+            // note changes required in ruler.css
+            const sizeMultiple = 10; // We want to get this from the config and set px per mm with it
+
+            const sizeConfig = labelSizes[labelConfig.labelDimension];
+            let myLabelSize = {
+              width: ((sizeConfig.width !== undefined) ? sizeConfig.width*10 : 700),
+              height: ((sizeConfig.height !== undefined) ? sizeConfig.height*10 : 500)
+            };
+
+            const drawEnv = {
+              shifted: false,
+              controlled: false,
+              orientation: 'portrait'
+            };
             #{file_content}
           })();
         </script>

@@ -36,6 +36,7 @@
         </div>
       </div>
       <div class="labeldesigner-actions pull-right">
+        <button type="button" class='btn btn-default btn-md btn-variable-settings'><i class="sprite sprite-options invert"></i>&nbsp;Variable Settings</button>
         <button type="button" class='btn btn-default btn-md btn-download-image'><i class="sprite sprite-download invert"></i>&nbsp;Download IMG</button>
         <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
         <button type="button" class='btn btn-default btn-md btn-save-label'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
@@ -43,7 +44,7 @@
       </div>
     </div>
     <!-- <hr> -->
-    <div class="text-popup" style="display:none;">
+    <div class="text-popup" data-disabled="true">
       <div class="text-toolbar clearfix">
         <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
         <button type="button" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
@@ -137,7 +138,7 @@
 
   <div id="variable-info-dialog-form" title="Variable settings" style="display:none;">
     <form class='variable-info-form'>
-      <p class='notice hidden'>You have not completed the form.</p>
+      <p class='notice' style="display:none;">Variable type must be selected.</p>
       <div class="variable-popup clearfix">
         <fieldset>
           <legend>Variable type:</legend>
@@ -230,14 +231,16 @@
     <form class="canvas-options">
       <p class='notice hidden'>Some fields are invalid.</p>
       <fieldset>
-        <legend>Canvas size(mm):</legend>
-        W: <input type="number" id="canvas_width" title="Set canvas width" placeholder="700">
-        H: <input type="number" id="canvas_height" title="Set canvas height" placeholder="500">
+        <legend>Canvas orientation:</legend>
+        <input type="radio" name="orientation" value="portrait" checked="checked"> Portrait<br>
+        <input type="radio" name="orientation" value="landscape"> Landscape
       </fieldset>
       <fieldset>
-        <legend>Canvas orientation:</legend>
-        <input type="radio" name="orientation" value="portrait"> Portrait<br>
-        <input type="radio" name="orientation" value="landscape"> Landscape
+        <legend>Canvas size(mm):</legend>
+        <label for="canvas_width">W:</label>
+        <input disabled='disabled' type="number" id="canvas_width" title="Set canvas width" placeholder="700"><br>
+        <label for="canvas_height">H:</label>
+        <input disabled='disabled' type="number" id="canvas_height" title="Set canvas height" placeholder="500">
       </fieldset>
 
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
