@@ -35,15 +35,35 @@
           </select>
         </div>
       </div>
+      <div class="canvas-toolbar">
+        <!--
+          // we are going to remove the options button and modal then
+          portrait/landscape
+          display canvas size as read only values here 840x640
+
+          // Zoom in & out
+          zoom (mimic google chrome - reset to 100% button)
+          [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500] percentages
+
+          // Still to be built in
+          <i class="sprite sprite-canvas-center-align"></i>
+          <i class="sprite sprite-canvas-left-align"></i>
+          <i class="sprite sprite-canvas-right-align"></i>
+          <i class="sprite sprite-multi-select"></i>
+
+          // This one belongs in the text toolbar
+          // A colorpicker might be nice here
+          <i class="sprite sprite-text-color"></i>
+         -->
+      </div>
       <div class="labeldesigner-actions pull-right">
-        <button type="button" class='btn btn-default btn-md btn-variable-settings'><i class="sprite sprite-options invert"></i>&nbsp;Variable Settings</button>
+        <button type="button" class='btn btn-default btn-md btn-variable-settings' style='display:none;'><i class="sprite sprite-options invert"></i>&nbsp;Variable Settings</button>
         <button type="button" class='btn btn-default btn-md btn-download-image'><i class="sprite sprite-download invert"></i>&nbsp;Download IMG</button>
         <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
         <button type="button" class='btn btn-default btn-md btn-save-label'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
         <button type="button" class='btn btn-default btn-md btn-options pull-right'><i class="sprite sprite-options invert"></i>&nbsp;Options</button>
       </div>
     </div>
-    <!-- <hr> -->
     <div class="text-popup" data-disabled="true">
       <div class="text-toolbar clearfix">
         <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
@@ -100,15 +120,6 @@
       </div>
     </div>
   </div>
-
-  <!--
-    Still to be built in
-    <i class="sprite sprite-canvas-center-align"></i>
-    <i class="sprite sprite-canvas-left-align"></i>
-    <i class="sprite sprite-canvas-right-align"></i>
-    <i class="sprite sprite-multi-select"></i>
-    <i class="sprite sprite-text-color"></i>
-  -->
 
    <div class='pull-left'>
     <div>

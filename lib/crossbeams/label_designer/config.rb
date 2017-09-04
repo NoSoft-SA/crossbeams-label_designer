@@ -8,10 +8,10 @@ module Crossbeams
       #                        { 'name' => '8464', 'mm_size' => {'width' => '84', 'height' => '64'} },
       #                        { 'name' => 'custom', 'mm_size' => {'width' => '84', 'height' => '64'} }]
       setting :label_sizes, {
-                              'a4': {'width': '71', 'height': '54'},
-                              'a5': {'width': '35', 'height': '21'},
+                              'A4': {'width': '71', 'height': '54'},
+                              'A5': {'width': '35', 'height': '21'},
                               '8464': {'width': '84', 'height': '64'},
-                              'custom': {'width': '84', 'height': '64'}
+                              'Custom': {'width': '84', 'height': '64'}
                             }
 
       setting :label_variables, [{ 'varname' => 'Commodity', 'test_value' => 'PLUM' },

@@ -37,6 +37,7 @@ module Crossbeams
         file_content = ''
         file_paths = [
           'assets/javascripts/variable_settings.js',
+          'assets/javascripts/image_uploader.js',
           'assets/javascripts/undo_engine.js',
           'assets/javascripts/undo_redo_module.js',
           'assets/javascripts/canvas.js',
@@ -53,7 +54,7 @@ module Crossbeams
         end
         eval(Erubi::Engine.new(<<-EOS).src).freeze
         <script type="text/javascript">
-          let myLabel,
+          let MyLabel,
               Library,
               Canvas,
               Clipboard,
@@ -63,6 +64,8 @@ module Crossbeams
               UndoRedoModule,
               LabelOptions,
               Shortcuts,
+              ImageUploader,
+              MyImages,
               VariableSettings;
 
           (function() {
@@ -75,7 +78,7 @@ module Crossbeams
             const sizeMultiple = 10; // We want to get this from the config and set px per mm with it
 
             const sizeConfig = labelSizes[labelConfig.labelDimension];
-            let myLabelSize = {
+            let MyLabelSize = {
               width: ((sizeConfig.width !== undefined) ? sizeConfig.width*10 : 700),
               height: ((sizeConfig.height !== undefined) ? sizeConfig.height*10 : 500)
             };
