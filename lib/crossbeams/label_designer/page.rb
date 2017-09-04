@@ -22,7 +22,8 @@ module Crossbeams
       #    str = Erubi::Engine.new(File.load(...))
       #    eval(str.src)
       def render
-        @barcode_types = Config.config.barcode_types
+        @barcode_types = Constants::BARCODE_TYPES
+        @font_sizes = Constants::FONT_SIZES
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
         eval(Erubi::Engine.new(<<-EOS).src).freeze
           #{File.read(file)}
@@ -30,7 +31,6 @@ module Crossbeams
       end
 
       def javascript
-        @json_save_path = Config.config.label_config['save_path']
         @label_config = Config.config.label_config
         @label_sizes = Config.config.label_sizes
 
@@ -72,15 +72,12 @@ module Crossbeams
 
             const labelConfig = <%= @label_config %>;
             const labelSizes = <%= @label_sizes %>;
-
-            // TODO: px/mm We need px per mm in labelConfig
-            // note changes required in ruler.css
-            const sizeMultiple = 10; // We want to get this from the config and set px per mm with it
+            const pxPerMm = labelConfig.pixelPerMillimeter;
 
             const sizeConfig = labelSizes[labelConfig.labelDimension];
             let MyLabelSize = {
-              width: ((sizeConfig.width !== undefined) ? sizeConfig.width*10 : 700),
-              height: ((sizeConfig.height !== undefined) ? sizeConfig.height*10 : 500)
+              width: ((sizeConfig.width !== undefined) ? sizeConfig.width*pxPerMm : 700),
+              height: ((sizeConfig.height !== undefined) ? sizeConfig.height*pxPerMm : 500)
             };
 
             const drawEnv = {
@@ -95,6 +92,7 @@ module Crossbeams
       end
 
       def css
+        @pixel_per_millimeter = JSON.parse(Config.config.label_config)['pixelPerMillimeter'].to_i
         file_content = ''
         file_paths = [
           'assets/ruler.css',
@@ -104,7 +102,7 @@ module Crossbeams
           file = File.join(File.dirname(__FILE__), filename)
           file_content << File.read(file)
         end
-        <<-EOS.freeze
+        eval(Erubi::Engine.new(<<-EOS).src).freeze
         <style>
           #{file_content}
         </style>

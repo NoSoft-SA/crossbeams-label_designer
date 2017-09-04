@@ -1,8 +1,11 @@
 # Crossbeams::LabelDesigner
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/crossbeams/label_designer`. To experiment with that code, run `bin/console` for an interactive prompt.
+The purpose of this project is to collect variable fields and configurations of labels from the clients in a visual way.
 
-TODO: Delete this and the text above, and describe your gem
+Clients can now design the entire label using the drawing tools.
+
+By allowing our clients to indicate where on the designed label template they want the variables to be printed
+as well as what font, font size etc. we can generate images to send to the printer to speed up the printing process.
 
 ## Installation
 

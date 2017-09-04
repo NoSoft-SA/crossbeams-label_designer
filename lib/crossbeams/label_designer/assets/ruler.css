@@ -78,7 +78,8 @@
       rgba(73, 73, 73, 0.4) 92%,
       transparent 92%
     );
-  background-size: 100px 20px;
+  /*background-size: 100px 20px;*/
+  background-size: <%= @pixel_per_millimeter*10 %>px 20px;
   background-repeat: repeat-x;
   min-height: 20px;
 
@@ -96,7 +97,8 @@
   font-size:9px;
   padding-top:2px;
   display:inline-block;
-  width:100px;
+  width:<%= @pixel_per_millimeter*10 %>px;
+  /*width:100px;*/
   text-indent:3px;
 }
 .ruler-placeholder{
@@ -170,7 +172,8 @@
       rgba(73, 73, 73, 0.4) 92%,
       transparent 92%
     );
-  background-size: 20px 100px;
+  background-size: 20px <%= @pixel_per_millimeter*10 %>px;
+  /*background-size: 20px 100px;*/
   background-repeat: repeat-y;
   min-width: 20px;
 
@@ -186,7 +189,8 @@
   font-size:9px;
   padding-left:2px;
   display:inline-block;
-  height:100px;
+  height:<%= @pixel_per_millimeter*10 %>px;
+  /*height:100px;*/
   -ms-writing-mode: tb-lr;
   -webkit-writing-mode: vertical-lr;
   -moz-writing-mode: vertical-lr;
