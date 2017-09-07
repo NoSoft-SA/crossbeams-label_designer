@@ -3,22 +3,32 @@ module Crossbeams
     class Config
       extend Dry::Configurable
 
-      # setting :label_sizes, [{ 'name' => 'a4', 'mm_size' => {'width' => '71', 'height' => '54'} },
-      #                        { 'name' => 'a5', 'mm_size' => {'width' => '35', 'height' => '21'} },
-      #                        { 'name' => '8464', 'mm_size' => {'width' => '84', 'height' => '64'} },
-      #                        { 'name' => 'custom', 'mm_size' => {'width' => '84', 'height' => '64'} }]
       setting :label_sizes, {
-                              'A4': {'width': '71', 'height': '54'},
-                              'A5': {'width': '35', 'height': '21'},
-                              '8464': {'width': '84', 'height': '64'},
-                              'Custom': {'width': '84', 'height': '64'}
+                              'name' => 'A4', 'mm_size' => {'width': '71', 'height': '54'},
+                              'name' => 'A5', 'mm_size' => {'width': '35', 'height': '21'},
+                              'name' => '8464', 'mm_size' => {'width': '84', 'height': '64'},
+                              'name' => 'Custom', 'mm_size' => {'width': '84', 'height': '64'}
                             }
 
-      setting :label_variables, [{ 'varname' => 'Commodity', 'test_value' => 'PLUM' },
-                                 { 'varname' => 'Variety', 'test_value' => 'Golden Delicious' }]
-
-      setting :label_variables, [{ 'Commodity' => 'PLUM' },
-                                 { 'Variety' => 'Golden Delicious' }]
+      setting :label_variable_types, [ { 'varname' => 'Class',          'test_value' => 'PLUM' },
+                                       { 'varname' => 'CLS',            'test_value' => 'test value' },
+                                       { 'varname' => 'Commodity',      'test_value' => 'test value' },
+                                       { 'varname' => 'Count',          'test_value' => 'test value' },
+                                       { 'varname' => 'Date Code',      'test_value' => 'test value' },
+                                       { 'varname' => 'Farm',           'test_value' => 'test value' },
+                                       { 'varname' => 'GGN',            'test_value' => 'test value' },
+                                       { 'varname' => 'Grade',          'test_value' => 'test value' },
+                                       { 'varname' => 'Line',           'test_value' => 'test value' },
+                                       { 'varname' => 'Orchard',        'test_value' => 'test value' },
+                                       { 'varname' => 'Pallet Number',  'test_value' => 'test value' },
+                                       { 'varname' => 'PHC',            'test_value' => 'test value' },
+                                       { 'varname' => 'PUC',            'test_value' => 'test value' },
+                                       { 'varname' => 'RMT',            'test_value' => 'test value' },
+                                       { 'varname' => 'Run',            'test_value' => 'test value' },
+                                       { 'varname' => 'Size',           'test_value' => 'test value' },
+                                       { 'varname' => 'Variety',        'test_value' => 'Golden Delicious' },
+                                       { 'varname' => 'Week',           'test_value' => '52' }
+                                     ]
 
       setting :label_config,  {
                                 labelState: 'new', # new, edit, copy, preview

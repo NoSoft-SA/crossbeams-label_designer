@@ -9,6 +9,7 @@ module Crossbeams
   module LabelDesigner
     class Constants
       FONT_SIZES = {
+        # PX val / Font val
         8 => 6,
         9 => 7,
         11 => 8,

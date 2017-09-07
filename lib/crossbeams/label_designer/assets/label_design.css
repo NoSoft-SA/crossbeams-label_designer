@@ -121,17 +121,17 @@
   padding-right: 5px !important;
   margin-right: 0px !important;
 }
-.designer-container .labeldesigner-toolbar, .designer-container .text-toolbar{
+.designer-container .labeldesigner-toolbar, .designer-container .text-toolbar, .designer-container .canvas-toolbar{
   border: 2px solid #515052;
   float: left;
 }
-.designer-container .labeldesigner-toolbar{
+.designer-container .labeldesigner-toolbar, .designer-container .canvas-toolbar{
   display: inline-block;
 }
 .designer-container .labeldesigner-toolbar .clearfix:after{
   height: 0px;
 }
-.labeldesigner-toolbar button, .text-toolbar button{
+.labeldesigner-toolbar button, .text-toolbar button, .canvas-toolbar button{
   margin: 0px;
   float: left;
   background-color: #D9DCD6;
@@ -140,14 +140,14 @@
   min-height: 2em;
   min-width: 1.6em;
 }
-.labeldesigner-toolbar select, .text-toolbar select{
+.labeldesigner-toolbar select, .text-toolbar select, .canvas-toolbar select{
   margin: 0px;
   background-color: white;
   border: none;
   min-height: 2em;
   min-width: 1em;
 }
-.labeldesigner-toolbar button:hover, .text-toolbar button:hover{
+.labeldesigner-toolbar button:hover, .text-toolbar button:hover, .canvas-toolbar button:hover{
   background-color: #81C3D7;
 }
 [data-chosen='true'] {
@@ -187,6 +187,9 @@
   padding: 5px;
   width: 450px;
 }
+.canvas-toolbar{
+  padding: 5px;
+}
 [data-disabled='true']{
   pointer-events: none;
   opacity: 0.5;
@@ -206,44 +209,30 @@
 }
 
 
-
-
-
-/*Form*/
-
-fieldset {
-  display: block;
-  margin-left: 2px;
-  margin-right: 2px;
-  padding-top: 0.35em;
-  padding-bottom: 0.625em;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  border: 2px groove (internal value);
-}
 .labeldesigner-form{
   height: 460px;
 }
 
+.canvas-toolbar fieldset {
+  display: inline-block;
+  padding: 0px;
+  border: none;
+}
 #canvas_width, #canvas_height{
   outline: none;
   border: none;
-  background-color: white;
+  width: 75px;
+  opacity: 1;
+  /*background-color: white;*/
 }
-#canvas-options-dialog-form label{
-  width: 25px;
+#zoom_percentage{
+  float: left;
+}
+label[for='canvas_width'], label[for='canvas_height']{
+  width: 20px;
   display: inline-block;
 }
 
-
-
-.variable-popup label{
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
-  margin: 0.2em;
-  clear: both;
-  display: block;
-}
 .variable-popup select{
   background-color: lightgrey;
   margin: 0.2em;

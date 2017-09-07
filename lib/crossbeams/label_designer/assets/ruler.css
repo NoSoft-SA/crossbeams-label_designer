@@ -78,7 +78,6 @@
       rgba(73, 73, 73, 0.4) 92%,
       transparent 92%
     );
-  /*background-size: 100px 20px;*/
   background-size: <%= @pixel_per_millimeter*10 %>px 20px;
   background-repeat: repeat-x;
   min-height: 20px;
@@ -97,9 +96,8 @@
   font-size:9px;
   padding-top:2px;
   display:inline-block;
-  width:<%= @pixel_per_millimeter*10 %>px;
-  /*width:100px;*/
   text-indent:3px;
+  width:<%= @pixel_per_millimeter*10 %>px;
 }
 .ruler-placeholder{
   width: 20px;
@@ -109,7 +107,6 @@
 }
 
 .left-ruler {
-  /*border-top: 2px solid darkgrey;*/
   background-color: #ffffff;
   background-image:
     linear-gradient(0deg,
@@ -173,7 +170,6 @@
       transparent 92%
     );
   background-size: 20px <%= @pixel_per_millimeter*10 %>px;
-  /*background-size: 20px 100px;*/
   background-repeat: repeat-y;
   min-width: 20px;
 
@@ -183,14 +179,12 @@
   margin:0;
   padding:0;
   width: 20px;
-  /*border-left: 1px solid darkgrey;*/
 }
 .left-ruler label {
   font-size:9px;
   padding-left:2px;
   display:inline-block;
   height:<%= @pixel_per_millimeter*10 %>px;
-  /*height:100px;*/
   -ms-writing-mode: tb-lr;
   -webkit-writing-mode: vertical-lr;
   -moz-writing-mode: vertical-lr;
@@ -200,3 +194,4 @@
 .left-ruler br {
   height: 0px;
 }
+

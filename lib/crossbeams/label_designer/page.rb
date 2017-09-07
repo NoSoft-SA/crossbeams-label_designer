@@ -24,6 +24,7 @@ module Crossbeams
       def render
         @barcode_types = Constants::BARCODE_TYPES
         @font_sizes = Constants::FONT_SIZES
+        @label_variable_types = Config.config.label_variable_types
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
         eval(Erubi::Engine.new(<<-EOS).src).freeze
           #{File.read(file)}
@@ -33,6 +34,8 @@ module Crossbeams
       def javascript
         @label_config = Config.config.label_config
         @label_sizes = Config.config.label_sizes
+        @font_sizes_json = Constants::FONT_SIZES.to_json
+        @label_variable_types_json = Config.config.label_variable_types.to_json
 
         file_content = ''
         file_paths = [
@@ -66,25 +69,29 @@ module Crossbeams
               Shortcuts,
               ImageUploader,
               MyImages,
-              VariableSettings;
+              VariableSettings,
+              Shape,
+              Label;
 
+          const labelConfig = <%= @label_config %>;
+          const labelSizes = <%= @label_sizes %>;
+          const fontSizes = <%= @font_sizes_json %>;
+          const labelVariableTypes = <%= @label_variable_types_json %>;
+          const pxPerMm = labelConfig.pixelPerMillimeter;
+
+          const sizeConfig = labelSizes[labelConfig.labelDimension];
+          let MyLabelSize = {
+            width: ((sizeConfig.width !== undefined) ? sizeConfig.width*pxPerMm : 700),
+            height: ((sizeConfig.height !== undefined) ? sizeConfig.height*pxPerMm : 500)
+          };
+
+          const drawEnv = {
+            shifted: false,
+            controlled: false,
+            orientation: 'portrait'
+          };
           (function() {
 
-            const labelConfig = <%= @label_config %>;
-            const labelSizes = <%= @label_sizes %>;
-            const pxPerMm = labelConfig.pixelPerMillimeter;
-
-            const sizeConfig = labelSizes[labelConfig.labelDimension];
-            let MyLabelSize = {
-              width: ((sizeConfig.width !== undefined) ? sizeConfig.width*pxPerMm : 700),
-              height: ((sizeConfig.height !== undefined) ? sizeConfig.height*pxPerMm : 500)
-            };
-
-            const drawEnv = {
-              shifted: false,
-              controlled: false,
-              orientation: 'portrait'
-            };
             #{file_content}
           })();
         </script>

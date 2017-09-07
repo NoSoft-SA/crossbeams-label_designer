@@ -36,11 +36,15 @@
         </div>
       </div>
       <div class="canvas-toolbar">
+        <button type="button" data-action="zoom-out" name="zoom-out" title="zoom-out" class='btn btn-default btn-md zoom-out'><i class="fa fa-minus"></i></button>
+        <select title='Set zoom percentage' class="selectpicker" id="zoom_percentage" data-option="zoom_percentage" name="zoom_percentage">
+          <% [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500].each do |zoom_percentage| %>
+            <option value="<%= zoom_percentage.to_f/100 %>" <%= (zoom_percentage == 100) ? 'selected="selected"' : '' %> ><%= zoom_percentage %>&#37;</option>
+          <% end %>
+        </select>
+        <button type="button" data-action="zoom-in" name="zoom-in" title="zoom-in" class='btn btn-default btn-md zoom-in'><i class="fa fa-plus"></i></button>
+        <button type="button" data-action="zoom-reset" name="zoom-reset" title="zoom-reset" class='btn btn-default btn-md zoom-reset'>reset</button>
         <!--
-          // we are going to remove the options button and modal then
-          portrait/landscape
-          display canvas size as read only values here 840x640
-
           // Zoom in & out
           zoom (mimic google chrome - reset to 100% button)
           [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500] percentages
@@ -75,35 +79,10 @@
         <div class="select-group">
           <button title='font size'><i class="sprite sprite-text-size"></i></button>
           <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
-            <option value="8">6</option>
-            <option value="9">7</option>
-            <option value="11">8</option>
-            <option value="12">9</option>
-            <option value="13">10</option>
-            <option value="15">11</option>
-            <option value="16">12</option>
-            <option value="17">13</option>
-            <option value="19">14</option>
-            <option selected="selected" value="21">15</option>
-            <option value="22">16</option>
-            <option value="23">17</option>
-            <option value="24">18</option>
-            <option value="25">19</option>
-            <option value="26">20</option>
-            <option value="28">21</option>
-            <option value="29">22</option>
-            <option value="31">23</option>
-            <option value="32">24</option>
-            <option value="33">25</option>
-            <option value="35">26</option>
-            <option value="36">27</option>
-            <option value="37">28</option>
-            <option value="39">29</option>
-            <option value="40">30</option>
-            <option value="47">35</option>
-            <option value="53">40</option>
-            <option value="60">45</option>
-            <option value="67">50</option>
+            <% @font_sizes.each do |px_val, font_val| %>
+              <% sel = (px_val == 21) ? 'selected="selected"' : '' %>
+              <option value="<%= px_val %>" <%= sel %> ><%= font_val %></option>
+            <% end %>
           </select>
         </div>
         <div class="select-group">
@@ -155,24 +134,10 @@
           <legend>Variable type:</legend>
           <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
             <option value="0" data-hidden="true">Please select</option>
-            <option value="Class">Class</option>
-            <option value="CLS">CLS</option>
-            <option value="Commodity">Commodity</option>
-            <option value="Count">Count</option>
-            <option value="Date Code">Date Code</option>
-            <option value="Farm">Farm</option>
-            <option value="GGN">GGN</option>
-            <option value="Grade">Grade</option>
-            <option value="Line">Line</option>
-            <option value="Orchard">Orchard</option>
-            <option value="Pallet Number">Pallet Number</option>
-            <option value="PHC">PHC</option>
-            <option value="PUC">PUC</option>
-            <option value="RMT">RMT</option>
-            <option value="Run">Run</option>
-            <option value="Size">Size</option>
-            <option value="Variety">Variety</option>
-            <option value="Week">Week</option>
+            label_variable_types
+            <% @label_variable_types.each do |var_type| %>
+              <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
+            <% end %>
           </select>
         </fieldset>
         <fieldset>
