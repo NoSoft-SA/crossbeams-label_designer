@@ -45,10 +45,6 @@
         <button type="button" data-action="zoom-in" name="zoom-in" title="zoom-in" class='btn btn-default btn-md zoom-in'><i class="fa fa-plus"></i></button>
         <button type="button" data-action="zoom-reset" name="zoom-reset" title="zoom-reset" class='btn btn-default btn-md zoom-reset'>reset</button>
         <!--
-          // Zoom in & out
-          zoom (mimic google chrome - reset to 100% button)
-          [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500] percentages
-
           // Still to be built in
           <i class="sprite sprite-canvas-center-align"></i>
           <i class="sprite sprite-canvas-left-align"></i>
@@ -70,12 +66,12 @@
     </div>
     <div class="text-popup" data-disabled="true">
       <div class="text-toolbar clearfix">
-        <button type="button" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
-        <button type="button" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
-        <button type="button" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="sprite sprite-italic"></i></button>
-        <button type="button" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-left-align"></i></button>
-        <button type="button" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-center-align"></i></button>
-        <button type="button" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-right-align"></i></button>
+        <button type="button" data-selected="false" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
+        <button type="button" data-selected="false" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
+        <button type="button" data-selected="false" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="sprite sprite-italic"></i></button>
+        <button type="button" data-selected="false" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-left-align"></i></button>
+        <button type="button" data-selected="false" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-center-align"></i></button>
+        <button type="button" data-selected="false" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-right-align"></i></button>
         <div class="select-group">
           <button title='font size'><i class="sprite sprite-text-size"></i></button>
           <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
@@ -129,63 +125,64 @@
   <div id="variable-info-dialog-form" title="Variable settings" style="display:none;">
     <form class='variable-info-form'>
       <p class='notice' style="display:none;">Variable type must be selected.</p>
-      <div class="variable-popup clearfix">
-        <fieldset>
-          <legend>Variable type:</legend>
-          <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
-            <option value="0" data-hidden="true">Please select</option>
-            label_variable_types
-            <% @label_variable_types.each do |var_type| %>
-              <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
+      <fieldset>
+        <legend>Variable type:</legend>
+        <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+          <option value="0" data-hidden="true">Please select</option>
+          label_variable_types
+          <% @label_variable_types.each do |var_type| %>
+            <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
+          <% end %>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Barcode options:</legend>
+        <input type="radio" name="barcode_bool" value="true"> Yes<br>
+        <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
+        <div class="barcode-options" style="display:none;">
+          <label for="barcode_margin">Margin size:</label>
+          <select class="selectpicker" id="barcode_margin" name="barcode_margin">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="40">40</option>
+            <option value="45">45</option>
+            <option value="50">50</option>
+          </select>
+          <label for="barcode_symbology">Barcode Symbology:</label>
+          <select class="form-control" id="barcode_symbology" name="barcode_symbology">
+            <% @barcode_types.each do |bc_type| %>
+              <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
             <% end %>
           </select>
-        </fieldset>
-        <fieldset>
-          <legend>Barcode options:</legend>
-          <input type="radio" name="barcode_bool" value="true"> Yes<br>
-          <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
-          <div class="barcode-options" style="display:none;">
-            <label for="barcode_margin">Margin size:</label>
-            <select class="selectpicker" id="barcode_margin" name="barcode_margin">
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-              <option value="13">13</option>
-              <option value="14">14</option>
-              <option value="15">15</option>
-              <option value="16">16</option>
-              <option value="17">17</option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-              <option value="26">26</option>
-              <option value="27">27</option>
-              <option value="28">28</option>
-              <option value="29">29</option>
-              <option value="30">30</option>
-              <option value="35">35</option>
-              <option value="40">40</option>
-              <option value="45">45</option>
-              <option value="50">50</option>
-            </select>
-            <label for="barcode_symbology">Barcode Symbology:</label>
-            <select class="form-control" id="barcode_symbology" name="barcode_symbology">
-              <% @barcode_types.each do |bc_type| %>
-                <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
-              <% end %>
-            </select>
-          </div>
-        </fieldset>
+        </div>
+      </fieldset>
+      <div class="labeldesigner-actions pull-right">
+        <button type="button" class='btn btn-default btn-md primary save'><i class="sprite sprite-save invert"></i>&nbsp;Save Variable Settings</button>
       </div>
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
@@ -198,6 +195,9 @@
       <label for="upload-image">Please select image to be uploaded:</label>
       <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
 
+      <div class="labeldesigner-actions pull-right">
+        <button type="button" class='btn btn-default btn-md primary upload'>Upload Image</button>
+      </div>
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
     </form>
@@ -218,6 +218,9 @@
         <label for="canvas_height">H:</label>
         <input disabled='disabled' type="number" id="canvas_height" title="Set canvas height" placeholder="500">
       </fieldset>
+      <div class="labeldesigner-actions pull-right">
+        <button type="button" class='btn btn-default btn-md primary save'><i class="sprite sprite-save invert"></i>&nbsp;Save Options</button>
+      </div>
 
       <!-- Allow form submission with keyboard without duplicating the dialog button -->
       <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">

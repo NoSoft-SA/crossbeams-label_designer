@@ -6,12 +6,12 @@
   height: 20px;
   position: absolute;
   border-right: 1px solid black;
-  z-index: 400 !important;
+  z-index: 1 !important;
 }
 .left-marker{
   width: 20px;
   position: absolute;
-  z-index: 400;
+  z-index: 1;
   border-bottom: 1px solid black;
 }
 
@@ -88,7 +88,7 @@
   margin-left: 20px;
   padding:0;
   width: 99999px;
-  z-index: 100;
+  z-index: 0;
   position: relative;
   border-top: 1px solid darkgrey;
 }
@@ -179,6 +179,7 @@
   margin:0;
   padding:0;
   width: 20px;
+  z-index: 0;
 }
 .left-ruler label {
   font-size:9px;

@@ -150,7 +150,7 @@
 .labeldesigner-toolbar button:hover, .text-toolbar button:hover, .canvas-toolbar button:hover{
   background-color: #81C3D7;
 }
-[data-chosen='true'] {
+.labeldesigner-toolbar button[data-chosen='true'], .text-toolbar button[data-selected='true'], .canvas-toolbar button[data-selected='true']{
   background-color: #188FA7 !important;
 }
 .labeldesigner-toolbar button:disabled, .labeldesigner-toolbar select:disabled{
@@ -166,11 +166,14 @@
   float: left;
   height: 46px;
 }
-.labeldesigner-actions .btn-download-image{
+.labeldesigner-actions .btn-download-image, .labeldesigner-actions .secondary{
   background-color: #16425B;
 }
-.labeldesigner-actions .btn-save-label{
+.labeldesigner-actions .btn-save-label, .labeldesigner-actions .primary{
   background-color: #188FA7;
+}
+.primary, .secondary{
+  margin-top: 25px;
 }
 .labeldesigner-actions .btn-options{
   background-color: #427AA1;
@@ -207,12 +210,9 @@
   border: 1px solid indianred;
   padding: 5px;
 }
-
-
 .labeldesigner-form{
   height: 460px;
 }
-
 .canvas-toolbar fieldset {
   display: inline-block;
   padding: 0px;
@@ -232,12 +232,14 @@ label[for='canvas_width'], label[for='canvas_height']{
   width: 20px;
   display: inline-block;
 }
-
-.variable-popup select{
+.variable-info-form select{
   background-color: lightgrey;
   margin: 0.2em;
   border: none;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   min-width: 5em;
+}
+.popupwindow_container{
+  z-index: 5;
 }

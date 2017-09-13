@@ -21,6 +21,12 @@ module Crossbeams
       #    require 'erubi'
       #    str = Erubi::Engine.new(File.load(...))
       #    eval(str.src)
+      def px_per_mm
+        ppmm = JSON.parse(Config.config.label_config)['pixelPerMM'].to_i
+        allowed_values = Config.config.printer_settings.map{|ps| ps['px_per_mm'].to_i}
+        allowed_values.include?(ppmm) ? ppmm : allowed_values[0]
+      end
+
       def render
         @barcode_types = Constants::BARCODE_TYPES
         @font_sizes = Constants::FONT_SIZES
@@ -36,7 +42,7 @@ module Crossbeams
         @label_sizes = Config.config.label_sizes
         @font_sizes_json = Constants::FONT_SIZES.to_json
         @label_variable_types_json = Config.config.label_variable_types.to_json
-
+        @px_per_mm = self.px_per_mm
         file_content = ''
         file_paths = [
           'assets/javascripts/variable_settings.js',
@@ -77,7 +83,7 @@ module Crossbeams
           const labelSizes = <%= @label_sizes %>;
           const fontSizes = <%= @font_sizes_json %>;
           const labelVariableTypes = <%= @label_variable_types_json %>;
-          const pxPerMm = labelConfig.pixelPerMillimeter;
+          const pxPerMm = <%= @px_per_mm %>;
 
           const sizeConfig = labelSizes[labelConfig.labelDimension];
           let MyLabelSize = {
@@ -88,7 +94,6 @@ module Crossbeams
           const drawEnv = {
             shifted: false,
             controlled: false,
-            orientation: 'portrait'
           };
           (function() {
 
@@ -99,7 +104,7 @@ module Crossbeams
       end
 
       def css
-        @pixel_per_millimeter = JSON.parse(Config.config.label_config)['pixelPerMillimeter'].to_i
+        @pixel_per_millimeter = self.px_per_mm
         file_content = ''
         file_paths = [
           'assets/ruler.css',

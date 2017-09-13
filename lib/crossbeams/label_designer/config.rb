@@ -10,7 +10,13 @@ module Crossbeams
                               'name' => 'Custom', 'mm_size' => {'width': '84', 'height': '64'}
                             }
 
-      setting :label_variable_types, [ { 'varname' => 'Class',          'test_value' => 'PLUM' },
+      setting :printer_settings, [
+                                  { 'printername' => 'Low Def', 'px_per_mm' => '8' },
+                                  { 'printername' => 'High Def', 'px_per_mm' => '12' }
+                                 ]
+
+      setting :label_variable_types, [
+                                       { 'varname' => 'Class',          'test_value' => 'PLUM' },
                                        { 'varname' => 'CLS',            'test_value' => 'test value' },
                                        { 'varname' => 'Commodity',      'test_value' => 'test value' },
                                        { 'varname' => 'Count',          'test_value' => 'test value' },
@@ -33,11 +39,11 @@ module Crossbeams
       setting :label_config,  {
                                 labelState: 'new', # new, edit, copy, preview
                                 labelName: 'xxx',
-                                labelJSON: {},
                                 savePath: '/xyz',
                                 labelDimension: '8464',
                                 id: 1,
-                                pixelPerMillimeter: '8'
+                                pixelPerMM: '8',
+                                labelJSON: {}
                               }
 
 
