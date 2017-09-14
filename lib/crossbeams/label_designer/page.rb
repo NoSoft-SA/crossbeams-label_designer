@@ -46,6 +46,7 @@ module Crossbeams
         file_content = ''
         file_paths = [
           'assets/javascripts/variable_settings.js',
+          'assets/javascripts/text_settings.js',
           'assets/javascripts/image_uploader.js',
           'assets/javascripts/undo_engine.js',
           'assets/javascripts/undo_redo_module.js',
@@ -76,6 +77,7 @@ module Crossbeams
               ImageUploader,
               MyImages,
               VariableSettings,
+              TextSettings,
               Shape,
               Label;
 
@@ -95,8 +97,8 @@ module Crossbeams
             shifted: false,
             controlled: false,
           };
-          (function() {
 
+          (function() {
             #{file_content}
           })();
         </script>
