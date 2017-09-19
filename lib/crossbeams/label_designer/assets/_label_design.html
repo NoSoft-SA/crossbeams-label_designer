@@ -1,4 +1,18 @@
 <div class="designer-container">
+  <div style="display:none;">
+    <p style="font-family: 'Arial';">Preload Font</p>
+    <p style="font-family: 'ArialB';">Preload Font</p>
+    <p style="font-family: 'ArialBI';">Preload Font</p>
+    <p style="font-family: 'ArialI';">Preload Font</p>
+    <p style="font-family: 'Cour';">Preload Font</p>
+    <p style="font-family: 'CourB';">Preload Font</p>
+    <p style="font-family: 'CourBI';">Preload Font</p>
+    <p style="font-family: 'CourI';">Preload Font</p>
+    <p style="font-family: 'TNR';">Preload Font</p>
+    <p style="font-family: 'TNRB';">Preload Font</p>
+    <p style="font-family: 'TNRBI';">Preload Font</p>
+    <p style="font-family: 'TNRI';">Preload Font</p>
+  </div>
   <div class="top-toolbar clearfix">
     <div class="info-bar">
       <!-- <span class="extra-info">pointer</span> |  --><span class="currentCoords pull-right">(0, 0)</span>
@@ -124,7 +138,7 @@
 
   <div id="variable-info-dialog-form" title="Variable settings" style="display:none;">
     <form class='variable-info-form'>
-      <p class='notice' style="display:none;">Variable type must be selected.</p>
+      <p class='notice' style="display:none;">Please ensure that a Variable type is saved.</p>
       <fieldset>
         <legend>Variable type:</legend>
         <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
@@ -191,7 +205,7 @@
 
   <div id="image-dialog-form" title="Upload image" style="display:none;">
     <form class="upload-image">
-      <p class='notice hidden'>You have not selected a file.</p>
+      <p class='notice'>You have not selected a file.</p>
       <label for="upload-image">Please select image to be uploaded:</label>
       <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
 
@@ -205,7 +219,7 @@
 
   <div id="canvas-options-dialog-form" title="Canvas Options" style="display:none;">
     <form class="canvas-options">
-      <p class='notice hidden'>Some fields are invalid.</p>
+      <p class='notice'>Some fields are invalid.</p>
       <fieldset>
         <legend>Canvas orientation:</legend>
         <input type="radio" name="orientation" value="portrait" checked="checked"> Portrait<br>
