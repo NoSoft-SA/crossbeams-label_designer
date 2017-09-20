@@ -46,7 +46,42 @@
   font-family: 'TNRI';
   src: url(/fonts/timesi.woff) format('woff');
 }
-
+.Arial{
+  font-family: "Arial";
+}
+.ArialB{
+  font-family: "ArialB";
+}
+.ArialBI{
+  font-family: "ArialBI";
+}
+.ArialI{
+  font-family: "ArialI";
+}
+.Cour{
+  font-family: "Cour";
+}
+.CourB{
+  font-family: "CourB";
+}
+.CourBI{
+  font-family: "CourBI";
+}
+.CourI{
+  font-family: "CourI";
+}
+.TNR{
+  font-family: "TNR";
+}
+.TNRB{
+  font-family: "TNRB";
+}
+.TNRBI{
+  font-family: "TNRBI";
+}
+.TNRI{
+  font-family: "TNRI";
+}
 .designer-container{
   overflow: scroll;
   width: 1500px;
@@ -243,3 +278,4 @@ label[for='canvas_width'], label[for='canvas_height']{
 .popupwindow_container{
   z-index: 5;
 }
+
