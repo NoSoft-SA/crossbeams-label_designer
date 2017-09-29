@@ -192,8 +192,14 @@
   <div id="image-dialog-form" title="Upload image" style="display:none;">
     <form class="upload-image">
       <p class='notice'>You have not selected a file.</p>
-      <label for="upload-image">Please select image to be uploaded:</label>
-      <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+      <fieldset>
+        <legend>Image upload:</legend>
+        <label for="upload-image">Please select image to be uploaded:</label>
+        <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+        <br><br>
+        <input type="checkbox" name="keep-aspect-ratio" id="keep-aspect-ratio" class="ui-widget-content" checked="checked">
+        <label for="keep-aspect-ratio">&nbsp;&nbsp;keep aspect ratio</label>
+      </fieldset>
 
       <div class="labeldesigner-actions pull-right">
         <button type="button" class='btn btn-default btn-md primary upload'>Upload Image</button>

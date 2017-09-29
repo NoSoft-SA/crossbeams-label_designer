@@ -46,6 +46,7 @@ module Crossbeams
         file_content = ''
         file_paths = [
           'assets/javascripts/variable_settings.js',
+          'assets/javascripts/resize.js',
           'assets/javascripts/text_settings.js',
           'assets/javascripts/image_uploader.js',
           'assets/javascripts/undo_engine.js',
