@@ -3,12 +3,12 @@ module Crossbeams
     class Config
       extend Dry::Configurable
 
-      setting :label_sizes, {
-                              'name' => 'A4', 'mm_size' => {'width': '71', 'height': '54'},
-                              'name' => 'A5', 'mm_size' => {'width': '35', 'height': '21'},
-                              'name' => '8464', 'mm_size' => {'width': '84', 'height': '64'},
-                              'name' => 'Custom', 'mm_size' => {'width': '84', 'height': '64'}
-                            }
+      setting :label_sizes, [
+                              { 'name' => 'A4', 'mm_size' => {'width': '71', 'height': '54'} },
+                              { 'name' => 'A5', 'mm_size' => {'width': '35', 'height': '21'} },
+                              { 'name' => '8464', 'mm_size' => {'width': '84', 'height': '64'} },
+                              { 'name' => 'Custom', 'mm_size' => {'width': '84', 'height': '64'} }
+                            ]
 
       setting :printer_settings, [
                                   { 'printername' => 'Low Def', 'px_per_mm' => '8' },
