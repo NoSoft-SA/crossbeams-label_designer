@@ -1,17 +1,17 @@
-var test = require('tape');
-var undoEngine = require('../../lib/crossbeams/label_designer/assets/javascripts/undo_engine.js');
-var undoModule = require('../../lib/crossbeams/label_designer/assets/javascripts/undo_redo_module.js');
+const test = require('tape');
+const undoEngine = require('../../lib/crossbeams/label_designer/assets/javascripts/undo_engine.js');
+const undoModule = require('../../lib/crossbeams/label_designer/assets/javascripts/undo_redo_module.js');
 
 
-test('timing test', function (t) {
-    console.log(undoEngine);
-    console.log(undoModule);
-    t.plan(2);
+test('timing test', (t) => {
+  console.log(undoEngine);
+  console.log(undoModule);
+  t.plan(2);
 
-    t.equal(typeof Date.now, 'function');
-    var start = Date.now();
+  t.equal(typeof Date.now, 'function');
+  const start = Date.now();
 
-    setTimeout(function () {
-        t.equal(Date.now() - start, 100);
-    }, 100);
+  setTimeout(() => {
+    t.equal(Date.now() - start, 100);
+  }, 100);
 });
