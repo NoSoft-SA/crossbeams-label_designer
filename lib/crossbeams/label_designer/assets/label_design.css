@@ -138,17 +138,18 @@
 /* Toolbar */
 .designer-container .top-toolbar{
   width: 1225px;
-  margin-left: 25px;
-  height: 170px;
+  margin-left: 20px;
+  /*height: 170px;*/
 }
 .designer-container .tool-container{
   width: 1225px;
 }
 .designer-container h2.labelname{
   color: #515052;
+  margin: 5px;
 }
 .select-group{
-  float: left;
+  /*float: left;*/
   display: inline-block;
 }
 .select-group button{
@@ -199,7 +200,7 @@
   font-weight: normal;
   color: white;
   float: left;
-  height: 46px;
+  height: 36px;
 }
 .labeldesigner-actions .btn-download-image, .labeldesigner-actions .secondary{
   background-color: #16425B;
@@ -221,22 +222,22 @@
   width:1225px;
   background-color: #D9DCD6; /*lightgrey;*/
 }
-.text-toolbar, .labeldesigner-toolbar{
-  padding: 5px;
-  width: 450px;
-}
-.canvas-toolbar{
-  padding: 5px;
-}
+/*.text-toolbar, .labeldesigner-toolbar{*/
+  /*padding: 5px;*/
+  /*width: 450px;*/
+/*}*/
+/*.canvas-toolbar{*/
+  /*padding: 5px;*/
+/*}*/
 [data-disabled='true']{
   pointer-events: none;
   opacity: 0.5;
   cursor: not-allowed;
 }
 .text-popup textarea{
-  width: 750px;
-  height: 46px;
-  margin-left: 25px;
+  width: 400px;
+  height: 36px;
+  margin-left: 15px;
 }
 .text-popup textarea:focus{
   border: 2px solid #515052;
