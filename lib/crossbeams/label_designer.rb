@@ -39,7 +39,7 @@ module Crossbeams
         53 => 40,
         60 => 45,
         67 => 50
-      }
+      }.freeze
 
       BARCODE_TYPES = {
         'CODE_39' => 'CODE 39',
@@ -55,7 +55,7 @@ module Crossbeams
         'QR_CODE' => 'QR code',
         'DATA_MATRIX' => 'Data Matrix',
         'PDF_417' => 'PDF 417'
-      }
+      }.freeze
     end
 
   end
