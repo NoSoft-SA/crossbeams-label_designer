@@ -35,7 +35,7 @@
           </select>
         </div>
       </div>
-      <div class="canvas-toolbar">
+      <div class="canvas-toolbar" style="display: none;">
         <button type="button" data-action="zoom-out" name="zoom-out" title="zoom-out" class='btn btn-default btn-md zoom-out'><i class="fa fa-minus"></i></button>
         <select title='Set zoom percentage' class="selectpicker" id="zoom_percentage" data-option="zoom_percentage" name="zoom_percentage">
           <% [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500].each do |zoom_percentage| %>
@@ -145,9 +145,10 @@
             <input type="radio" name="barcode_bool" value="true"> Yes<br>
             <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
             <div class="barcode-options" style="display:none;">
-              <label>Show barcode text:</label><br>
-              <input type="radio" name="barcode_text" value="true"> Yes<br>
-              <input type="radio" name="barcode_text" value="false" checked="checked"> No<br>
+              <label style="display:none;">Show barcode text:</label><br>
+              <input style="display:none;" type="radio" name="barcode_text" value="true" checked="checked"> Yes<br>
+              <!--Show barcode text is marked as default yes because the current library only offers barcodes with text at the moment-->
+              <input style="display:none;" type="radio" name="barcode_text" value="false"> No<br>
               <label for="barcode_margin">Margin size:</label><br>
               <select class="selectpicker" id="barcode_margin" name="barcode_margin">
                 <option value="5">5</option>
