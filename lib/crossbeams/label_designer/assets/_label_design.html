@@ -124,7 +124,7 @@
 
   <div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
     <div class="dialog-overlay" tabindex="-1"></div>
-    <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+    <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog" style="min-width:400px;min-height:400px">
       <div role="document">
         <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
         <h1 id="dialogTitle">Variable settings</h1>
@@ -132,9 +132,7 @@
           <p class='notice' style="display:none;">Please ensure that a Variable type is saved.</p>
           <fieldset>
             <legend>Variable type:</legend>
-            <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
-              <option value="0" data-hidden="true">Please select</option>
-              label_variable_types
+            <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
               <% @label_variable_types.each do |var_type| %>
               <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
               <% end %>
