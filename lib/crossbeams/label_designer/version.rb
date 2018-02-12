@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 module Crossbeams
   module LabelDesigner
-    VERSION = '0.1.1'.freeze
+    VERSION = '0.1.1'
   end
 end
