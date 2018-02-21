@@ -243,8 +243,10 @@
   border: 2px solid #515052;
 }
 .notice{
-  border: 1px solid indianred;
-  padding: 5px;
+  color:white;
+  font-weight: bold;
+  background-color: red;
+  padding: 15px;
 }
 .labeldesigner-form{
   height: 460px;

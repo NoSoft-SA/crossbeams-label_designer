@@ -129,7 +129,7 @@
         <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
         <h1 id="dialogTitle">Variable settings</h1>
         <form class='variable-info-form'>
-          <p class='notice' style="display:none;">Please ensure that a Variable type is saved.</p>
+          <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
           <fieldset>
             <label for="vars"><b>Variable type:</b></label>
             <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
@@ -137,7 +137,7 @@
               <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
               <% end %>
             </select>
-            <label><b>Barcode options:</b></label><br>
+            <label><b>Is this a Barcode?</b></label><br>
             <input type="radio" name="barcode_bool" value="true"> Yes<br>
             <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
             <div class="barcode-options" style="display:none;">
@@ -156,7 +156,7 @@
               <label for="barcode_width_factor"><b>Barcode width factor:</b></label>
               <select class="selectpicker" id="barcode_width_factor" name="barcode_width_factor">
                 <option value="1.5">1.5</option>
-                <option selected="selected"  value="2.0">2.0</option>
+                <option selected="selected" value="2.0">2.0</option>
                 <option value="2.5">2.5</option>
                 <option value="3.0">3.0</option>
                 <option value="3.5">3.5</option>
