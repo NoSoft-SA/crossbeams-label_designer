@@ -133,6 +133,7 @@
           <fieldset>
             <label for="vars"><b>Variable type:</b></label>
             <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+              <option value="">Select an option...</option>
               <% @label_variable_types.each do |var_type| %>
               <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
               <% end %>
