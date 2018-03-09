@@ -43,18 +43,19 @@ module Crossbeams
 
       BARCODE_TYPES = {
         'CODE_39' => 'CODE 39',
-        'CODE_93' => 'CODE 93',
         'CODE_128' => 'CODE 128',
-        'EAN_8' => 'EAN8',
-        'EAN_13' => 'EAN13',
+        'EAN_8' => 'EAN 8',
+        'EAN_13' => 'EAN 13',
+        'EAN_128' => 'EAN 128',
         'UPC_A' => 'UPCa',
         'UPC_E' => 'UPCe',
+        'QR_CODE' => 'QR code',
+        'PDF_417' => 'PDF 417',
+        'CODE_93' => 'CODE 93',
         'UPC_EAN_EXTENSION' => 'UPC/EAN Extension',
         'RSS_14' => 'RSS 14',
         'RSS_EXPANDED' => 'RSS Expanded',
-        'QR_CODE' => 'QR code',
-        'DATA_MATRIX' => 'Data Matrix',
-        'PDF_417' => 'PDF 417'
+        'DATA_MATRIX' => 'Data Matrix'
       }.freeze
     end
 
