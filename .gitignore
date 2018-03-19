@@ -12,7 +12,8 @@
 ## Rubymine
 .idea/
 .rake_tasks~
-package.json
+#package.json
+/node_modules/
 
 ## Vim
 tags
