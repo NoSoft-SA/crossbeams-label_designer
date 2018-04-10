@@ -1,0 +1,14 @@
+{
+  "name": "crossbeams-test",
+  "version": "0.1.0",
+  "devDependencies": {
+    "jsdom": "11.6.2",
+    "jsdom-global": "3.0.2",
+    "sinon": "^4.4.6",
+    "tap-diff": "^0.1.1",
+    "tape": "^4.9.0"
+  },
+  "scripts": {
+    "test": "node ./test/javascripts/test_undo_engine.js"
+  }
+}
