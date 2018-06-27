@@ -23,7 +23,7 @@ module Crossbeams
       #    eval(str.src)
       def px_per_mm
         ppmm = JSON.parse(Config.config.label_config)['pixelPerMM'].to_i
-        allowed_values = Config.config.printer_settings.map{|ps| ps['px_per_mm'].to_i}
+        allowed_values = Config.config.printer_settings.map { |ps| ps['px_per_mm'].to_i }
         allowed_values.include?(ppmm) ? ppmm : allowed_values[0]
       end
 
@@ -32,9 +32,9 @@ module Crossbeams
         @font_sizes = Constants::FONT_SIZES
         @label_variable_types = Config.config.label_variable_types
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
-        eval(Erubi::Engine.new(<<-EOS).src).freeze
-          #{File.read(file)}
-        EOS
+        eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
+          #{File.read(file, encoding: 'UTF-8')}
+        HTML
       end
 
       def javascript
@@ -42,9 +42,9 @@ module Crossbeams
         @label_sizes = Config.config.label_sizes
         @font_sizes_json = Constants::FONT_SIZES.to_json
         @label_variable_types_json = Config.config.label_variable_types.to_json
-        @px_per_mm = self.px_per_mm
+        @px_per_mm = px_per_mm
         file_content = ''
-        file_paths = [
+        [
           'assets/javascripts/variable_settings.js',
           'assets/javascripts/resize.js',
           'assets/javascripts/text_settings.js',
@@ -61,67 +61,67 @@ module Crossbeams
           'assets/javascripts/label_design.js'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
-          file_content << File.read(file)
+          file_content << File.read(file, encoding: 'UTF-8')
         end
-        eval(Erubi::Engine.new(<<-EOS).src).freeze
-        <script type="text/javascript">
-          let MyLabel,
-              Library,
-              Canvas,
-              Clipboard,
-              DrawApp,
-              Positioner,
-              UndoEngine,
-              UndoRedoModule,
-              LabelOptions,
-              Shortcuts,
-              ImageUploader,
-              MyImages,
-              VariableSettings,
-              TextSettings,
-              Shape,
-              Label;
+        eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
+          <script type="text/javascript">
+            let MyLabel,
+                Library,
+                Canvas,
+                Clipboard,
+                DrawApp,
+                Positioner,
+                UndoEngine,
+                UndoRedoModule,
+                LabelOptions,
+                Shortcuts,
+                ImageUploader,
+                MyImages,
+                VariableSettings,
+                TextSettings,
+                Shape,
+                Label;
 
-          const labelConfig = <%= @label_config %>;
-          const labelSizes = <%= @label_sizes %>;
-          const fontSizes = <%= @font_sizes_json %>;
-          const labelVariableTypes = <%= @label_variable_types_json %>;
-          const pxPerMm = <%= @px_per_mm %>;
+            const labelConfig = <%= @label_config %>;
+            const labelSizes = <%= @label_sizes %>;
+            const fontSizes = <%= @font_sizes_json %>;
+            const labelVariableTypes = <%= @label_variable_types_json %>;
+            const pxPerMm = <%= @px_per_mm %>;
 
-          const sizeConfig = labelSizes[labelConfig.labelDimension];
-          let MyLabelSize = {
-            width: ((sizeConfig.width !== undefined) ? sizeConfig.width*pxPerMm : 700),
-            height: ((sizeConfig.height !== undefined) ? sizeConfig.height*pxPerMm : 500)
-          };
+            const sizeConfig = labelSizes[labelConfig.labelDimension];
+            let MyLabelSize = {
+              width: ((sizeConfig.width !== undefined) ? sizeConfig.width*pxPerMm : 700),
+              height: ((sizeConfig.height !== undefined) ? sizeConfig.height*pxPerMm : 500)
+            };
 
-          const drawEnv = {
-            shifted: false,
-            controlled: false,
-          };
+            const drawEnv = {
+              shifted: false,
+              controlled: false,
+            };
 
-          (function() {
-            #{file_content}
-          })();
-        </script>
-        EOS
+            (function() {
+              #{file_content}
+            })();
+          </script>
+        JS
       end
 
       def css
-        @pixel_per_millimeter = self.px_per_mm
+        @pixel_per_millimeter = px_per_mm
         file_content = ''
-        file_paths = [
+        [
           'assets/ruler.css',
           'assets/icons_sprite.css',
           'assets/label_design.css'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
-          file_content << File.read(file)
+          file_content << File.read(file, encoding: 'UTF-8')
         end
-        eval(Erubi::Engine.new(<<-EOS).src).freeze
-        <style>
-          #{file_content}
-        </style>
-        EOS
+        eval(Erubi::Engine.new(<<~CSS).src).encode('UTF-8').freeze
+          <style>
+            #{file_content}
+          </style>
+        CSS
       end
     end
   end
