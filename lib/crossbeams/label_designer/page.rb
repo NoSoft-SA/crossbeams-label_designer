@@ -32,8 +32,8 @@ module Crossbeams
         @font_sizes = Constants::FONT_SIZES
         @label_variable_types = Config.config.label_variable_types
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
-        eval(Erubi::Engine.new(<<-HTML).src).encode('ASCII-8BIT').freeze
-          #{File.read(file, encoding: 'ASCII-8BIT')}
+        eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
+          #{File.read(file, encoding: 'UTF-8')}
         HTML
       end
 
@@ -61,9 +61,9 @@ module Crossbeams
           'assets/javascripts/label_design.js'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
-          file_content << File.read(file, encoding: 'ASCII-8BIT')
+          file_content << File.read(file, encoding: 'UTF-8')
         end
-        eval(Erubi::Engine.new(<<~JS).src).encode('ASCII-8BIT').freeze
+        eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
           <script type="text/javascript">
             let MyLabel,
                 Library,
@@ -115,9 +115,9 @@ module Crossbeams
           'assets/label_design.css'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
-          file_content << File.read(file, encoding: 'ASCII-8BIT')
+          file_content << File.read(file, encoding: 'UTF-8')
         end
-        eval(Erubi::Engine.new(<<~CSS).src).encode('ASCII-8BIT').freeze
+        eval(Erubi::Engine.new(<<~CSS).src).encode('UTF-8').freeze
           <style>
             #{file_content}
           </style>
