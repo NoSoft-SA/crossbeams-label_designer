@@ -8,8 +8,10 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
-- Page encoding is forced to UTF-8.
 ### Fixed
+
+## [0.1.3] - 2018-06-29
+- Page encoding is forced to UTF-8.
 
 ## [0.1.2] - 2018-04-10
 ### Added
