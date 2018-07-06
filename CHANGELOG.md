@@ -8,6 +8,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+- Konva 2.1.7: stage events are slightly changed. mousedown, click, mouseup, dblclick, touchstart, touchend, tap, dbltap will be triggered when clicked on empty areas too. This change guards against undefined shapes in events.
 ### Fixed
 
 ## [0.1.3] - 2018-06-29
