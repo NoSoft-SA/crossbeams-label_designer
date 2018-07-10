@@ -24,6 +24,7 @@ module.exports = {
     MyLabel: false,
     Library: false,
     Canvas: false,
+    Resize: false,
     DrawApp: false,
     Positioner: false,
     UndoEngine: false,
