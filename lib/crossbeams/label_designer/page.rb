@@ -97,7 +97,18 @@ module Crossbeams
             const drawEnv = {
               shifted: false,
               controlled: false,
+              changesMade: false
             };
+
+            /*
+             * CHECK IF THE USER IS LEAVING THE PAGE WITHOUT SAVING
+             */
+            window.addEventListener('beforeunload', function (event) {
+              if (drawEnv.changesMade) {
+                event.returnValue = 'Unsaved changes. Are you sure you want to leave?';
+              }
+            });
+
 
             (function() {
               #{file_content}
