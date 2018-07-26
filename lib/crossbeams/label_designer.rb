@@ -44,7 +44,9 @@ module Crossbeams
         76 => 54,
         80 => 60,
         84 => 63,
-        88 => 66
+        88 => 66,
+        92 => 69,
+        96 => 72
       }.freeze
 
       BARCODE_TYPES = {
