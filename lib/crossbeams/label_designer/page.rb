@@ -27,9 +27,13 @@ module Crossbeams
         allowed_values.include?(ppmm) ? ppmm : allowed_values[0]
       end
 
+      def font_sizes
+        px_per_mm == 12 ? Constants::FONT_SIZES_12PXMM : Constants::FONT_SIZES_8PXMM
+      end
+
       def render
         @barcode_types = Constants::BARCODE_TYPES
-        @font_sizes = Constants::FONT_SIZES
+        @font_sizes = font_sizes
         @label_variable_types = Config.config.label_variable_types
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
         eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
@@ -40,7 +44,9 @@ module Crossbeams
       def javascript
         @label_config = Config.config.label_config
         @label_sizes = Config.config.label_sizes
-        @font_sizes_json = Constants::FONT_SIZES.to_json
+        @font_sizes_json = font_sizes.to_json
+        @default_font_px = font_sizes.key(8)
+        @default_font_pt = 8
         @label_variable_types_json = Config.config.label_variable_types.to_json
         @px_per_mm = px_per_mm
         file_content = ''
@@ -87,6 +93,8 @@ module Crossbeams
             const fontSizes = <%= @font_sizes_json %>;
             const labelVariableTypes = <%= @label_variable_types_json %>;
             const pxPerMm = <%= @px_per_mm %>;
+            const fontDefaultPx = <%= @default_font_px %>;
+            const fontDefaultPt = <%= @default_font_pt %>;
 
             const sizeConfig = labelSizes[labelConfig.labelDimension];
             let MyLabelSize = {

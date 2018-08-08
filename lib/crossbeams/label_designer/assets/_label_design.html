@@ -76,7 +76,7 @@
           <button title='font size'><i class="sprite sprite-text-size"></i></button>
           <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
             <% @font_sizes.each do |px_val, font_val| %>
-              <% sel = (px_val == 21) ? 'selected="selected"' : '' %>
+              <% sel = (font_val == 8) ? 'selected="selected"' : '' %>
               <option value="<%= px_val %>" <%= sel %> ><%= font_val %></option>
             <% end %>
           </select>
