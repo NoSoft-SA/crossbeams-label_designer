@@ -40,6 +40,8 @@ module.exports = {
     labelConfig: false,
     labelSizes: false,
     fontSizes: false,
+    fontDefaultPx: false,
+    fontDefaultPt: false,
     labelVariableTypes: false,
     pxPerMm: false,
     sizeConfig: false,

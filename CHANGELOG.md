@@ -8,7 +8,9 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+- Font pixel sizes are boosted by a factor depending on the printer resolution (8 or 12 px/mm). This allows the label to print fonts at a more accurate size - closely matching the size when printed from a word processor.
 ### Fixed
+- When an existing label is loaded and a shape uses a pixel size for a font that is no longer available, the closest pixel size is chosen and that font size is used instead.
 
 ## [0.1.4] - 2018-07-06
 ### Changed
