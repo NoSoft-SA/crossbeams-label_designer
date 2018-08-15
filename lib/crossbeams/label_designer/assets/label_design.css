@@ -117,9 +117,6 @@
   content: " ";
   clear: both;
 }
-.pull-right{
-  float: right !important;
-}
 .hidden{
   display: none;
 }

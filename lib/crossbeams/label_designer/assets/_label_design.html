@@ -1,27 +1,56 @@
 <div class="designer-container">
   <div class="top-toolbar clearfix">
     <div class="info-bar">
-      <!-- <span class="extra-info">pointer</span> |  --><span class="currentCoords pull-right">(0, 0)</span>
+      <!-- <span class="extra-info">pointer</span> |  --><span class="currentCoords fr">(0, 0)</span>
     </div>
     <h2 class="labelname">New Label</h2>
     <div class="tool-container clearfix">
       <div class="labeldesigner-toolbar">
-        <button type="button" data-chosen="false" data-pointer="Pointer" name="Pointer" title="pointer" class='btn btn-default btn-md'><i class="sprite sprite-pointer"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="TextBox" name="TextBox" title="Add a text box" class='btn btn-default btn-md'><i class="sprite sprite-textbox"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="VariableBox" name="VariableBox" title="Draw a variable box" class='btn btn-default btn-md'><i class="sprite sprite-variable"></i></button>
-        <button type="button" data-chosen="false" name="image" title="Add image" class='btn btn-default btn-md'><i class="sprite sprite-image"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="Line" name="Line" title="Draw a line" class='btn btn-default btn-md'><i class="sprite sprite-line"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="Rect" name="Rect" title="Draw a rectangle" class='btn btn-default btn-md'><i class="sprite sprite-square"></i></button>
-        <button type="button" data-chosen="false" data-drawtype="Ellipse" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md'><i class="sprite sprite-circle"></i></button>
-        <button type="button" data-action="remove" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'><i class="sprite sprite-trashcan"></i></button>
-        <button type="button" data-action="rotate" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'><i class="sprite sprite-rotate"></i></button>
-        <button type="button" data-action="undo" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'><i class="sprite sprite-undo"></i></button>
-        <button type="button" data-action="redo" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'><i class="sprite sprite-redo"></i></button>
-        <button type="button" data-action="copy" name="copy" title="copy" disabled=disabled class='btn btn-default btn-md label-designer-copy-button disabled'><i class="sprite sprite-copy"></i></button>
-        <button type="button" data-action="paste" name="paste" title="paste" disabled=disabled class='btn btn-default btn-md label-designer-paste-button disabled'><i class="sprite sprite-paste"></i></button>
+        <button type="button" data-chosen="false" data-pointer="Pointer" name="Pointer" title="pointer" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1389 1043q31 30 14 69-17 40-59 40h-382l201 476q10 25 0 49t-34 35l-177 75q-25 10-49 0t-35-34l-191-452-312 312q-19 19-45 19-12 0-24-5-40-17-40-59v-1504q0-42 40-59 12-5 24-5 27 0 45 19z"/></svg>
+</button>
+        <button type="button" data-chosen="false" data-drawtype="TextBox" name="TextBox" title="Add a text box" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0h6v6H0V0zm2 2v2h2V2H2zm12-2h6v6h-6V0zm2 2v2h2V2h-2zm-2 12h6v6h-6v-6zm2 2v2h2v-2h-2zM0 14h6v6H0v-6zm2 2v2h2v-2H2zM6 2h8v2H6V2zm0 14h8v2H6v-2zM16 6h2v8h-2V6zM2 6h2v8H2V6zm5 1h6v2H7V7zm2 2h2v4H9V9z"/></svg>
+</button>
+        <button type="button" data-chosen="false" data-drawtype="VariableBox" name="VariableBox" title="Draw a variable box" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M63 1536h-63v-1408h63v1408zm63-1h-32v-1407h32v1407zm94 0h-31v-1407h31v1407zm157 0h-31v-1407h31v1407zm157 0h-62v-1407h62v1407zm126 0h-31v-1407h31v1407zm63 0h-31v-1407h31v1407zm63 0h-31v-1407h31v1407zm157 0h-63v-1407h63v1407zm157 0h-63v-1407h63v1407zm126 0h-63v-1407h63v1407zm126 0h-63v-1407h63v1407zm94 0h-63v-1407h63v1407zm189 0h-94v-1407h94v1407zm63 0h-32v-1407h32v1407zm94 1h-63v-1408h63v1408z"/></svg>
+</button>
+        <button type="button" data-chosen="false" name="image" title="Add image" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" width="2048" height="1792" viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg"><path d="M704 576q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm1024 384v448h-1408v-192l320-320 160 160 512-512zm96-704h-1600q-13 0-22.5 9.5t-9.5 22.5v1216q0 13 9.5 22.5t22.5 9.5h1600q13 0 22.5-9.5t9.5-22.5v-1216q0-13-9.5-22.5t-22.5-9.5zm160 32v1216q0 66-47 113t-113 47h-1600q-66 0-113-47t-47-113v-1216q0-66 47-113t113-47h1600q66 0 113 47t47 113z"/></svg>
+</button>
+        <button type="button" data-chosen="false" data-drawtype="Line" name="Line" title="Draw a line" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-1216q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h1216q40 0 68 28t28 68z"/></svg>
+</button>
+        <button type="button" data-chosen="false" data-drawtype="Rect" name="Rect" title="Draw a rectangle" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1312 256h-832q-66 0-113 47t-47 113v832q0 66 47 113t113 47h832q66 0 113-47t47-113v-832q0-66-47-113t-113-47zm288 160v832q0 119-84.5 203.5t-203.5 84.5h-832q-119 0-203.5-84.5t-84.5-203.5v-832q0-119 84.5-203.5t203.5-84.5h832q119 0 203.5 84.5t84.5 203.5z"/></svg>
+</button>
+        <button type="button" data-chosen="false" data-drawtype="Ellipse" name="Ellipse" title="Draw an ellipse" class='btn btn-default btn-md'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M896 352q-148 0-273 73t-198 198-73 273 73 273 198 198 273 73 273-73 198-198 73-273-73-273-198-198-273-73zm768 544q0 209-103 385.5t-279.5 279.5-385.5 103-385.5-103-279.5-279.5-103-385.5 103-385.5 279.5-279.5 385.5-103 385.5 103 279.5 279.5 103 385.5z"/></svg>
+</button>
+        <button type="button" data-action="remove" name="remove" title="remove" disabled=disabled class='btn btn-default btn-md remove disabled'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M704 1376v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm256 0v-704q0-14-9-23t-23-9h-64q-14 0-23 9t-9 23v704q0 14 9 23t23 9h64q14 0 23-9t9-23zm-544-992h448l-48-117q-7-9-17-11h-317q-10 2-17 11zm928 32v64q0 14-9 23t-23 9h-96v948q0 83-47 143.5t-113 60.5h-832q-66 0-113-58.5t-47-141.5v-952h-96q-14 0-23-9t-9-23v-64q0-14 9-23t23-9h309l70-167q15-37 54-63t79-26h320q40 0 79 26t54 63l70 167h309q14 0 23 9t9 23z"/></svg>
+</button>
+        <button type="button" data-action="rotate" name="rotate" title="rotate" disabled=disabled class='btn btn-default btn-md rotate disabled'>
+          <svg class="cbl-icon" width="2048" height="1792" viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1344 1504q0 13-9.5 22.5t-22.5 9.5h-960q-8 0-13.5-2t-9-7-5.5-8-3-11.5-1-11.5v-600h-192q-26 0-45-19t-19-45q0-24 15-41l320-384q19-22 49-22t49 22l320 384q15 17 15 41 0 26-19 45t-45 19h-192v384h576q16 0 25 11l160 192q7 10 7 21zm640-416q0 24-15 41l-320 384q-20 23-49 23t-49-23l-320-384q-15-17-15-41 0-26 19-45t45-19h192v-384h-576q-16 0-25-12l-160-192q-7-9-7-20 0-13 9.5-22.5t22.5-9.5h960q8 0 13.5 2t9 7 5.5 8 3 11.5 1 11.5v600h192q26 0 45 19t19 45z"/></svg>
+</button>
+        <button type="button" data-action="undo" name="undo" title="undo" disabled=disabled class='btn btn-default btn-md label-designer-undo-button disabled'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 1120q0 166-127 451-3 7-10.5 24t-13.5 30-13 22q-12 17-28 17-15 0-23.5-10t-8.5-25q0-9 2.5-26.5t2.5-23.5q5-68 5-123 0-101-17.5-181t-48.5-138.5-80-101-105.5-69.5-133-42.5-154-21.5-175.5-6h-224v256q0 26-19 45t-45 19-45-19l-512-512q-19-19-19-45t19-45l512-512q19-19 45-19t45 19 19 45v256h224q713 0 875 403 53 134 53 333z"/></svg>
+</button>
+        <button type="button" data-action="redo" name="redo" title="redo" disabled=disabled class='btn btn-default btn-md label-designer-redo-button disabled'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 640q0 26-19 45l-512 512q-19 19-45 19t-45-19-19-45v-256h-224q-98 0-175.5 6t-154 21.5-133 42.5-105.5 69.5-80 101-48.5 138.5-17.5 181q0 55 5 123 0 6 2.5 23.5t2.5 26.5q0 15-8.5 25t-23.5 10q-16 0-28-17-7-9-13-22t-13.5-30-10.5-24q-127-285-127-451 0-199 53-333 162-403 875-403h224v-256q0-26 19-45t45-19 45 19l512 512q19 19 19 45z"/></svg>
+</button>
+        <button type="button" data-action="copy" name="copy" title="copy" disabled=disabled class='btn btn-default btn-md label-designer-copy-button disabled'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/></svg>
+</button>
+        <button type="button" data-action="paste" name="paste" title="paste" disabled=disabled class='btn btn-default btn-md label-designer-paste-button disabled'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.5 20H2a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h1V3l2.03-.4a3 3 0 0 1 5.94 0L13 3v1h1a2 2 0 0 1 2 2v1h-2V6h-1v1H3V6H2v12h5v2h3.5zM8 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm2 4h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2zm0 2v8h8v-8h-8z"/></svg>
+</button>
         &nbsp;
         <div class="select-group">
-          <button title='Set stroke width'><i class="sprite sprite-stroke-width"></i></button>
+          <button title='Set stroke width'>
+            <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0h20v5H0V0zm0 7h20v4H0V7zm0 6h20v3H0v-3zm0 5h20v2H0v-2z"/></svg>
+
+          </button>
           <select title='Set stroke width' class="selectpicker disabled" id="stroke-width" data-option="stroke-width" name="stroke-width" disabled=disabled>
             <option selected="selected" value="2">2</option>
             <option value="3">3</option>
@@ -36,13 +65,17 @@
         </div>
       </div>
       <div class="canvas-toolbar" style="display: none;">
-        <button type="button" data-action="zoom-out" name="zoom-out" title="zoom-out" class='btn btn-default btn-md zoom-out'><i class="fa fa-minus"></i></button>
+        <button type="button" data-action="zoom-out" name="zoom-out" title="zoom-out" class='btn btn-default btn-md zoom-out'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zM5 7h6v2H5V7z"/></svg>
+        </button>
         <select title='Set zoom percentage' class="selectpicker" id="zoom_percentage" data-option="zoom_percentage" name="zoom_percentage">
           <% [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500].each do |zoom_percentage| %>
             <option value="<%= zoom_percentage.to_f/100 %>" <%= (zoom_percentage == 100) ? 'selected="selected"' : '' %> ><%= zoom_percentage %>&#37;</option>
           <% end %>
         </select>
-        <button type="button" data-action="zoom-in" name="zoom-in" title="zoom-in" class='btn btn-default btn-md zoom-in'><i class="fa fa-plus"></i></button>
+        <button type="button" data-action="zoom-in" name="zoom-in" title="zoom-in" class='btn btn-default btn-md zoom-in'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zM7 7V5h2v2h2v2H9v2H7V9H5V7h2z"/></svg>
+        </button>
         <button type="button" data-action="zoom-reset" name="zoom-reset" title="zoom-reset" class='btn btn-default btn-md zoom-reset'>reset</button>
         <!--
           // Still to be built in
@@ -56,24 +89,47 @@
           <i class="sprite sprite-text-color"></i>
          -->
       </div>
-      <div class="labeldesigner-actions pull-right">
-        <button type="button" class='btn btn-default btn-md btn-variable-settings' style='display:none;'><i class="sprite sprite-options invert"></i>&nbsp;Variable Settings</button>
-        <button type="button" class='btn btn-default btn-md btn-download-image'><i class="sprite sprite-download invert"></i>&nbsp;Download IMG</button>
+      <div class="labeldesigner-actions fr">
+        <button type="button" class='btn btn-default btn-md btn-variable-settings' style='display:none;'>
+          <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M63 1536h-63v-1408h63v1408zm63-1h-32v-1407h32v1407zm94 0h-31v-1407h31v1407zm157 0h-31v-1407h31v1407zm157 0h-62v-1407h62v1407zm126 0h-31v-1407h31v1407zm63 0h-31v-1407h31v1407zm63 0h-31v-1407h31v1407zm157 0h-63v-1407h63v1407zm157 0h-63v-1407h63v1407zm126 0h-63v-1407h63v1407zm126 0h-63v-1407h63v1407zm94 0h-63v-1407h63v1407zm189 0h-94v-1407h94v1407zm63 0h-32v-1407h32v1407zm94 1h-63v-1408h63v1408z"/></svg>
+          &nbsp;Variable Settings</button>
+        <button type="button" class='btn btn-default btn-md btn-download-image'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+          &nbsp;Download IMG</button>
         <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
-        <button type="button" class='btn btn-default btn-md btn-save-label'><i class="sprite sprite-save invert"></i>&nbsp;Save Label</button>
-        <button type="button" class='btn btn-default btn-md btn-options pull-right'><i class="sprite sprite-options invert"></i>&nbsp;Options</button>
+        <button type="button" class='btn btn-default btn-md btn-save-label'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+          &nbsp;Save Label</button>
+        <button type="button" class='btn btn-default btn-md btn-options fr'>
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3.94 6.5L2.22 3.64l1.42-1.42L6.5 3.94c.52-.3 1.1-.54 1.7-.7L9 0h2l.8 3.24c.6.16 1.18.4 1.7.7l2.86-1.72 1.42 1.42-1.72 2.86c.3.52.54 1.1.7 1.7L20 9v2l-3.24.8c-.16.6-.4 1.18-.7 1.7l1.72 2.86-1.42 1.42-2.86-1.72c-.52.3-1.1.54-1.7.7L11 20H9l-.8-3.24c-.6-.16-1.18-.4-1.7-.7l-2.86 1.72-1.42-1.42 1.72-2.86c-.3-.52-.54-1.1-.7-1.7L0 11V9l3.24-.8c.16-.6.4-1.18.7-1.7zM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+          &nbsp;Options</button>
       </div>
     </div>
     <div class="text-popup" data-disabled="true">
       <div class="text-toolbar clearfix">
-        <button type="button" data-selected="false" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'><i class="sprite sprite-bold"></i></button>
-        <button type="button" data-selected="false" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'><i class="sprite sprite-underline"></i></button>
-        <button type="button" data-selected="false" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'><i class="sprite sprite-italic"></i></button>
-        <button type="button" data-selected="false" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-left-align"></i></button>
-        <button type="button" data-selected="false" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-center-align"></i></button>
-        <button type="button" data-selected="false" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'><i class="sprite sprite-right-align"></i></button>
+        <button type="button" data-selected="false" data-textstyle="bold" name="bold" title="bold" class='btn btn-default btn-md bold'>
+         <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M747 1521q74 32 140 32 376 0 376-335 0-114-41-180-27-44-61.5-74t-67.5-46.5-80.5-25-84-10.5-94.5-2q-73 0-101 10 0 53-.5 159t-.5 158q0 8-1 67.5t-.5 96.5 4.5 83.5 12 66.5zm-14-746q42 7 109 7 82 0 143-13t110-44.5 74.5-89.5 25.5-142q0-70-29-122.5t-79-82-108-43.5-124-14q-50 0-130 13 0 50 4 151t4 152q0 27-.5 80t-.5 79q0 46 1 69zm-541 889l2-94q15-4 85-16t106-27q7-12 12.5-27t8.5-33.5 5.5-32.5 3-37.5.5-34v-65.5q0-982-22-1025-4-8-22-14.5t-44.5-11-49.5-7-48.5-4.5-30.5-3l-4-83q98-2 340-11.5t373-9.5q23 0 68 .5t68 .5q70 0 136.5 13t128.5 42 108 71 74 104.5 28 137.5q0 52-16.5 95.5t-39 72-64.5 57.5-73 45-84 40q154 35 256.5 134t102.5 248q0 100-35 179.5t-93.5 130.5-138 85.5-163.5 48.5-176 14q-44 0-132-3t-132-3q-106 0-307 11t-231 12z"/></svg>
+         </button> 
+        <button type="button" data-selected="false" data-textstyle="underline" name="underline" title="underline" class='btn btn-default btn-md underline'>
+        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M176 223q-37-2-45-4l-3-88q13-1 40-1 60 0 112 4 132 7 166 7 86 0 168-3 116-4 146-5 56 0 86-2l-1 14 2 64v9q-60 9-124 9-60 0-79 25-13 14-13 132 0 13 .5 32.5t.5 25.5l1 229 14 280q6 124 51 202 35 59 96 92 88 47 177 47 104 0 191-28 56-18 99-51 48-36 65-64 36-56 53-114 21-73 21-229 0-79-3.5-128t-11-122.5-13.5-159.5l-4-59q-5-67-24-88-34-35-77-34l-100 2-14-3 2-86h84l205 10q76 3 196-10l18 2q6 38 6 51 0 7-4 31-45 12-84 13-73 11-79 17-15 15-15 41 0 7 1.5 27t1.5 31q8 19 22 396 6 195-15 304-15 76-41 122-38 65-112 123-75 57-182 89-109 33-255 33-167 0-284-46-119-47-179-122-61-76-83-195-16-80-16-237v-333q0-188-17-213-25-36-147-39zm1488 1409v-64q0-14-9-23t-23-9h-1472q-14 0-23 9t-9 23v64q0 14 9 23t23 9h1472q14 0 23-9t9-23z"/></svg>
+        </button>
+        <button type="button" data-selected="false" data-textstyle="italic" name="italic" title="italic" class='btn btn-default btn-md italic'>
+        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M384 1662l17-85q22-7 61.5-16.5t72-19 59.5-23.5q28-35 41-101 1-7 62-289t114-543.5 52-296.5v-25q-24-13-54.5-18.5t-69.5-8-58-5.5l19-103q33 2 120 6.5t149.5 7 120.5 2.5q48 0 98.5-2.5t121-7 98.5-6.5q-5 39-19 89-30 10-101.5 28.5t-108.5 33.5q-8 19-14 42.5t-9 40-7.5 45.5-6.5 42q-27 148-87.5 419.5t-77.5 355.5q-2 9-13 58t-20 90-16 83.5-6 57.5l1 18q17 4 185 31-3 44-16 99-11 0-32.5 1.5t-32.5 1.5q-29 0-87-10t-86-10q-138-2-206-2-51 0-143 9t-121 11z"/></svg>
+        </button>
+        <button type="button" data-selected="false" data-alignment="left" title="Left align text" class='btn btn-default btn-md align-options'>
+        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 1344v128q0 26-19 45t-45 19h-1664q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1664q26 0 45 19t19 45zm-384-384v128q0 26-19 45t-45 19h-1280q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1280q26 0 45 19t19 45zm256-384v128q0 26-19 45t-45 19h-1536q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1536q26 0 45 19t19 45zm-384-384v128q0 26-19 45t-45 19h-1152q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1152q26 0 45 19t19 45z"/></svg>
+        </button>
+        <button type="button" data-selected="false" data-alignment="center" title="Center align text" class='btn btn-default btn-md align-options'>
+        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 1344v128q0 26-19 45t-45 19h-1664q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1664q26 0 45 19t19 45zm-384-384v128q0 26-19 45t-45 19h-896q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h896q26 0 45 19t19 45zm256-384v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zm-384-384v128q0 26-19 45t-45 19h-640q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h640q26 0 45 19t19 45z"/></svg>
+        </button>
+        <button type="button" data-selected="false" data-alignment="right" title="Right align text" class='btn btn-default btn-md align-options'>
+        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 1344v128q0 26-19 45t-45 19h-1664q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1664q26 0 45 19t19 45zm0-384v128q0 26-19 45t-45 19h-1280q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1280q26 0 45 19t19 45zm0-384v128q0 26-19 45t-45 19h-1536q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1536q26 0 45 19t19 45zm0-384v128q0 26-19 45t-45 19h-1152q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1152q26 0 45 19t19 45z"/></svg>
+        </button>
         <div class="select-group">
-          <button title='font size'><i class="sprite sprite-text-size"></i></button>
+          <button title='font size'>
+            <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 9v8h-2V9h-4V7h10v2h-4zM8 5v12H6V5H0V3h15v2H8z"/></svg>
+
+          </button>
           <select class="selectpicker" id="font-size" title='font size' data-option="font-size" name="font-size">
             <% @font_sizes.each do |px_val, font_val| %>
               <% sel = (font_val == 8) ? 'selected="selected"' : '' %>
@@ -82,7 +138,9 @@
           </select>
         </div>
         <div class="select-group">
-          <button title='font family'><i class="sprite sprite-font"></i></button>
+          <button title='font family'>
+            <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M789 559l-170 450q33 0 136.5 2t160.5 2q19 0 57-2-87-253-184-452zm-725 1105l2-79q23-7 56-12.5t57-10.5 49.5-14.5 44.5-29 31-50.5l237-616 280-724h128q8 14 11 21l205 480q33 78 106 257.5t114 274.5q15 34 58 144.5t72 168.5q20 45 35 57 19 15 88 29.5t84 20.5q6 38 6 57 0 5-.5 13.5t-.5 12.5q-63 0-190-8t-191-8q-76 0-215 7t-178 8q0-43 4-78l131-28q1 0 12.5-2.5t15.5-3.5 14.5-4.5 15-6.5 11-8 9-11 2.5-14q0-16-31-96.5t-72-177.5-42-100l-450-2q-26 58-76.5 195.5t-50.5 162.5q0 22 14 37.5t43.5 24.5 48.5 13.5 57 8.5 41 4q1 19 1 58 0 9-2 27-58 0-174.5-10t-174.5-10q-8 0-26.5 4t-21.5 4q-80 14-188 14z"/></svg>
+          </button>
           <select class="selectpicker" id="font-family" title='font family' data-option="font-family" name="font-family">
             <option selected="selected" value="Arial">Arial</option>
             <option value="Courier New">Courier New</option>
@@ -96,9 +154,9 @@
     </div>
   </div>
 
-   <div class='pull-left'>
+   <div class='fl'>
     <div>
-      <div class="ruler-placeholder pull-left">&nbsp;</div>
+      <div class="ruler-placeholder fl">&nbsp;</div>
       <div class="top-ruler">
         <div class="top-marker"></div>
         <% (0..5000).step(100).each do |counter| %>
@@ -107,7 +165,7 @@
       </div>
     </div>
 
-    <div class="left-ruler pull-left">
+    <div class="left-ruler fl">
       <div class="left-marker"></div>
       <% (0..5000).step(100).each do |counter| %>
         <label <%= "class=first" if counter == 0 %> > <%= counter %></label>
@@ -115,7 +173,7 @@
       <% end %>
     </div>
 
-    <div class='pull-left'>
+    <div class='fl'>
       <div id="paper-wrapper" class="paper-wrapper css-height css-width">
         <div id='paper' class="image-container"></div>
       </div>
@@ -204,8 +262,10 @@
               </select>
             </div>
           </fieldset>
-          <div class="labeldesigner-actions pull-right">
-            <button type="button" class='btn btn-default btn-md primary save'><i class="sprite sprite-save invert"></i>&nbsp;Save Variable Settings</button>
+          <div class="labeldesigner-actions fr">
+            <button type="button" class='btn btn-default btn-md primary save'>
+              <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+              &nbsp;Save Variable Settings</button>
           </div>
           <!-- Allow form submission with keyboard without duplicating the dialog button -->
           <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
@@ -231,7 +291,7 @@
               <label for="keep-aspect-ratio">&nbsp;&nbsp;keep aspect ratio</label>
             </fieldset>
 
-            <div class="labeldesigner-actions pull-right">
+            <div class="labeldesigner-actions fr">
               <button type="button" class='btn btn-default btn-md primary upload'>Upload Image</button>
             </div>
             <!-- Allow form submission with keyboard without duplicating the dialog button -->
@@ -261,8 +321,10 @@
               <label for="canvas_height">H:</label>
               <input disabled='disabled' type="number" id="canvas_height" title="Set canvas height" placeholder="500">
             </fieldset>
-            <div class="labeldesigner-actions pull-right">
-              <button type="button" class='btn btn-default btn-md primary save'><i class="sprite sprite-save invert"></i>&nbsp;Save Options</button>
+            <div class="labeldesigner-actions fr">
+              <button type="button" class='btn btn-default btn-md primary save'>
+<svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+                &nbsp;Save Options</button>
             </div>
 
             <!-- Allow form submission with keyboard without duplicating the dialog button -->
