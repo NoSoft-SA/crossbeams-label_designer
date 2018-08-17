@@ -87,13 +87,6 @@
   width: 1500px;
   height: 900px;
 }
-/*
-.designer-container button, select, input, textarea{
-  outline: none;
-  border-radius: 0px !important;
-  border-color: white;
-}
-*/
 
 /*Application layout*/
 .paper-wrapper{
@@ -138,131 +131,23 @@
 .designer-container .top-toolbar{
   width: 1225px;
   margin-left: 20px;
-  /*height: 170px;*/
 }
-/*
-.designer-container .tool-container{
-  width: 1225px;
-}
-*/
-/*
-.designer-container h2.labelname{
-  color: #515052;
-  margin: 5px;
-}
-*/
-/*
-.select-group{
-  /*float: left;*/
-/*
-  display: inline-block;
-}
-.select-group button{
-  background-color: white !important;
-  padding-right: 5px !important;
-  margin-right: 0px !important;
-}
-*/
-/*.designer-container .labeldesigner-toolbar, */
-  /*
-.designer-container .text-toolbar, .designer-container .canvas-toolbar{
-  border: 2px solid #515052;
-  float: left;
-}
-.designer-container .canvas-toolbar{
-  display: inline-block;
-}
-*/
-  /*
-.designer-container .labeldesigner-toolbar .clearfix:after{
-  height: 0px;
-}
-*/
-/*
-.labeldesigner-toolbar button, .text-toolbar button, .canvas-toolbar button{
-  margin: 0px;
-  float: left;
-  background-color: #D9DCD6;
-  /*#adadeb;*/
-  /*
-  border:none;
-  min-height: 2em;
-  min-width: 1.6em;
-}
-.labeldesigner-toolbar select, .text-toolbar select, .canvas-toolbar select{
-  margin: 0px;
-  background-color: white;
-  border: none;
-  min-height: 2em;
-  min-width: 1em;
-}
-*/
-  /*
-.labeldesigner-toolbar button:hover, .text-toolbar button:hover, .canvas-toolbar button:hover{
-  background-color: #81C3D7;
-}
-*/
 .labeldesigner-toolbar button[data-chosen='true'], .text-toolbar button[data-selected='true'], .canvas-toolbar button[data-selected='true']{
-  background-color: #188FA7 !important;
+  background-color: #86a0b9 !important;
 }
 .labeldesigner-toolbar button:disabled, .labeldesigner-toolbar select:disabled{
   cursor: not-allowed;
 }
-/*
-.labeldesigner-actions{
-  display: inline-block;
-}
-*/
-/*
-.labeldesigner-actions button{
-  border: none;
-  font-weight: normal;
-  color: white;
-  float: left;
-  height: 36px;
-}
-.labeldesigner-actions .btn-download-image, .labeldesigner-actions .secondary{
-  background-color: #16425B;
-}
-.labeldesigner-actions .btn-save-label, .labeldesigner-actions .primary{
-  background-color: #188FA7;
-}
-.primary, .secondary{
-  margin-top: 25px;
-}
-.labeldesigner-actions .btn-options{
-  background-color: #427AA1;
-}
-.labeldesigner-actions .btn-variable-settings{
-  background-color: #515052;
-}
-*/
 .info-bar{
   margin-top: 10px;
   width:1225px;
   background-color: #D9DCD6; /*lightgrey;*/
 }
-/*.text-toolbar, .labeldesigner-toolbar{*/
-  /*padding: 5px;*/
-  /*width: 450px;*/
-/*}*/
-/*.canvas-toolbar{*/
-  /*padding: 5px;*/
-/*}*/
 [data-disabled='true']{
   pointer-events: none;
   opacity: 0.5;
   cursor: not-allowed;
 }
-/*
-.text-popup textarea{
-  width: 400px;
-  /* height: 3rem; */
-  /* margin-left: 15px; */
-  /*
-}
-*/
-/* .text-popup textarea:focus{ */
 #textinput:focus{
   border: 2px solid #515052;
 }
@@ -285,7 +170,6 @@
   border: none;
   width: 75px;
   opacity: 1;
-  /*background-color: white;*/
 }
 #zoom_percentage{
   float: left;
@@ -305,4 +189,3 @@ label[for='canvas_width'], label[for='canvas_height']{
 .popupwindow_container{
   z-index: 5;
 }
-
