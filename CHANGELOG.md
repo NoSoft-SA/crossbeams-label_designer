@@ -10,6 +10,15 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.1.6] - 2018-08-22
+### Added
+- Add the "Lato Light" font for use in text boxes only (not for variables). i.e. this font can be included in the background image, but variables only use fonts that are readily available to the print server.
+### Changed
+- Redesign of the toolbars:
+    - Layout changed.
+    - Using embedded SVG icons.
+    - Fix behaviour for when to make the stroke width dropdown available.
+
 ## [0.1.5] - 2018-08-08
 ### Changed
 - Font pixel sizes are boosted by a factor depending on the printer resolution (8 or 12 px/mm). This allows the label to print fonts at a more accurate size - closely matching the size when printed from a word processor.

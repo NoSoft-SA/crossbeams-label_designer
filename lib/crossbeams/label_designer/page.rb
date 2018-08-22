@@ -130,7 +130,6 @@ module Crossbeams
         file_content = ''
         [
           'assets/ruler.css',
-          'assets/icons_sprite.css',
           'assets/label_design.css'
         ].each do |filename|
           file = File.join(File.dirname(__FILE__), filename)
