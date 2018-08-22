@@ -4,7 +4,7 @@
 }
 @font-face {
   font-family: 'ArialB';
-  src: local('Arial, Bold'), url(/fonts/arialbd.woff) format('woff');
+  src: local('Arial Bold'), url(/fonts/arialbd.woff) format('woff');
 }
 @font-face {
   font-family: 'ArialBI';
@@ -16,7 +16,7 @@
 }
 @font-face {
   font-family: 'Cour';
-  src: local('Courier New'), url(/fonts/cour.woff) format('woff');
+  src: local('Courier New'), url('/fonts/cour.woff') format('woff');
 }
 @font-face {
   font-family: 'CourB';
@@ -46,6 +46,43 @@
   font-family: 'TNRI';
   src: url(/fonts/timesi.woff) format('woff');
 }
+/* START: Lato (Light font; bold is actually Medium) */
+@font-face {
+    font-family: 'LatoL';
+    src: /* local('Lato Light'), local('Lato-Light'), */
+        url('/fonts/Lato-Light.woff2') format('woff2'),
+        url('/fonts/Lato-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoLBI';
+    src: /* local('Lato Medium Italic'), local('Lato-MediumItalic'), */
+        url('/fonts/Lato-MediumItalic.woff2') format('woff2'),
+        url('/fonts/Lato-MediumItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoLB';
+    src: /* local('Lato Medium'), local('Lato-Medium'), */
+        url('/fonts/Lato-Medium.woff2') format('woff2'),
+        url('/fonts/Lato-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LatoLI';
+    src: /* local('Lato Light Italic'), local('Lato-LightItalic'), */
+        url('/fonts/Lato-LightItalic.woff2') format('woff2'),
+        url('/fonts/Lato-LightItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* END: Lato */
 .Arial{
   font-family: "Arial";
 }
@@ -81,6 +118,18 @@
 }
 .TNRI{
   font-family: "TNRI";
+}
+.LatoL{
+  font-family: "LatoL";
+}
+.LatoLB{
+  font-family: "LatoLB";
+}
+.LatoLBI{
+  font-family: "LatoLBI";
+}
+.LatoLI{
+  font-family: "LatoLI";
 }
 .designer-container{
   overflow: scroll;
