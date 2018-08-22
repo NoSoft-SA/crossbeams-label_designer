@@ -7,13 +7,17 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+### Changed
+### Fixed
+
+## [0.1.6] - 2018-08-22
+### Added
 - Add the "Lato Light" font for use in text boxes only (not for variables). i.e. this font can be included in the background image, but variables only use fonts that are readily available to the print server.
 ### Changed
 - Redesign of the toolbars:
     - Layout changed.
     - Using embedded SVG icons.
     - Fix behaviour for when to make the stroke width dropdown available.
-### Fixed
 
 ## [0.1.5] - 2018-08-08
 ### Changed
