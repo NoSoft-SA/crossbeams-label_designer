@@ -1,12 +1,12 @@
-<div class="designer-container">
-  <div class="ml2 clearfix">
-    <div class="info-bar">
-      <span class="currentCoords fr">(0, 0)</span>
+<div class="top-toolbars">
+  <div class="clearfix">
+    <div class="info-bar mt2">
+      <span class="currentCoords fr b dark-blue">(0, 0)</span>
     </div>
     <h2 id="labelname" class="ma1 mid-gray">&nbsp;</h2>
-    <div class="flex">
+    <div class="flex bg-moon-gray ph3 pt2 br2 br--top">
       <div class="flex flex-column">
-        <div class="tool-container clearfix">
+        <div class="clearfix">
           <div class="labeldesigner-toolbar fl ba bg-moon-gray">
             <button type="button" data-chosen="false" data-pointer="Pointer" name="Pointer" title="pointer" class='pa1 ma0 bg-moon-gray bn hover-bg-light-blue'>
               <!-- svg: fa: mouse-pointer -->
@@ -72,7 +72,7 @@
                 <!-- svg: zondi: stroke-width -->
                 <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0h20v5H0V0zm0 7h20v4H0V7zm0 6h20v3H0v-3zm0 5h20v2H0v-2z"/></svg>
               </button>
-              <select title='Set stroke width' class="selectpicker disabled bg-white bn" id="stroke-width" data-option="stroke-width" name="stroke-width" disabled=disabled data-disabled="true">
+              <select title='Set stroke width' class="disabled bg-white bn" id="stroke-width" data-option="stroke-width" name="stroke-width" disabled=disabled data-disabled="true">
                 <option selected="selected" value=2>2</option>
                 <option value=3>3</option>
                 <option value=4>4</option>
@@ -90,7 +90,7 @@
             <button type="button" data-action="zoom-out" name="zoom-out" title="zoom-out" class='btn btn-default btn-md zoom-out'>
               <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12zM5 7h6v2H5V7z"/></svg>
             </button>
-            <select title='Set zoom percentage' class="selectpicker" id="zoom_percentage" data-option="zoom_percentage" name="zoom_percentage">
+            <select title='Set zoom percentage' id="zoom_percentage" data-option="zoom_percentage" name="zoom_percentage">
               <% [25, 33, 50, 67, 75, 80, 90, 100, 110, 125, 150, 175, 200, 250, 300, 400, 500].each do |zoom_percentage| %>
               <option value="<%= zoom_percentage.to_f/100 %>" <%= (zoom_percentage == 100) ? 'selected="selected"' : '' %> ><%= zoom_percentage %>&#37;</option>
               <% end %>
@@ -143,7 +143,7 @@
                 <!-- svg: zondi: format-font-size -->
                 <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 9v8h-2V9h-4V7h10v2h-4zM8 5v12H6V5H0V3h15v2H8z"/></svg>
               </button>
-              <select class="selectpicker bg-white bn" id="font-size" title='font size' data-option="font-size" name="font-size">
+              <select class="bg-white bn" id="font-size" title='font size' data-option="font-size" name="font-size">
                 <% @font_sizes.each do |px_val, font_val| %>
                 <% sel = (font_val == 8) ? 'selected="selected"' : '' %>
                 <option value="<%= px_val %>" <%= sel %> ><%= font_val %></option>
@@ -155,7 +155,7 @@
                 <!-- svg: fa: font -->
                 <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M789 559l-170 450q33 0 136.5 2t160.5 2q19 0 57-2-87-253-184-452zm-725 1105l2-79q23-7 56-12.5t57-10.5 49.5-14.5 44.5-29 31-50.5l237-616 280-724h128q8 14 11 21l205 480q33 78 106 257.5t114 274.5q15 34 58 144.5t72 168.5q20 45 35 57 19 15 88 29.5t84 20.5q6 38 6 57 0 5-.5 13.5t-.5 12.5q-63 0-190-8t-191-8q-76 0-215 7t-178 8q0-43 4-78l131-28q1 0 12.5-2.5t15.5-3.5 14.5-4.5 15-6.5 11-8 9-11 2.5-14q0-16-31-96.5t-72-177.5-42-100l-450-2q-26 58-76.5 195.5t-50.5 162.5q0 22 14 37.5t43.5 24.5 48.5 13.5 57 8.5 41 4q1 19 1 58 0 9-2 27-58 0-174.5-10t-174.5-10q-8 0-26.5 4t-21.5 4q-80 14-188 14z"/></svg>
               </button>
-              <select class="selectpicker bg-white bn" id="font-family" title='font family' data-option="font-family" name="font-family">
+              <select class="bg-white bn" id="font-family" title='font family' data-option="font-family" name="font-family">
                 <option selected="selected" value="Arial">Arial</option>
                 <option value="Courier New">Courier New</option>
                 <option value="Lato Light">Lato Light</option>
@@ -168,7 +168,7 @@
 
       <textarea style="flex-grow:1" class="text-popup ml2" data-disabled="true" type="text" id="textinput" class="ml2 h3" data-option="textinput" title="Insert text here" placeholder="Insert text here..."></textarea>
 
-      <div class="labeldesigner-actions ml2 flex">
+      <div class="ml2 flex">
         <div class="flex flex-column">
           <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-dark-blue btn-options fr'>
             <!-- svg: zondi: cog -->
@@ -186,7 +186,7 @@
             <!-- svg: zondi: download -->
             <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
               &nbsp;Download IMG</button>
-            <a class='hidden' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
+            <a class='dn' href="#" id="btn-download-image" target='_blank' download='png_example.png'></a>
           <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-dark-blue btn-save-label'>
             <!-- svg: zondi: save-disk -->
             <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
@@ -196,7 +196,6 @@
     </div>
   </div>
 
-  <div class='fl'>
     <div>
       <div class="ruler-placeholder fl">&nbsp;</div>
       <div class="top-ruler">
@@ -207,6 +206,8 @@
       </div>
     </div>
 
+    <div class="designer-container relative bg-gray">
+
     <div class="left-ruler fl">
       <div class="left-marker"></div>
       <% (0..5000).step(100).each do |counter| %>
@@ -215,12 +216,9 @@
       <% end %>
     </div>
 
-    <div class='fl'>
-      <div id="paper-wrapper" class="paper-wrapper css-height css-width">
-        <div id='paper' class="image-container"></div>
+      <div id="paper-wrapper" class="paper-wrapper">
+        <div id='paper' class="relative bg-gray" style="left:20px"></div>
       </div>
-    </div>
-  </div>
 
   <div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
     <div class="dialog-overlay" tabindex="-1"></div>
@@ -255,7 +253,7 @@
               <input type="radio" name="barcode_top" value="false" checked="checked">
               Bottom<br>
               <label for="barcode_width_factor"><b>Barcode width factor:</b></label>
-              <select class="selectpicker" id="barcode_width_factor" name="barcode_width_factor">
+              <select id="barcode_width_factor" name="barcode_width_factor">
                 <option value="1.5">1.5</option>
                 <option selected="selected" value="2.0">2.0</option>
                 <option value="2.5">2.5</option>
@@ -264,7 +262,7 @@
               </select><br>
               <p>The barcode width factor controls the width of the barcode,<br> please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
               <label for="barcode_margin"><b>Margin size:</b></label><br>
-              <select class="selectpicker" id="barcode_margin" name="barcode_margin">
+              <select id="barcode_margin" name="barcode_margin">
                 <option value="5">5</option>
                 <option value="6">6</option>
                 <option value="7">7</option>
@@ -371,23 +369,23 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="fonts">
-    <p class="Arial">Preload Font</p>
-    <p class="ArialB">Preload Font</p>
-    <p class="ArialBI">Preload Font</p>
-    <p class="ArialI">Preload Font</p>
-    <p class="Cour">Preload Font</p>
-    <p class="CourB">Preload Font</p>
-    <p class="CourBI">Preload Font</p>
-    <p class="CourI">Preload Font</p>
-    <p class="LatoL">Preload Font</p>
-    <p class="LatoLB">Preload Font</p>
-    <p class="LatoLBI">Preload Font</p>
-    <p class="LatoLI">Preload Font</p>
-    <p class="TNR">Preload Font</p>
-    <p class="TNRB">Preload Font</p>
-    <p class="TNRBI">Preload Font</p>
-    <p class="TNRI">Preload Font</p>
-  </div>
+<div class="fonts" style="position:fixed;left:-900">
+  <p class="Arial">Preload Font</p>
+  <p class="ArialB">Preload Font</p>
+  <p class="ArialBI">Preload Font</p>
+  <p class="ArialI">Preload Font</p>
+  <p class="Cour">Preload Font</p>
+  <p class="CourB">Preload Font</p>
+  <p class="CourBI">Preload Font</p>
+  <p class="CourI">Preload Font</p>
+  <p class="LatoL">Preload Font</p>
+  <p class="LatoLB">Preload Font</p>
+  <p class="LatoLBI">Preload Font</p>
+  <p class="LatoLI">Preload Font</p>
+  <p class="TNR">Preload Font</p>
+  <p class="TNRB">Preload Font</p>
+  <p class="TNRBI">Preload Font</p>
+  <p class="TNRI">Preload Font</p>
 </div>
