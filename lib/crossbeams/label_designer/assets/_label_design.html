@@ -199,11 +199,13 @@
 
 <div>
   <div class="ruler-placeholder fl">&nbsp;</div>
-  <div class="top-ruler">
-    <div class="top-marker"></div>
-    <% (0..5000).step(100).each do |counter| %>
-    <label <%= "class=first" if counter == 0 %> ><%= counter %></label>
-    <% end %>
+  <div class="br b--black-20 bw1" style="width:1205px;overflow:hidden">
+    <div class="top-ruler">
+      <div class="top-marker"></div>
+      <% (0..5000).step(100).each do |counter| %>
+      <label <%= "class=first" if counter == 0 %> ><%= counter %></label>
+      <% end %>
+    </div>
   </div>
 </div>
 
