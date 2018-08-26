@@ -1,14 +1,10 @@
-.designer-container{
-  background-color: #D9DCD6;
-  position: relative;
-}
-.top-marker{
+.top-marker {
   height: 20px;
   position: absolute;
   border-right: 1px solid black;
   z-index: 1 !important;
 }
-.left-marker{
+.left-marker {
   width: 20px;
   position: absolute;
   z-index: 1;
@@ -16,6 +12,7 @@
 }
 
 .top-ruler {
+ overflow: hidden;
   background-color: #ffffff;
   background-image:
     linear-gradient(90deg,
@@ -87,7 +84,6 @@
   font-size:0;
   margin-left: 20px;
   padding:0;
-  width: 99999px;
   z-index: 0;
   position: relative;
   border-top: 1px solid darkgrey;
@@ -99,7 +95,7 @@
   text-indent:3px;
   width:<%= @pixel_per_millimeter*10 %>px;
 }
-.ruler-placeholder{
+.ruler-placeholder {
   width: 20px;
   height: 20px;
   display:inline-block;
@@ -195,4 +191,3 @@
 .left-ruler br {
   height: 0px;
 }
-
