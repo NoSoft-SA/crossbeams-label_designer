@@ -195,183 +195,185 @@
       </div>
     </div>
   </div>
+</div>
 
-    <div>
-      <div class="ruler-placeholder fl">&nbsp;</div>
-      <div class="top-ruler">
-        <div class="top-marker"></div>
-        <% (0..5000).step(100).each do |counter| %>
-        <label <%= "class=first" if counter == 0 %> ><%= counter %></label>
-        <% end %>
-      </div>
-    </div>
+<div>
+  <div class="ruler-placeholder fl">&nbsp;</div>
+  <div class="top-ruler">
+    <div class="top-marker"></div>
+    <% (0..5000).step(100).each do |counter| %>
+    <label <%= "class=first" if counter == 0 %> ><%= counter %></label>
+    <% end %>
+  </div>
+</div>
 
-    <div class="designer-container relative bg-gray">
+<div class="designer-container relative bg-gray">
 
-    <div class="left-ruler fl">
-      <div class="left-marker"></div>
-      <% (0..5000).step(100).each do |counter| %>
-      <label <%= "class=first" if counter == 0 %> > <%= counter %></label>
-      <br>
-      <% end %>
-    </div>
+  <div class="left-ruler fl">
+    <div class="left-marker"></div>
+    <% (0..5000).step(100).each do |counter| %>
+    <label <%= "class=first" if counter == 0 %> > <%= counter %></label>
+    <br>
+    <% end %>
+  </div>
 
-      <div id="paper-wrapper" class="paper-wrapper">
-        <div id='paper' class="relative bg-gray" style="left:20px"></div>
-      </div>
+  <div id="paper-wrapper" class="paper-wrapper">
+    <div id='paper' class="relative bg-gray" style="left:20px"></div>
+  </div>
+</div>
 
-  <div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
-    <div class="dialog-overlay" tabindex="-1"></div>
-    <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog" style="min-width:400px;min-height:400px">
-      <div role="document">
-        <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-        <h1 id="dialogTitle">Variable settings</h1>
-        <form class='variable-info-form'>
-          <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
-          <fieldset>
-            <label for="vars"><b>Variable type:</b></label>
-            <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
-              <option value="">Select an option...</option>
-              <% @label_variable_types.each do |var_type| %>
-              <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
+    <!-- HIDDEN DIALOG DEFINITIONS -->
+<div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
+  <div class="dialog-overlay" tabindex="-1"></div>
+  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog" style="min-width:400px;min-height:400px">
+    <div role="document">
+      <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
+      <h1 id="dialogTitle">Variable settings</h1>
+      <form class='variable-info-form'>
+        <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
+        <fieldset>
+          <label for="vars"><b>Variable type:</b></label>
+          <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+            <option value="">Select an option...</option>
+            <% @label_variable_types.each do |var_type| %>
+            <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
+            <% end %>
+          </select>
+          <label><b>Is this a Barcode?</b></label><br>
+          <input type="radio" name="barcode_bool" value="true"> Yes<br>
+          <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
+          <div class="barcode-options" style="display:none;">
+            <label><b>Show barcode text:</b></label>
+            <br>
+            <input type="radio" name="barcode_text" value="true">
+            Yes<br>
+            <input type="radio" name="barcode_text" value="false" checked="checked">
+            No<br>
+            <label><b>If Yes:</b></label>
+            <br>
+            <input type="radio" name="barcode_top" value="true">
+            Top<br>
+            <input type="radio" name="barcode_top" value="false" checked="checked">
+            Bottom<br>
+            <label for="barcode_width_factor"><b>Barcode width factor:</b></label>
+            <select id="barcode_width_factor" name="barcode_width_factor">
+              <option value="1.5">1.5</option>
+              <option selected="selected" value="2.0">2.0</option>
+              <option value="2.5">2.5</option>
+              <option value="3.0">3.0</option>
+              <option value="3.5">3.5</option>
+            </select><br>
+            <p>The barcode width factor controls the width of the barcode,<br> please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
+            <label for="barcode_margin"><b>Margin size:</b></label><br>
+            <select id="barcode_margin" name="barcode_margin">
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+            </select><br>
+            <label for="barcode_symbology"><b>Barcode Symbology:</b></label><br>
+            <select class="form-control" id="barcode_symbology" name="barcode_symbology">
+              <% @barcode_types.each do |bc_type| %>
+              <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
               <% end %>
             </select>
-            <label><b>Is this a Barcode?</b></label><br>
-            <input type="radio" name="barcode_bool" value="true"> Yes<br>
-            <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
-            <div class="barcode-options" style="display:none;">
-              <label><b>Show barcode text:</b></label>
-              <br>
-              <input type="radio" name="barcode_text" value="true">
-              Yes<br>
-              <input type="radio" name="barcode_text" value="false" checked="checked">
-              No<br>
-              <label><b>If Yes:</b></label>
-              <br>
-              <input type="radio" name="barcode_top" value="true">
-              Top<br>
-              <input type="radio" name="barcode_top" value="false" checked="checked">
-              Bottom<br>
-              <label for="barcode_width_factor"><b>Barcode width factor:</b></label>
-              <select id="barcode_width_factor" name="barcode_width_factor">
-                <option value="1.5">1.5</option>
-                <option selected="selected" value="2.0">2.0</option>
-                <option value="2.5">2.5</option>
-                <option value="3.0">3.0</option>
-                <option value="3.5">3.5</option>
-              </select><br>
-              <p>The barcode width factor controls the width of the barcode,<br> please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
-              <label for="barcode_margin"><b>Margin size:</b></label><br>
-              <select id="barcode_margin" name="barcode_margin">
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="35">35</option>
-                <option value="40">40</option>
-                <option value="45">45</option>
-                <option value="50">50</option>
-              </select><br>
-              <label for="barcode_symbology"><b>Barcode Symbology:</b></label><br>
-              <select class="form-control" id="barcode_symbology" name="barcode_symbology">
-                <% @barcode_types.each do |bc_type| %>
-                <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
-                <% end %>
-              </select>
-            </div>
-          </fieldset>
-          <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
-            <!-- svg: zondi: save-disk -->
-            <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
-              &nbsp;Save Variable Settings</button>
-          <!-- Allow form submission with keyboard without duplicating the dialog button -->
-          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="dialog" aria-hidden="true" id="image-dialog-form">
-    <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
-    <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
-      <div role="document">
-        <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-        <h1 id="dialogTitle">Image Uploader</h1>
-        <form class="upload-image">
-          <p class='notice'>You have not selected a file.</p>
-          <fieldset>
-            <legend>Image upload:</legend>
-            <label for="upload-image">Please select image to be uploaded:</label>
-            <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
-            <br><br>
-            <input type="checkbox" name="keep-aspect-ratio" id="keep-aspect-ratio" class="ui-widget-content" checked="checked">
-            <label for="keep-aspect-ratio">&nbsp;&nbsp;keep aspect ratio</label>
-          </fieldset>
-
-          <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 upload'>Upload Image</button>
-          <!-- Allow form submission with keyboard without duplicating the dialog button -->
-          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div class="dialog" aria-hidden="true" id="canvas-options-dialog-form">
-    <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
-    <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
-      <div role="document">
-        <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-        <h1 id="dialogTitle">Canvas Options</h1>
-        <form class="canvas-options">
-          <p class='notice' style="display:none;">Some fields are invalid.</p>
-          <fieldset>
-            <legend>Canvas orientation:</legend>
-            <label><input type="radio" name="orientation" value="portrait" checked="checked"> Portrait</label><br>
-            <label><input type="radio" name="orientation" value="landscape"> Landscape</label>
-          </fieldset>
-          <fieldset>
-            <legend>Canvas size(mm):</legend>
-            <label for="canvas_width">W:</label>
-            <input disabled='disabled' type="number" id="canvas_width" title="Set canvas width" placeholder="700"><br>
-            <label for="canvas_height">H:</label>
-            <input disabled='disabled' type="number" id="canvas_height" title="Set canvas height" placeholder="500">
-          </fieldset>
-          <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
-            <!-- svg: zondi: save-disk -->
-            <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
-              &nbsp;Save Options</button>
-
-          <!-- Allow form submission with keyboard without duplicating the dialog button -->
-          <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-        </form>
-      </div>
+          </div>
+        </fieldset>
+        <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
+          <!-- svg: zondi: save-disk -->
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+            &nbsp;Save Variable Settings</button>
+        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </form>
     </div>
   </div>
 </div>
 
-<div class="fonts" style="position:fixed;left:-900">
+<div class="dialog" aria-hidden="true" id="image-dialog-form">
+  <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+    <div role="document">
+      <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
+      <h1 id="dialogTitle">Image Uploader</h1>
+      <form class="upload-image">
+        <p class='notice'>You have not selected a file.</p>
+        <fieldset>
+          <legend>Image upload:</legend>
+          <label for="upload-image">Please select image to be uploaded:</label>
+          <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+          <br><br>
+          <input type="checkbox" name="keep-aspect-ratio" id="keep-aspect-ratio" class="ui-widget-content" checked="checked">
+          <label for="keep-aspect-ratio">&nbsp;&nbsp;keep aspect ratio</label>
+        </fieldset>
+
+        <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 upload'>Upload Image</button>
+        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="dialog" aria-hidden="true" id="canvas-options-dialog-form">
+  <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+    <div role="document">
+      <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
+      <h1 id="dialogTitle">Canvas Options</h1>
+      <form class="canvas-options">
+        <p class='notice' style="display:none;">Some fields are invalid.</p>
+        <fieldset>
+          <legend>Canvas orientation:</legend>
+          <label><input type="radio" name="orientation" value="portrait" checked="checked"> Portrait</label><br>
+          <label><input type="radio" name="orientation" value="landscape"> Landscape</label>
+        </fieldset>
+        <fieldset>
+          <legend>Canvas size(mm):</legend>
+          <label for="canvas_width">W:</label>
+          <input disabled='disabled' type="number" id="canvas_width" title="Set canvas width" placeholder="700"><br>
+          <label for="canvas_height">H:</label>
+          <input disabled='disabled' type="number" id="canvas_height" title="Set canvas height" placeholder="500">
+        </fieldset>
+        <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
+          <!-- svg: zondi: save-disk -->
+          <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+            &nbsp;Save Options</button>
+
+        <!-- Allow form submission with keyboard without duplicating the dialog button -->
+        <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="hidden-fonts" hidden-fonts="position:absolute;left:-900px;">
   <p class="Arial">Preload Font</p>
   <p class="ArialB">Preload Font</p>
   <p class="ArialBI">Preload Font</p>

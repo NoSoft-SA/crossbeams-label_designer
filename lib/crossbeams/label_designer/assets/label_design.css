@@ -131,6 +131,10 @@
 .LatoLI {
   font-family: "LatoLI";
 }
+.hidden-fonts {
+  position: absolute;
+  left: -900px;
+}
 
 /*Application layout*/
 
