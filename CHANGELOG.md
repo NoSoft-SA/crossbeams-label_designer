@@ -10,6 +10,12 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.1.7] - 2018-08-27
+### Changed
+- UI tries to avoid page scrolling. Toolbars remain on top while scrolling the canvas.
+### Fixed
+- Broken label after an undo operation when almost all shapes became selected.
+
 ## [0.1.6] - 2018-08-22
 ### Added
 - Add the "Lato Light" font for use in text boxes only (not for variables). i.e. this font can be included in the background image, but variables only use fonts that are readily available to the print server.
