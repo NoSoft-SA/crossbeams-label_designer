@@ -236,31 +236,46 @@
       <form class='variable-info-form'>
         <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
         <fieldset>
-          <label for="vars"><b>Variable type:</b></label>
+          <label for="vars"><strong>Variable type:</strong></label>
           <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
             <option value="">Select an option...</option>
             <% @label_variable_types.each do |var_type| %>
             <option value="<%= var_type['varname'] %>" data-test-value="<%= var_type['test_value'] %>"><%= var_type['varname'] %></option>
             <% end %>
           </select>
-          <label><b>Is this a Barcode?</b></label><br>
-          <input type="radio" name="barcode_bool" value="true"> Yes<br>
-          <input type="radio" name="barcode_bool" value="false" checked="checked"> No<br>
+          <label><strong>Is this a Barcode?</strong></label><br>
+          <label>
+            <input type="radio" name="barcode_bool" value="true"> Yes
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="barcode_bool" value="false" checked="checked"> No
+          </label>
+          <br>
           <div class="barcode-options" style="display:none;">
-            <label><b>Show barcode text:</b></label>
+            <strong>Show barcode text:</strong>
             <br>
-            <input type="radio" name="barcode_text" value="true">
-            Yes<br>
-            <input type="radio" name="barcode_text" value="false" checked="checked">
-            No<br>
-            <label><b>If Yes:</b></label>
+            <label>
+              <input type="radio" name="barcode_text" value="true"> Yes
+            </label>
             <br>
-            <input type="radio" name="barcode_top" value="true">
-            Top<br>
-            <input type="radio" name="barcode_top" value="false" checked="checked">
-            Bottom<br>
-            <label for="barcode_width_factor"><b>Barcode width factor:</b></label>
+            <label>
+              <input type="radio" name="barcode_text" value="false" checked="checked"> No
+            </label>
+            <br>
+            <strong>If Yes:</strong>
+            <br>
+            <label>
+              <input type="radio" name="barcode_top" value="true"> Top
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="barcode_top" value="false" checked="checked"> Bottom
+            </label>
+            <br>
+            <label for="barcode_width_factor"><strong>Barcode width factor:</strong></label>
             <select id="barcode_width_factor" name="barcode_width_factor">
+              <option value="1.0">1.0</option>
               <option value="1.5">1.5</option>
               <option selected="selected" value="2.0">2.0</option>
               <option value="2.5">2.5</option>
@@ -268,7 +283,7 @@
               <option value="3.5">3.5</option>
             </select><br>
             <p>The barcode width factor controls the width of the barcode,<br> please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
-            <label for="barcode_margin"><b>Margin size:</b></label><br>
+            <label for="barcode_margin"><strong>Margin size:</strong></label><br>
             <select id="barcode_margin" name="barcode_margin">
               <option value="5">5</option>
               <option value="6">6</option>
@@ -300,8 +315,10 @@
               <option value="40">40</option>
               <option value="45">45</option>
               <option value="50">50</option>
-            </select><br>
-            <label for="barcode_symbology"><b>Barcode Symbology:</b></label><br>
+            </select>
+            <br>
+            <label for="barcode_symbology"><strong>Barcode Symbology:</strong></label>
+            <br>
             <select class="form-control" id="barcode_symbology" name="barcode_symbology">
               <% @barcode_types.each do |bc_type| %>
               <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
