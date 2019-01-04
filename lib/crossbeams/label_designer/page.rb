@@ -1,6 +1,6 @@
 module Crossbeams
   module LabelDesigner
-    class Page
+    class Page # rubocop:disable Metrics/ClassLength
       def initialize(file_to_load = nil)
         @file_to_load = file_to_load || 'new'
       end
@@ -35,13 +35,14 @@ module Crossbeams
         @barcode_types = Constants::BARCODE_TYPES
         @font_sizes = font_sizes
         @label_variable_types = Config.config.label_variable_types
+
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
         eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
           #{File.read(file, encoding: 'UTF-8')}
         HTML
       end
 
-      def javascript
+      def javascript # rubocop:disable Metrics/AbcSize
         @label_config = Config.config.label_config
         @label_sizes = Config.config.label_sizes
         @font_sizes_json = font_sizes.to_json
@@ -91,7 +92,7 @@ module Crossbeams
             const labelConfig = <%= @label_config %>;
             const labelSizes = <%= @label_sizes %>;
             const fontSizes = <%= @font_sizes_json %>;
-            const labelVariableTypes = <%= @label_variable_types_json %>;
+            // const labelVariableTypes = <%= @label_variable_types_json %>;
             const pxPerMm = <%= @px_per_mm %>;
             const fontDefaultPx = <%= @default_font_px %>;
             const fontDefaultPt = <%= @default_font_pt %>;
