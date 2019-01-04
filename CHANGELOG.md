@@ -7,9 +7,14 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Barcode width factor 1.0.
 ### Changed
 ### Fixed
+
+## [0.1.8] - 2019-01-04
+### Added
+- Barcode width factor 1.0.
+### Changed
+- Variables are displayed within groups. The config list for variables was changed to accommodate this and to allow for overriding with a different variable list.
 
 ## [0.1.7] - 2018-08-27
 ### Changed
