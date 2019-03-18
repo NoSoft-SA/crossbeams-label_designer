@@ -72,22 +72,22 @@ module Crossbeams
         end
         eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
           <script type="text/javascript">
-            let MyLabel,
-                Library,
-                Canvas,
-                Clipboard,
-                DrawApp,
-                Positioner,
-                UndoEngine,
-                UndoRedoModule,
-                LabelOptions,
-                Shortcuts,
-                ImageUploader,
-                MyImages,
-                VariableSettings,
-                TextSettings,
-                Shape,
-                Label;
+            let MyLabel;
+            let Library;
+            let Canvas;
+            let Clipboard;
+            let DrawApp;
+            let Positioner;
+            let UndoEngine;
+            let UndoRedoModule;
+            // let LabelOptions;
+            // let Shortcuts;
+            let ImageUploader;
+            let MyImages;
+            let VariableSettings;
+            let TextSettings;
+            // let Shape;
+            // let Label;
 
             const labelConfig = <%= @label_config %>;
             const labelSizes = <%= @label_sizes %>;
@@ -99,29 +99,29 @@ module Crossbeams
 
             const sizeConfig = labelSizes[labelConfig.labelDimension];
             let MyLabelSize = {
-              width: ((sizeConfig.width !== undefined) ? sizeConfig.width*pxPerMm : 700),
-              height: ((sizeConfig.height !== undefined) ? sizeConfig.height*pxPerMm : 500)
+              width: ((sizeConfig.width !== undefined) ? sizeConfig.width * pxPerMm : 700),
+              height: ((sizeConfig.height !== undefined) ? sizeConfig.height * pxPerMm : 500),
             };
 
             const drawEnv = {
               shifted: false,
               controlled: false,
-              changesMade: false
+              changesMade: false,
             };
 
             /*
              * CHECK IF THE USER IS LEAVING THE PAGE WITHOUT SAVING
              */
-            window.addEventListener('beforeunload', function (event) {
+            window.addEventListener('beforeunload', (event) => {
               if (drawEnv.changesMade) {
                 event.returnValue = 'Unsaved changes. Are you sure you want to leave?';
               }
             });
 
 
-            (function() {
+            (function () {
               #{file_content}
-            })();
+            }());
           </script>
         JS
       end
