@@ -1,3 +1,27 @@
+    <style>
+      fieldset.varFieldSet {
+        min-width: 30em;
+      }
+      div.varSetTypeGroup {
+        padding: 0.25em 0;
+      }
+      div.varSetFieldGroup {
+        padding: 0.25em 0;
+        display: flex;
+        align-items: center;
+      }
+      div.varSetFieldGroup label {
+        width: 12em;
+      }
+      div.varSetFieldGroup input[type="checkbox"] ~ label {
+        width: auto;
+        padding-left: 0.4em;
+      }
+      div.varSetFieldGroup .third {
+        margin-left: 12em;
+        position: absolute;
+      }
+    </style>
 <div class="top-toolbars">
   <div class="clearfix">
     <div class="info-bar mt2">
@@ -235,26 +259,111 @@
       <h1 id="dialogTitle">Variable settings</h1>
       <form class='variable-info-form'>
         <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
-        <fieldset>
-          <label for="vars"><strong>Variable type:</strong></label>
-          <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
-            <option value="">Select an option...</option>
-            <optgroup label="Static text">
-              <option value="Static Barcode">Static Barcode</option>
-            </optgroup>
-            <% @label_variable_types.each do |opt, var_types| %>
-            <optgroup label="<%= opt %>">
-            <% var_types.each do |var_type| %>
-              <option value="<%= var_type %>"><%= var_type %></option>
-            <% end %>
-            </optgroup>
-            <% end %>
-          </select>
-          <!-- p id="static_barcode2">
-            <label><strong>Barcode text</strong><br><input type="text" id="static_barcode_value2" name="static_barcode_value2" /></label>
-          </p-->
+        <fieldset class="varFieldSet">
+          <div class="varSetTypeGroup">
+            <label for="vars">Variable type</label>
+            <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+              <option value="">Select an option...</option>
+              <optgroup label="Static text">
+                <option value="Static Barcode">Static Barcode</option>
+              </optgroup>
+              <% @label_variable_types.each do |opt, var_types| %>
+              <optgroup label="<%= opt %>">
+              <% var_types.each do |var_type| %>
+                <option value="<%= var_type %>"><%= var_type %></option>
+              <% end %>
+              </optgroup>
+              <% end %>
+            </select>
+          </div>
+
+            <div class="varSetFieldGroup mt1" id="static_barcode">
+              <label for="static_barcode_value">Static Barcode text</label>
+              <input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
+            </div>
+            <div class="varSetFieldGroup">
+              <input type="checkbox" name="barcode_bool" id="barcode_bool" value="true">
+              <label for="barcode_bool">Is this a Barcode?</label>
+            </div>
+            <div class="barcode-options" style="display:none;">
+            <div class="varSetFieldGroup">
+              <input type="checkbox" name="barcode_text" id="barcode_text" value="true">
+              <label for="barcode_text">Show Barcode text at</label>
+              <select name="barcode_top" id="barcode_top" class="third">
+                <option selected="selected" value="true">Top</option>
+                <option value="false">Bottom</option>
+              </select>
+            </div>
+            <div class="varSetFieldGroup">
+            <label for="barcode_width_factor">Barcode width factor</label>
+            <select id="barcode_width_factor" name="barcode_width_factor">
+              <option value="1.0">1.0</option>
+              <option selected="selected" value="1.5">1.5</option>
+              <option value="2.0">2.0</option>
+              <option value="2.5">2.5</option>
+              <option value="3.0">3.0</option>
+              <option value="3.5">3.5</option>
+            </select>
+            </div>
+            <p>The barcode width factor controls the width of the barcode.<br>Please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
+            <div class="varSetFieldGroup">
+            <label for="barcode_margin">Margin size</label>
+            <select id="barcode_margin" name="barcode_margin">
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+            </select>
+            </div>
+            <div class="varSetFieldGroup">
+            <label for="barcode_symbology">Barcode Symbology</label>
+            <select class="form-control" id="barcode_symbology" name="barcode_symbology">
+              <option value="CODE_39">CODE 39</option>
+              <option value="CODE_128">CODE 128</option>
+              <option value="EAN_8">EAN 8</option>
+              <option value="EAN_13">EAN 13</option>
+              <option value="EAN_128">EAN 128</option>
+              <option value="UPC_A">UPCa</option>
+              <option value="UPC_E">UPCe</option>
+              <option value="QR_CODE">QR code</option>
+              <option value="PDF_417">PDF 417</option>
+              <option value="CODE_93">CODE 93</option>
+              <option value="UPC_EAN_EXTENSION">UPC/EAN Extension</option>
+              <option value="RSS_14">RSS 14</option>
+              <option value="RSS_EXPANDED">RSS Expanded</option>
+              <option value="DATA_MATRIX">Data Matrix</option>
+            </select>
+            </div>
+          </div>
+
+          <!--
           <table>
-            <!-- If tr starts hidden, it does not compute width based on all rows.... -->
             <tr id="static_barcode">
               <th style="width:10rem;text-align:left">Barcode text</th>
               <td colspan="2"><input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
@@ -336,6 +445,7 @@
               <% end %>
             </select>
           </div>
+          -->
         </fieldset>
         <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
           <!-- svg: zondi: save-disk -->
