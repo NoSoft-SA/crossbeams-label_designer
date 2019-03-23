@@ -237,8 +237,11 @@
         <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
         <fieldset>
           <label for="vars"><strong>Variable type:</strong></label>
-          <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+          <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
             <option value="">Select an option...</option>
+            <optgroup label="Static text">
+              <option value="Static Barcode">Static Barcode</option>
+            </optgroup>
             <% @label_variable_types.each do |opt, var_types| %>
             <optgroup label="<%= opt %>">
             <% var_types.each do |var_type| %>
@@ -247,47 +250,52 @@
             </optgroup>
             <% end %>
           </select>
-          <label><strong>Is this a Barcode?</strong></label><br>
-          <label>
+          <!-- p id="static_barcode2">
+            <label><strong>Barcode text</strong><br><input type="text" id="static_barcode_value2" name="static_barcode_value2" /></label>
+          </p-->
+          <table>
+            <!-- If tr starts hidden, it does not compute width based on all rows.... -->
+            <tr id="static_barcode">
+              <th style="width:10rem;text-align:left">Barcode text</th>
+              <td colspan="2"><input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
+            </td>
+          </tr>
+            <tr>
+              <th style="width:10rem;text-align:left">Is this a Barcode?</th>
+              <td><label>
             <input type="radio" name="barcode_bool" value="true"> Yes
-          </label>
-          <br>
+          </label></td><td>
           <label>
             <input type="radio" name="barcode_bool" value="false" checked="checked"> No
-          </label>
-          <br>
+    </label></td></tr></table>
           <div class="barcode-options" style="display:none;">
-            <strong>Show barcode text:</strong>
-            <br>
+          <table><tr>
+              <th style="width:10rem;text-align:left">Show barcode text?</th><td>
             <label>
               <input type="radio" name="barcode_text" value="true"> Yes
-            </label>
-            <br>
+            </label></td><td>
             <label>
               <input type="radio" name="barcode_text" value="false" checked="checked"> No
-            </label>
-            <br>
-            <strong>If Yes:</strong>
-            <br>
+        </label></td></tr>
+        <tr><th style="width:10rem;text-align:left">Text position</th><td>
             <label>
               <input type="radio" name="barcode_top" value="true"> Top
-            </label>
-            <br>
+            </label></td><td>
             <label>
               <input type="radio" name="barcode_top" value="false" checked="checked"> Bottom
             </label>
-            <br>
+      </td></tr></table>
             <label for="barcode_width_factor"><strong>Barcode width factor:</strong></label>
             <select id="barcode_width_factor" name="barcode_width_factor">
               <option value="1.0">1.0</option>
-              <option value="1.5">1.5</option>
-              <option selected="selected" value="2.0">2.0</option>
+              <option selected="selected" value="1.5">1.5</option>
+              <option value="2.0">2.0</option>
               <option value="2.5">2.5</option>
               <option value="3.0">3.0</option>
               <option value="3.5">3.5</option>
             </select><br>
-            <p>The barcode width factor controls the width of the barcode,<br> please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
-            <label for="barcode_margin"><strong>Margin size:</strong></label><br>
+            <p>The barcode width factor controls the width of the barcode.<br> Please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
+            <label for="barcode_margin"><strong>Margin size:</strong></label>
             <select id="barcode_margin" name="barcode_margin">
               <option value="5">5</option>
               <option value="6">6</option>
@@ -322,7 +330,6 @@
             </select>
             <br>
             <label for="barcode_symbology"><strong>Barcode Symbology:</strong></label>
-            <br>
             <select class="form-control" id="barcode_symbology" name="barcode_symbology">
               <% @barcode_types.each do |bc_type| %>
               <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
