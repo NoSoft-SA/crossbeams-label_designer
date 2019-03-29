@@ -216,3 +216,27 @@ label[for='canvas_width'], label[for='canvas_height'] {
 .popupwindow_container {
   z-index: 5;
 }
+/* --- Variable Dialog styling */
+fieldset.varFieldSet {
+  min-width: 30em;
+}
+div.varSetTypeGroup {
+  padding: 0.25em 0;
+}
+div.varSetFieldGroup {
+  padding: 0.25em 0;
+  display: flex;
+  align-items: center;
+}
+div.varSetFieldGroup label {
+  width: 12em;
+}
+div.varSetFieldGroup input[type="checkbox"] ~ label {
+  width: auto;
+  padding-left: 0.4em;
+}
+div.varSetFieldGroup .third {
+  margin-left: 12em;
+  position: absolute;
+}
+/* --- END of variable dialog styling */

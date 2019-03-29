@@ -1,27 +1,3 @@
-    <style>
-      fieldset.varFieldSet {
-        min-width: 30em;
-      }
-      div.varSetTypeGroup {
-        padding: 0.25em 0;
-      }
-      div.varSetFieldGroup {
-        padding: 0.25em 0;
-        display: flex;
-        align-items: center;
-      }
-      div.varSetFieldGroup label {
-        width: 12em;
-      }
-      div.varSetFieldGroup input[type="checkbox"] ~ label {
-        width: auto;
-        padding-left: 0.4em;
-      }
-      div.varSetFieldGroup .third {
-        margin-left: 12em;
-        position: absolute;
-      }
-    </style>
 <div class="top-toolbars">
   <div class="clearfix">
     <div class="info-bar mt2">
@@ -190,7 +166,7 @@
         </div>
       </div>
 
-      <textarea style="flex-grow:1" class="text-popup ml2" data-disabled="true" type="text" id="textinput" class="ml2 h3" data-option="textinput" title="Insert text here" placeholder="Insert text here..."></textarea>
+      <textarea style="flex-grow:1" class="text-popup ml2 h3" data-disabled="true" id="textinput" data-option="textinput" title="Insert text here" placeholder="Insert text here..."></textarea>
 
       <div class="ml2 flex">
         <div class="flex flex-column">
@@ -253,10 +229,10 @@
     <!-- HIDDEN DIALOG DEFINITIONS -->
 <div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
   <div class="dialog-overlay" tabindex="-1"></div>
-  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog" style="min-width:400px;min-height:400px">
+  <div class="dialog-content" aria-labelledby="dialogTitleV" role="dialog" style="min-width:400px;min-height:400px">
     <div role="document">
       <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-      <h1 id="dialogTitle">Variable settings</h1>
+      <h1 id="dialogTitleV">Variable settings</h1>
       <form class='variable-info-form'>
         <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
         <fieldset class="varFieldSet">
@@ -345,7 +321,7 @@
             <label for="barcode_symbology">Barcode Symbology</label>
             <select class="form-control" id="barcode_symbology" name="barcode_symbology">
               <option value="CODE_39">CODE 39</option>
-              <option value="CODE_128">CODE 128</option>
+              <option value="CODE_128" selected="selected">CODE 128</option>
               <option value="EAN_8">EAN 8</option>
               <option value="EAN_13">EAN 13</option>
               <option value="EAN_128">EAN 128</option>
@@ -460,10 +436,10 @@
 
 <div class="dialog" aria-hidden="true" id="image-dialog-form">
   <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
-  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+  <div class="dialog-content" aria-labelledby="dialogTitleI" role="dialog">
     <div role="document">
       <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-      <h1 id="dialogTitle">Image Uploader</h1>
+      <h1 id="dialogTitleI">Image Uploader</h1>
       <form class="upload-image">
         <p class='notice'>You have not selected a file.</p>
         <fieldset>
@@ -485,10 +461,10 @@
 
 <div class="dialog" aria-hidden="true" id="canvas-options-dialog-form">
   <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
-  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+  <div class="dialog-content" aria-labelledby="dialogTitleO" role="dialog">
     <div role="document">
       <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-      <h1 id="dialogTitle">Canvas Options</h1>
+      <h1 id="dialogTitleO">Canvas Options</h1>
       <form class="canvas-options">
         <p class='notice' style="display:none;">Some fields are invalid.</p>
         <fieldset>
@@ -515,7 +491,7 @@
   </div>
 </div>
 
-<div class="hidden-fonts" hidden-fonts="position:absolute;left:-900px;">
+<div class="hidden-fonts">
   <p class="Arial">Preload Font</p>
   <p class="ArialB">Preload Font</p>
   <p class="ArialBI">Preload Font</p>
