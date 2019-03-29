@@ -7,6 +7,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- The ability to create static barcode variables. These print as barcodes, but their value is fixed in the design, not dynamically applied at print time.
 ### Changed
 ### Fixed
 
