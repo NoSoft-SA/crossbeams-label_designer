@@ -166,7 +166,7 @@
         </div>
       </div>
 
-      <textarea style="flex-grow:1" class="text-popup ml2" data-disabled="true" type="text" id="textinput" class="ml2 h3" data-option="textinput" title="Insert text here" placeholder="Insert text here..."></textarea>
+      <textarea style="flex-grow:1" class="text-popup ml2 h3" data-disabled="true" id="textinput" data-option="textinput" title="Insert text here" placeholder="Insert text here..."></textarea>
 
       <div class="ml2 flex">
         <div class="flex flex-column">
@@ -229,65 +229,158 @@
     <!-- HIDDEN DIALOG DEFINITIONS -->
 <div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
   <div class="dialog-overlay" tabindex="-1"></div>
-  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog" style="min-width:400px;min-height:400px">
+  <div class="dialog-content" aria-labelledby="dialogTitleV" role="dialog" style="min-width:400px;min-height:400px">
     <div role="document">
       <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-      <h1 id="dialogTitle">Variable settings</h1>
+      <h1 id="dialogTitleV">Variable settings</h1>
       <form class='variable-info-form'>
         <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
-        <fieldset>
-          <label for="vars"><strong>Variable type:</strong></label>
-          <select class="form-control selectpicker searchable-select" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
-            <option value="">Select an option...</option>
-            <% @label_variable_types.each do |opt, var_types| %>
-            <optgroup label="<%= opt %>">
-            <% var_types.each do |var_type| %>
-              <option value="<%= var_type %>"><%= var_type %></option>
-            <% end %>
-            </optgroup>
-            <% end %>
-          </select>
-          <label><strong>Is this a Barcode?</strong></label><br>
-          <label>
+        <fieldset class="varFieldSet">
+          <div class="varSetTypeGroup">
+            <label for="vars">Variable type</label>
+            <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+              <option value="">Select an option...</option>
+              <optgroup label="Static text">
+                <option value="Static Barcode">Static Barcode</option>
+              </optgroup>
+              <% @label_variable_types.each do |opt, var_types| %>
+              <optgroup label="<%= opt %>">
+              <% var_types.each do |var_type| %>
+                <option value="<%= var_type %>"><%= var_type %></option>
+              <% end %>
+              </optgroup>
+              <% end %>
+            </select>
+          </div>
+
+            <div class="varSetFieldGroup mt1" id="static_barcode">
+              <label for="static_barcode_value">Static Barcode text</label>
+              <input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
+            </div>
+            <div class="varSetFieldGroup">
+              <input type="checkbox" name="barcode_bool" id="barcode_bool" value="true">
+              <label for="barcode_bool">Is this a Barcode?</label>
+            </div>
+            <div class="barcode-options" style="display:none;">
+            <div class="varSetFieldGroup">
+              <input type="checkbox" name="barcode_text" id="barcode_text" value="true">
+              <label for="barcode_text">Show Barcode text at</label>
+              <select name="barcode_top" id="barcode_top" class="third">
+                <option selected="selected" value="true">Top</option>
+                <option value="false">Bottom</option>
+              </select>
+            </div>
+            <div class="varSetFieldGroup">
+            <label for="barcode_width_factor">Barcode width factor</label>
+            <select id="barcode_width_factor" name="barcode_width_factor">
+              <option value="1.0">1.0</option>
+              <option selected="selected" value="1.5">1.5</option>
+              <option value="2.0">2.0</option>
+              <option value="2.5">2.5</option>
+              <option value="3.0">3.0</option>
+              <option value="3.5">3.5</option>
+            </select>
+            </div>
+            <p>The barcode width factor controls the width of the barcode.<br>Please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
+            <div class="varSetFieldGroup">
+            <label for="barcode_margin">Margin size</label>
+            <select id="barcode_margin" name="barcode_margin">
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="35">35</option>
+              <option value="40">40</option>
+              <option value="45">45</option>
+              <option value="50">50</option>
+            </select>
+            </div>
+            <div class="varSetFieldGroup">
+            <label for="barcode_symbology">Barcode Symbology</label>
+            <select class="form-control" id="barcode_symbology" name="barcode_symbology">
+              <option value="CODE_39">CODE 39</option>
+              <option value="CODE_128" selected="selected">CODE 128</option>
+              <option value="EAN_8">EAN 8</option>
+              <option value="EAN_13">EAN 13</option>
+              <option value="EAN_128">EAN 128</option>
+              <option value="UPC_A">UPCa</option>
+              <option value="UPC_E">UPCe</option>
+              <option value="QR_CODE">QR code</option>
+              <option value="PDF_417">PDF 417</option>
+              <option value="CODE_93">CODE 93</option>
+              <option value="UPC_EAN_EXTENSION">UPC/EAN Extension</option>
+              <option value="RSS_14">RSS 14</option>
+              <option value="RSS_EXPANDED">RSS Expanded</option>
+              <option value="DATA_MATRIX">Data Matrix</option>
+            </select>
+            </div>
+          </div>
+
+          <!--
+          <table>
+            <tr id="static_barcode">
+              <th style="width:10rem;text-align:left">Barcode text</th>
+              <td colspan="2"><input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
+            </td>
+          </tr>
+            <tr>
+              <th style="width:10rem;text-align:left">Is this a Barcode?</th>
+              <td><label>
             <input type="radio" name="barcode_bool" value="true"> Yes
-          </label>
-          <br>
+          </label></td><td>
           <label>
             <input type="radio" name="barcode_bool" value="false" checked="checked"> No
-          </label>
-          <br>
+    </label></td></tr></table>
           <div class="barcode-options" style="display:none;">
-            <strong>Show barcode text:</strong>
-            <br>
+          <table><tr>
+              <th style="width:10rem;text-align:left">Show barcode text?</th><td>
             <label>
               <input type="radio" name="barcode_text" value="true"> Yes
-            </label>
-            <br>
+            </label></td><td>
             <label>
               <input type="radio" name="barcode_text" value="false" checked="checked"> No
-            </label>
-            <br>
-            <strong>If Yes:</strong>
-            <br>
+        </label></td></tr>
+        <tr><th style="width:10rem;text-align:left">Text position</th><td>
             <label>
               <input type="radio" name="barcode_top" value="true"> Top
-            </label>
-            <br>
+            </label></td><td>
             <label>
               <input type="radio" name="barcode_top" value="false" checked="checked"> Bottom
             </label>
-            <br>
+      </td></tr></table>
             <label for="barcode_width_factor"><strong>Barcode width factor:</strong></label>
             <select id="barcode_width_factor" name="barcode_width_factor">
               <option value="1.0">1.0</option>
-              <option value="1.5">1.5</option>
-              <option selected="selected" value="2.0">2.0</option>
+              <option selected="selected" value="1.5">1.5</option>
+              <option value="2.0">2.0</option>
               <option value="2.5">2.5</option>
               <option value="3.0">3.0</option>
               <option value="3.5">3.5</option>
             </select><br>
-            <p>The barcode width factor controls the width of the barcode,<br> please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
-            <label for="barcode_margin"><strong>Margin size:</strong></label><br>
+            <p>The barcode width factor controls the width of the barcode.<br> Please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
+            <label for="barcode_margin"><strong>Margin size:</strong></label>
             <select id="barcode_margin" name="barcode_margin">
               <option value="5">5</option>
               <option value="6">6</option>
@@ -322,13 +415,13 @@
             </select>
             <br>
             <label for="barcode_symbology"><strong>Barcode Symbology:</strong></label>
-            <br>
             <select class="form-control" id="barcode_symbology" name="barcode_symbology">
               <% @barcode_types.each do |bc_type| %>
               <option value="<%= bc_type[0] %>"><%= bc_type[1] %></option>
               <% end %>
             </select>
           </div>
+          -->
         </fieldset>
         <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
           <!-- svg: zondi: save-disk -->
@@ -343,10 +436,10 @@
 
 <div class="dialog" aria-hidden="true" id="image-dialog-form">
   <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
-  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+  <div class="dialog-content" aria-labelledby="dialogTitleI" role="dialog">
     <div role="document">
       <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-      <h1 id="dialogTitle">Image Uploader</h1>
+      <h1 id="dialogTitleI">Image Uploader</h1>
       <form class="upload-image">
         <p class='notice'>You have not selected a file.</p>
         <fieldset>
@@ -368,10 +461,10 @@
 
 <div class="dialog" aria-hidden="true" id="canvas-options-dialog-form">
   <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
-  <div class="dialog-content" aria-labelledby="dialogTitle" aria-describedby="dialogDescription" role="dialog">
+  <div class="dialog-content" aria-labelledby="dialogTitleO" role="dialog">
     <div role="document">
       <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
-      <h1 id="dialogTitle">Canvas Options</h1>
+      <h1 id="dialogTitleO">Canvas Options</h1>
       <form class="canvas-options">
         <p class='notice' style="display:none;">Some fields are invalid.</p>
         <fieldset>
@@ -398,7 +491,7 @@
   </div>
 </div>
 
-<div class="hidden-fonts" hidden-fonts="position:absolute;left:-900px;">
+<div class="hidden-fonts">
   <p class="Arial">Preload Font</p>
   <p class="ArialB">Preload Font</p>
   <p class="ArialBI">Preload Font</p>

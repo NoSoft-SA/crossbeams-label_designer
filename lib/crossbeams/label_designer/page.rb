@@ -71,7 +71,7 @@ module Crossbeams
           file_content << File.read(file, encoding: 'UTF-8')
         end
         eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
-          <script type="text/javascript">
+          <script>
             let MyLabel;
             let Library;
             let Canvas;
