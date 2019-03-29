@@ -10,6 +10,10 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.2.0] - 2019-03-29
+### Added
+- The ability to create static barcode variables. These print as barcodes, but their value is fixed in the design, not dynamically applied at print time.
+
 ## [0.1.8] - 2019-01-04
 ### Added
 - Barcode width factor 1.0.
