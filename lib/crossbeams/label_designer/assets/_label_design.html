@@ -240,6 +240,11 @@
             <label for="vars">Variable type</label>
             <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
               <option value="">Select an option...</option>
+              <% if @allow_compound_variable %>
+              <optgroup label="Compound">
+                <option value="Compound Variable">Compound Variable</option>
+              </optgroup>
+              <% end %>
               <optgroup label="Static text">
                 <option value="Static Barcode">Static Barcode</option>
               </optgroup>
@@ -253,11 +258,59 @@
             </select>
           </div>
 
+          <div id="compound_vars" hidden>
+            <p>
+              Build up a compound variable here by adding variables and typed-in text.
+            </p>
+            <div>
+              <label for="varsCmp">Variable</label><br>
+              <div class="flex">
+                <div style="flex-grow:1">
+                <select class="form-control selectpicker" id="varsCmp" data-max-options="1">
+                  <% @label_variable_types.each do |opt, var_types| %>
+                  <% next if opt == 'Custom' %>
+                  <optgroup label="<%= opt %>">
+                  <% var_types.each do |var_type| %>
+                    <option value="<%= var_type %>"><%= var_type %></option>
+                  <% end %>
+                  </optgroup>
+                  <% end %>
+                </select>
+              </div>
+                <button type="button" name="add_compound_sel" title="Add the selected variable" class='dim br2 pa2 dib white bg-silver'>
+                  <!-- svg: zondi: plus -->
+                  <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-416v416q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-416h-416q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h416v-416q0-40 28-68t68-28h192q40 0 68 28t28 68v416h416q40 0 68 28t28 68z"/></svg> Add
+                </button>
+              </div>
+            </div>
+            <div class="mt1">
+              <label for="textCmp">Text (remember to include spaces if required)</label><br>
+              <div class="flex">
+                <input type="text" id="textCmp" name="text_for_compound" style="flex-grow:1" class="cbl-input"/>
+                <button type="button" name="add_compound_txt" title="Add the entered text" class='dim br2 pa2 dib white bg-silver'>
+                  <!-- svg: zondi: plus -->
+                  <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-416v416q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-416h-416q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h416v-416q0-40 28-68t68-28h192q40 0 68 28t28 68v416h416q40 0 68 28t28 68z"/></svg> Add
+                </button>
+              </div>
+            </div>
+            <div>
+              <label>Layout of this compound variable:</label>
+              <div class="flex">
+                <div id="compound_display" style="flex-grow:1" class="pa2 ba dib b-gray bg-moon-gray"></div>
+                <button type="button" name="clear_compound" title="Clear the compound variable" class='ml0 dim br2 pa2 dib white bg-silver'>
+                  <!-- svg: zondi: trash -->
+                  <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg> Clear
+                </button>
+              </div>
+            </div>
+            <input type="hidden" id="compound_result" name="compound_result">
+          </div>
+
             <div class="varSetFieldGroup mt1" id="static_barcode">
               <label for="static_barcode_value">Static Barcode text</label>
               <input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
             </div>
-            <div class="varSetFieldGroup">
+            <div id="barcode_bool_wrapper" class="varSetFieldGroup">
               <input type="checkbox" name="barcode_bool" id="barcode_bool" value="true">
               <label for="barcode_bool">Is this a Barcode?</label>
             </div>

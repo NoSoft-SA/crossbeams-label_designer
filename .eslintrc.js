@@ -19,6 +19,7 @@ module.exports = {
   globals: {
     swal: false,
     agGrid: false,
+    Selectr: false,
     Konva: false,
     Clipboard: false,
     MyLabel: false,

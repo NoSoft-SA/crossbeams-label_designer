@@ -35,6 +35,7 @@ module Crossbeams
         @barcode_types = Constants::BARCODE_TYPES
         @font_sizes = font_sizes
         @label_variable_types = Config.config.label_variable_types
+        @allow_compound_variable = Config.config.allow_compound_variable
 
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
         eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
