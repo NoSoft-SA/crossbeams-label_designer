@@ -10,6 +10,10 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.2.1] - 2019-04-16
+### Added
+- Compound variables can be designed by building up a variable from other variables and arbitrary text.
+
 ## [0.2.0] - 2019-03-29
 ### Added
 - The ability to create static barcode variables. These print as barcodes, but their value is fixed in the design, not dynamically applied at print time.

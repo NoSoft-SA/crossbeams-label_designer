@@ -3,6 +3,8 @@ module Crossbeams
     class Config
       extend Dry::Configurable
 
+      setting :allow_compound_variable, true
+
       setting :label_sizes, [
         { 'name' => '8464', 'mm_size' => { 'width': '84', 'height': '64' } },
         { 'name' => '10070', 'mm_size' => { 'width': '100', 'height': '70' } }
