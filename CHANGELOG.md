@@ -7,9 +7,12 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
-- Compound variables can be designed by building up a variable from other variables and arbitrary text.
 ### Changed
 ### Fixed
+
+## [0.2.1] - 2019-04-16
+### Added
+- Compound variables can be designed by building up a variable from other variables and arbitrary text.
 
 ## [0.2.0] - 2019-03-29
 ### Added
