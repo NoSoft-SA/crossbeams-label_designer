@@ -36,6 +36,7 @@ module Crossbeams
         @font_sizes = font_sizes
         @label_variable_types = Config.config.label_variable_types
         @allow_compound_variable = Config.config.allow_compound_variable
+        @px_per_mm = px_per_mm
 
         file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
         eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
@@ -100,8 +101,8 @@ module Crossbeams
 
             const sizeConfig = labelSizes[labelConfig.labelDimension];
             let MyLabelSize = {
-              width: ((sizeConfig.width !== undefined) ? sizeConfig.width * pxPerMm : 700),
-              height: ((sizeConfig.height !== undefined) ? sizeConfig.height * pxPerMm : 500),
+              width: ((sizeConfig.width !== undefined) ? (sizeConfig.width -1) * pxPerMm : 700),
+              height: ((sizeConfig.height !== undefined) ? (sizeConfig.height -1) * pxPerMm : 500),
             };
 
             const drawEnv = {

@@ -8,6 +8,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+- Label margins introduced. All label work areas are reduced by (1mm * px/mm) in width and height. A border displays where the margin is.
 ### Fixed
 
 ## [0.2.1] - 2019-04-16
