@@ -8,8 +8,11 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
-- Use the Choices.js library instead of Selectr.js library for decorating select boxes.
 ### Fixed
+
+## [0.2.3] - 2019-06-28
+### Changed
+- Use the Choices.js library instead of Selectr.js library for decorating select boxes.
 
 ## [0.2.2] - 2019-06-11
 ### Changed
