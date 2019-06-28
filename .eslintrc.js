@@ -20,6 +20,7 @@ module.exports = {
     swal: false,
     agGrid: false,
     Selectr: false,
+    Choices: false,
     Konva: false,
     Clipboard: false,
     MyLabel: false,
