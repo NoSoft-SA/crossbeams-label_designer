@@ -10,6 +10,10 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [0.2.3] - 2019-06-28
+### Changed
+- Use the Choices.js library instead of Selectr.js library for decorating select boxes.
+
 ## [0.2.2] - 2019-06-11
 ### Changed
 - Label margins introduced. All label work areas are reduced by (1mm * px/mm) in width and height. A border displays where the margin is.
