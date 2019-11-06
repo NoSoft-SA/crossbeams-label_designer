@@ -9,6 +9,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Changed
 ### Fixed
+- Select for compound fields was being cleared of items.
 
 ## [0.2.3] - 2019-06-28
 ### Changed
