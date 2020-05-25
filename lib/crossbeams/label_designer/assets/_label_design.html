@@ -325,14 +325,15 @@
             </div>
             <div class="varSetFieldGroup">
             <label for="barcode_width_factor">Barcode width factor</label>
-            <select id="barcode_width_factor" name="barcode_width_factor">
-              <option value="1.0">1.0</option>
-              <option selected="selected" value="1.5">1.5</option>
-              <option value="2.0">2.0</option>
-              <option value="2.5">2.5</option>
-              <option value="3.0">3.0</option>
-              <option value="3.5">3.5</option>
-            </select>
+            <input type="number" id="barcode_width_factor" name="barcode_width_factor" min="1" max="3.5" value="1.8" list="barcode_width_factor_suggest" step="0.1">
+            <datalist id="barcode_width_factor_suggest">
+              <option value="1.0">
+              <option value="1.5">
+              <option value="2.0">
+              <option value="2.5">
+              <option value="3.0">
+              <option value="3.5">
+            </datalist>
             </div>
             <p>The barcode width factor controls the width of the barcode.<br>Please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
             <div class="varSetFieldGroup">

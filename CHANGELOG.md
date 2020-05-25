@@ -8,6 +8,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+- Barcode width format set in increments of 0.1 instead of 0.5.
 ### Fixed
 - Select for compound fields was being cleared of items.
 

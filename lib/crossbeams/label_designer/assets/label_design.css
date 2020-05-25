@@ -239,4 +239,7 @@ div.varSetFieldGroup .third {
   margin-left: 12em;
   position: absolute;
 }
+#barcode_width_factor {
+  width: 5em;
+}
 /* --- END of variable dialog styling */
