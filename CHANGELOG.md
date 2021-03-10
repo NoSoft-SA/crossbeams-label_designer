@@ -7,6 +7,11 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+### Changed
+### Fixed
+
+## [0.2.4] - 2021-03-10
+### Added
 - White-on-black option for variables. If set, the variable will be printed using white text.
 ### Changed
 - Barcode width format set in increments of 0.1 instead of 0.5.
