@@ -22,9 +22,12 @@ module Crossbeams
       #    str = Erubi::Engine.new(File.load(...))
       #    eval(str.src)
       def px_per_mm
-        ppmm = JSON.parse(Config.config.label_config)['pixelPerMM'].to_i
-        allowed_values = Config.config.printer_settings.map { |ps| ps['px_per_mm'].to_i }
-        allowed_values.include?(ppmm) ? ppmm : allowed_values[0]
+        # ppmm = JSON.parse(Config.config.label_config)['pixelPerMM'].to_i
+        # allowed_values = Config.config.printer_settings.map { |ps| ps['px_per_mm'].to_i }
+        # allowed_values.include?(ppmm) ? ppmm : allowed_values[0]
+        raise %(Pixels per mm value of "#{Config.config.pixels_mm}" is not allowed) unless [8, 12].include?(Config.config.pixels_mm)
+
+        Config.config.pixels_mm
       end
 
       def font_sizes
@@ -38,94 +41,141 @@ module Crossbeams
         @allow_compound_variable = Config.config.allow_compound_variable
         @px_per_mm = px_per_mm
 
-        file = File.join(File.dirname(__FILE__), 'assets/_label_design.html')
+        file = File.join(File.dirname(__FILE__), 'assets/_designer.html')
         eval(Erubi::Engine.new(<<-HTML).src).encode('UTF-8').freeze
           #{File.read(file, encoding: 'UTF-8')}
         HTML
       end
 
       def javascript # rubocop:disable Metrics/AbcSize
-        @label_config = Config.config.label_config
-        @label_sizes = Config.config.label_sizes
-        @font_sizes_json = font_sizes.to_json
-        @default_font_px = font_sizes.key(8)
-        @default_font_pt = 8
-        @label_variable_types_json = Config.config.label_variable_types.to_json
-        @px_per_mm = px_per_mm
+        # @label_config = Config.config.label_config # include version (1 for new, else from label... --> this should just be the labelJSON
+        # @label_sizes = Config.config.label_sizes
+        # @font_sizes_json = font_sizes.to_json
+        # @default_font_px = font_sizes.key(8)
+        # @default_font_pt = 8
+        # @label_variable_types_json = Config.config.label_variable_types.to_json
+        # @px_per_mm = px_per_mm
+        # cf = JSON.parse(@label_config)
+        # ls = JSON.parse(@label_sizes)
+        # @w = ls[cf['labelDimension']]['width']
+        # @h = ls[cf['labelDimension']]['height']
+        # p ls[cf['labelDimension']]
+        # p cf
+        # @w = 100
+        # @h = 100
         file_content = ''
-        [
-          'assets/javascripts/variable_settings.js',
-          'assets/javascripts/resize.js',
-          'assets/javascripts/text_settings.js',
-          'assets/javascripts/image_uploader.js',
-          'assets/javascripts/undo_engine.js',
-          'assets/javascripts/undo_redo_module.js',
-          'assets/javascripts/canvas.js',
-          'assets/javascripts/positioner.js',
-          'assets/javascripts/shortcuts.js',
-          'assets/javascripts/label_options.js',
-          'assets/javascripts/draw_app.js',
-          'assets/javascripts/clipboard.js',
-          'assets/javascripts/library.js',
-          'assets/javascripts/label_design.js'
-        ].each do |filename|
-          file = File.join(File.dirname(__FILE__), filename)
-          file_content << File.read(file, encoding: 'UTF-8')
-        end
-        eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
+        # [
+        #   'assets/javascripts/variable_settings.js',
+        #   'assets/javascripts/resize.js',
+        #   'assets/javascripts/text_settings.js',
+        #   'assets/javascripts/image_uploader.js',
+        #   'assets/javascripts/undo_engine.js',
+        #   'assets/javascripts/undo_redo_module.js',
+        #   'assets/javascripts/canvas.js',
+        #   'assets/javascripts/positioner.js',
+        #   'assets/javascripts/shortcuts.js',
+        #   'assets/javascripts/label_options.js',
+        #   'assets/javascripts/draw_app.js',
+        #   'assets/javascripts/clipboard.js',
+        #   'assets/javascripts/library.js',
+        #   'assets/javascripts/label_design.js'
+        # ].each do |filename|
+        #   file = File.join(File.dirname(__FILE__), filename)
+        #   file_content << File.read(file, encoding: 'UTF-8')
+        # end
+        #     const labelSizes = <%= @label_sizes %>;
+        #     const fontSizes = <%= @font_sizes_json %>;
+        #     // const labelVariableTypes = <%= @label_variable_types_json %>;
+        #     const pxPerMm = <%= @px_per_mm %>;
+        #     const fontDefaultPx = <%= @default_font_px %>;
+        #     const fontDefaultPt = <%= @default_font_pt %>;
+        #
+        #     const sizeConfig = labelSizes[labelConfig.labelDimension];
+        loader = Config.config.label_json ? "LabelDesigner.load(#{Config.config.label_json});" : ''
+        # eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
+
+        <<~JS.encode('UTF-8').freeze
           <script>
-            let MyLabel;
-            let Library;
-            let Canvas;
-            let Clipboard;
-            let DrawApp;
-            let Positioner;
-            let UndoEngine;
-            let UndoRedoModule;
-            // let LabelOptions;
-            // let Shortcuts;
-            let ImageUploader;
-            let MyImages;
-            let VariableSettings;
-            let TextSettings;
-            // let Shape;
-            // let Label;
-
-            const labelConfig = <%= @label_config %>;
-            const labelSizes = <%= @label_sizes %>;
-            const fontSizes = <%= @font_sizes_json %>;
-            // const labelVariableTypes = <%= @label_variable_types_json %>;
-            const pxPerMm = <%= @px_per_mm %>;
-            const fontDefaultPx = <%= @default_font_px %>;
-            const fontDefaultPt = <%= @default_font_pt %>;
-
-            const sizeConfig = labelSizes[labelConfig.labelDimension];
-            let MyLabelSize = {
-              width: ((sizeConfig.width !== undefined) ? (sizeConfig.width -1) * pxPerMm : 700),
-              height: ((sizeConfig.height !== undefined) ? (sizeConfig.height -1) * pxPerMm : 500),
-            };
-
-            const drawEnv = {
-              shifted: false,
-              controlled: false,
-              changesMade: false,
+            const labelConfig = {
+              labelName: '#{Config.config.label_name}',
+              width: #{Config.config.width},
+              height: #{Config.config.height},
+              labelDimension: '#{Config.config.label_dimension}',
+              pxPerMm: #{px_per_mm},
+              // helpURL: '/help/system/rmd/rmd_properties', // PART OF OPTIONS MENU?
+              savePath: '#{Config.config.save_path}',
             };
 
             /*
              * CHECK IF THE USER IS LEAVING THE PAGE WITHOUT SAVING
              */
             window.addEventListener('beforeunload', (event) => {
-              if (drawEnv.changesMade) {
+              if (LabelDesigner.changesMade()) {
                 event.returnValue = 'Unsaved changes. Are you sure you want to leave?';
+              }
+              if (LabelDesigner.hasUnsetVariables()) {
+                event.returnValue = 'Some variables have not been set. Are you sure you want to leave?';
               }
             });
 
-
-            (function () {
-              #{file_content}
-            }());
+            LabelDesigner.init(labelConfig);
+            #{loader}
           </script>
         JS
+        # eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
+        #   <script>
+        #     let MyLabel;
+        #     let Library;
+        #     let Canvas;
+        #     let Clipboard;
+        #     let DrawApp;
+        #     let Positioner;
+        #     let UndoEngine;
+        #     let UndoRedoModule;
+        #     // let LabelOptions;
+        #     // let Shortcuts;
+        #     let ImageUploader;
+        #     let MyImages;
+        #     let VariableSettings;
+        #     let TextSettings;
+        #     // let Shape;
+        #     // let Label;
+        #
+        #     const labelConfig = <%= @label_config %>;
+        #     const labelSizes = <%= @label_sizes %>;
+        #     const fontSizes = <%= @font_sizes_json %>;
+        #     // const labelVariableTypes = <%= @label_variable_types_json %>;
+        #     const pxPerMm = <%= @px_per_mm %>;
+        #     const fontDefaultPx = <%= @default_font_px %>;
+        #     const fontDefaultPt = <%= @default_font_pt %>;
+        #
+        #     const sizeConfig = labelSizes[labelConfig.labelDimension];
+        #     let MyLabelSize = {
+        #       width: ((sizeConfig.width !== undefined) ? (sizeConfig.width -1) * pxPerMm : 700),
+        #       height: ((sizeConfig.height !== undefined) ? (sizeConfig.height -1) * pxPerMm : 500),
+        #     };
+        #
+        #     const drawEnv = {
+        #       shifted: false,
+        #       controlled: false,
+        #       changesMade: false,
+        #     };
+        #
+        #     /*
+        #      * CHECK IF THE USER IS LEAVING THE PAGE WITHOUT SAVING
+        #      */
+        #     window.addEventListener('beforeunload', (event) => {
+        #       if (drawEnv.changesMade) {
+        #         event.returnValue = 'Unsaved changes. Are you sure you want to leave?';
+        #       }
+        #     });
+        #
+        #
+        #     (function () {
+        #       #{file_content}
+        #     }());
+        #   </script>
+        # JS
       end
 
       def css

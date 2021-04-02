@@ -3,6 +3,7 @@ require 'dry/configurable'
 require 'crossbeams/label_designer/version'
 require 'crossbeams/label_designer/config'
 require 'crossbeams/label_designer/page'
+require 'crossbeams/label_designer/variable_xml'
 require 'erubi'
 
 module Crossbeams
