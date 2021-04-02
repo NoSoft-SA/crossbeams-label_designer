@@ -94,6 +94,7 @@ module Crossbeams
         loader = Config.config.label_json ? "LabelDesigner.load(#{Config.config.label_json});" : ''
         # eval(Erubi::Engine.new(<<~JS).src).encode('UTF-8').freeze
 
+        help_url = Config.config.help_url ? "'#{Config.config.help_url}'" : 'undefined'
         <<~JS.encode('UTF-8').freeze
           <script>
             const labelConfig = {
@@ -102,7 +103,7 @@ module Crossbeams
               height: #{Config.config.height},
               labelDimension: '#{Config.config.label_dimension}',
               pxPerMm: #{px_per_mm},
-              // helpURL: '/help/system/rmd/rmd_properties', // PART OF OPTIONS MENU?
+              helpURL: #{help_url},
               savePath: '#{Config.config.save_path}',
             };
 
