@@ -114,9 +114,9 @@ module Crossbeams
               if (LabelDesigner.changesMade()) {
                 event.returnValue = 'Unsaved changes. Are you sure you want to leave?';
               }
-              if (LabelDesigner.hasUnsetVariables()) {
-                event.returnValue = 'Some variables have not been set. Are you sure you want to leave?';
-              }
+              // if (LabelDesigner.hasUnsetVariables()) {
+              //   event.returnValue = 'Some variables have not been set. Are you sure you want to leave?';
+              // }
             });
 
             LabelDesigner.init(labelConfig);
