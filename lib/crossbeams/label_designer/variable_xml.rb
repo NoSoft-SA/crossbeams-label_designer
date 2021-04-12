@@ -1,5 +1,6 @@
 module Crossbeams
   module LabelDesigner
+    # Parse the JSON from a label design and generate XML that describes the variables.
     class VariableXML
       attr_reader :formatted_name, :label_def, :var_cnt, :font_sizes, :px_per_mm
 
@@ -48,7 +49,6 @@ module Crossbeams
         end
         if pretty
           builder.to_xml(save_with: Nokogiri::XML::Node::SaveOptions::NO_EMPTY_TAGS | Nokogiri::XML::Node::SaveOptions::FORMAT)
-          # builder.to_xml
         else
           builder.to_xml(save_with: Nokogiri::XML::Node::SaveOptions::NO_EMPTY_TAGS | Nokogiri::XML::Node::SaveOptions::AS_XML)
         end

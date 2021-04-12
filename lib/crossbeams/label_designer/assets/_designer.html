@@ -167,6 +167,7 @@
                   </button>
                   <div class="options-dropdown-content">
                     <a data-menu="off" href="#" disabled="" id="set-variable-opt">Variable settings</a>
+                    <a data-menu="off" href="#" disabled="" id="send-to-back-opt">Move to bottom</button>
                     <a data-menu="on" class='btn-download-image' href="#" id="btn-download-image" target='_blank' download='png_example.png'>Download Image</a>
                   </div>
                 </div>
@@ -205,8 +206,8 @@
             </div>
             <div id="varMenu" style="display:none">
               <div>
-                <button id="set-variable">Variable settings</button>
-                <!--<button id="delete-button">Delete</button> -->
+                <button id="set-variable" data-filter="variable">Variable settings</button>
+                <button id="send-to-back" data-filter="singleSelect">Move to bottom</button>
               </div>
             </div>
           </div>

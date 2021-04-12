@@ -8,6 +8,8 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+- Upgrade Konva library
+- Refactor for version 1.0.0.
 ### Fixed
 
 ## [0.2.4] - 2021-03-10

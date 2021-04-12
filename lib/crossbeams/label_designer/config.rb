@@ -56,15 +56,6 @@ module Crossbeams
               'Variety' => ['Variety', 'Variety Short Description', 'Variety Medium Description', 'Variety Long Description', 'Variety TM Description'],
               'Voice Code' => ['Voice Code Large digits', 'Voice Code Small digits']
 
-      setting(:label_config,
-              labelState: 'new', # new, edit, copy, preview
-              labelName: 'xxx',
-              savePath: '/xyz',
-              labelDimension: '8464',
-              id: 1,
-              pixelPerMM: '8',
-              labelJSON: {})
-
       setting(:save_path, nil)
       setting(:label_name, 'test_label')
       setting(:width, 100)
