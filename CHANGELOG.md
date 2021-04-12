@@ -10,6 +10,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 - Upgrade Konva library
 - Refactor for version 1.0.0.
+- Rake task to upgrade application's label designer javascript from gem.
 ### Fixed
 
 ## [0.2.4] - 2021-03-10
