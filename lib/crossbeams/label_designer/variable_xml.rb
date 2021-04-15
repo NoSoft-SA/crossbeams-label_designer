@@ -27,6 +27,12 @@ module Crossbeams
                 var_id = 0
                 xml.variables do
                   label_def[:nodes].select { |n| n[:name] == 'variableBox' }.each do |node|
+                    # Convert decimal dimensions to ints
+                    node[:x] = node[:x].round
+                    node[:y] = node[:y].round
+                    node[:width] = node[:width].round
+                    node[:height] = node[:height].round
+
                     var_id += 1
                     if node[:varAttrs][:staticValue].nil?
                       xml.variable do
@@ -61,6 +67,37 @@ module Crossbeams
         xml.rotation_angle node[:rotation]
         xml.startx node[:x]
         xml.starty node[:y]
+        # Baseline is calculated as dropping the line from Y by the fontSize.
+        # However this (probably) does not account for the descender being part of the size.
+        # Ideally we would use cap height instead of font size, but how to calculate that?
+        # (get the cap-height-ratio for each font?) [about 70% ???]
+        # Arial: 0.72
+        # Courier: 0.635
+        # Times: 0.66
+        cap_height = case node[:fontFamily]
+                     when 'Arial'
+                       (node[:fontSize] * 0.72).round
+                     when 'Times New Roman'
+                       (node[:fontSize] * 0.63).round
+                     when 'Courier New'
+                       (node[:fontSize] * 0.66).round
+                     else
+                       node[:fontSize]
+                     end
+        case node[:rotation]
+        when 90
+          xml.baseline_x node[:x] - cap_height
+          xml.baseline_y node[:y]
+        when 180
+          xml.baseline_x node[:x]
+          xml.baseline_y node[:y] - cap_height
+        when 270
+          xml.baseline_x node[:x] + cap_height
+          xml.baseline_y node[:y]
+        else
+          xml.baseline_x node[:x]
+          xml.baseline_y node[:y] + cap_height
+        end
         xml.width node[:width]
         xml.height node[:height]
         xml.white_on_black node[:varAttrs][:whiteOnBlack]
