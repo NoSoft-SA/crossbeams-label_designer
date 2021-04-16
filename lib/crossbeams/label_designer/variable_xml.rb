@@ -23,6 +23,7 @@ module Crossbeams
                   xml.image_height label_def[:height] + px_per_mm
                   xml.variable_count var_cnt
                   xml.orientation 'landscape'
+                  xml.label_version 2
                 end
                 var_id = 0
                 xml.variables do
@@ -65,8 +66,6 @@ module Crossbeams
       def variable_xml(xml, node) # rubocop:disable Metrics/AbcSize
         xml.variable_type node[:varType]
         xml.rotation_angle node[:rotation]
-        xml.startx node[:x]
-        xml.starty node[:y]
         # Baseline is calculated as dropping the line from Y by the fontSize.
         # However this (probably) does not account for the descender being part of the size.
         # Ideally we would use cap height instead of font size, but how to calculate that?
@@ -86,15 +85,23 @@ module Crossbeams
                      end
         case node[:rotation]
         when 90
+          xml.startx node[:x] - node[:height]
+          xml.starty node[:y]
           xml.baseline_x node[:x] - cap_height
           xml.baseline_y node[:y]
         when 180
+          xml.startx node[:x] - node[:width]
+          xml.starty node[:y] - node[:height]
           xml.baseline_x node[:x]
           xml.baseline_y node[:y] - cap_height
         when 270
+          xml.startx node[:x]
+          xml.starty node[:y] - node[:width]
           xml.baseline_x node[:x] + cap_height
           xml.baseline_y node[:y]
         else
+          xml.startx node[:x]
+          xml.starty node[:y]
           xml.baseline_x node[:x]
           xml.baseline_y node[:y] + cap_height
         end

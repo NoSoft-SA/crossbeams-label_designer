@@ -22,8 +22,9 @@ fin_img = img.sub('.png', '_filled.png')
 
 LKP = { 'Arial' => 'arial', 'Times New Roman' => 'times-new-roman', 'Courier New' => 'courier-new' }.freeze
 
-cmd = ["convert #{img} -fill '#000000'"]
-draw = []
+cmd = ["convert #{img}"]
+txt = ["-fill '#000000' -stroke none"]
+drw = ["-fill none -stroke '#188FA7' -strokewidth 2"]
 
 curr_font = nil
 curr_size = nil
@@ -36,24 +37,29 @@ doc.xpath('//variable').each do |var| # rubocop:disable Metrics/BlockLength
   svar = var.at_xpath('static_value')
   static = svar ? var.content : nil
   barcode = var.at_xpath('barcode').content == 'true'
-  draw << "-draw \"rectangle #{sx},#{sy} #{sx + w},#{sy + h}\""
+  rot = var.at_xpath('rotation_angle').content.to_i
+
+  drw << if [90, 270].include?(rot)
+           "-draw \"rectangle #{sx},#{sy} #{sx + h},#{sy + w}\""
+         else
+           "-draw \"rectangle #{sx},#{sy} #{sx + w},#{sy + h}\""
+         end
 
   x = var.at_xpath('baseline_x').content.to_i
   y = var.at_xpath('baseline_y').content.to_i
-  rot = var.at_xpath('rotation_angle').content.to_i
   size = var.at_xpath('fontsize_px').content.to_i
   font = var.at_xpath('fontfamily').content
   f_no = var.at_xpath('variable_field_count').content
   if font != curr_font
     curr_font = font
-    cmd << "-font '#{LKP[font]}'"
+    txt << "-font '#{LKP[font]}'"
   end
   if size != curr_size
     curr_size = size
-    cmd << "-pointsize '#{size}'"
+    txt << "-pointsize '#{size}'"
   end
   puts "#{f_no}: #{rot} #{x},#{y}"
-  cmd << if static.nil?
+  txt << if static.nil?
            if barcode
              "-annotate #{rot}x#{rot}+#{x}+#{y} \"Barcode for #{f_no}\""
            else
@@ -63,8 +69,9 @@ doc.xpath('//variable').each do |var| # rubocop:disable Metrics/BlockLength
            "-annotate #{rot}x#{rot}+#{x}+#{y} \"[#{static}] (barcode)\""
          end
 end
-cmd << '-fill transparent -stroke "#188FA7" -strokewidth 2'
-draw.each { |d| cmd << d }
+
+drw.each { |d| cmd << d }
+txt.each { |d| cmd << d }
 
 cmd << fin_img
 
