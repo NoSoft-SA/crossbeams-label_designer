@@ -66,10 +66,11 @@ module Crossbeams
       def variable_xml(xml, node) # rubocop:disable Metrics/AbcSize
         xml.variable_type node[:varType]
         xml.rotation_angle node[:rotation]
-        # Baseline is calculated as dropping the line from Y by the fontSize.
-        # However this (probably) does not account for the descender being part of the size.
-        # Ideally we would use cap height instead of font size, but how to calculate that?
-        # (get the cap-height-ratio for each font?) [about 70% ???]
+        xml.startx node[:x]
+        xml.starty node[:y]
+
+        # Baseline is calculated as dropping the line from Y by the cap height (distance from font's top to baseline).
+        # Here we calculate cap height using the cap-height-ratio for each font:
         # Arial: 0.72
         # Courier: 0.635
         # Times: 0.66
@@ -85,23 +86,15 @@ module Crossbeams
                      end
         case node[:rotation]
         when 90
-          xml.startx node[:x] - node[:height]
-          xml.starty node[:y]
           xml.baseline_x node[:x] - cap_height
           xml.baseline_y node[:y]
         when 180
-          xml.startx node[:x] - node[:width]
-          xml.starty node[:y] - node[:height]
           xml.baseline_x node[:x]
           xml.baseline_y node[:y] - cap_height
         when 270
-          xml.startx node[:x]
-          xml.starty node[:y] - node[:width]
           xml.baseline_x node[:x] + cap_height
           xml.baseline_y node[:y]
         else
-          xml.startx node[:x]
-          xml.starty node[:y]
           xml.baseline_x node[:x]
           xml.baseline_y node[:y] + cap_height
         end
