@@ -348,6 +348,17 @@
                     <% end %>
                     </select>
                   </div>
+
+                  <div class="varSetFieldGroup" id="barcode_error_level_wrap" hidden>
+                    <label for="barcode_error_level">QR Code error level</label>
+                    <select class="form-control" id="barcode_error_level" name="barcode_error_level">
+                      <option value="N">None</option>
+                      <option value="L">Low (7%)</option>
+                      <option value="M">Medium (15%)</option>
+                      <option value="Q">Quartile (25%)</option>
+                      <option value="H">High (30%)</option>
+                    </select>
+                  </div>
                 </div>
 
               </fieldset>

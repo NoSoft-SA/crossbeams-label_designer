@@ -113,6 +113,7 @@ module Crossbeams
         xml.barcodetop node[:varAttrs][:barcodeTop]
         xml.barcodewidthfactor node[:varAttrs][:barcodeWidthFactor].to_f
         xml.barcode_symbology node[:varAttrs][:barcodeSymbology]
+        xml.error_level node[:varAttrs][:barcodeErrorLevel]
       end
     end
   end
