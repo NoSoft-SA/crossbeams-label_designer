@@ -8,10 +8,24 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+### Fixed
+
+## [1.0.0] - 2021-05-23
+
+Version 1.0. Major Konva upgrade and redesign of most aspects of designer.
+
+- Changed persistence strategy to store shape descriptions, rather than full Konva JSON dump.
+- Multiselect capabilities with alignment etc.
+- Full-featured undo/redo facility.
+- Remove overlapping constraints.
+- Lines can only be horizontal or vertical.
+- Variables position based on text's baseline, not top-left which makes lining-up text much easier.
+- Error-correction options for QR codes.
+
+### Changed
 - Upgrade Konva library
 - Refactor for version 1.0.0.
 - Rake task to upgrade application's label designer javascript from gem.
-### Fixed
 
 ## [0.2.4] - 2021-03-10
 ### Added
