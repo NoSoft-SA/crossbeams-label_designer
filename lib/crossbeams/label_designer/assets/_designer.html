@@ -1,0 +1,418 @@
+      <div class="top-toolbars">
+        <div class="clearfix">
+          <div class="info-bar mt2">
+            <span class="currentCoords fr b dark-blue">(0, 0)</span>
+          </div>
+          <h2 id="labelName" class="ma1 mid-gray">&nbsp;</h2>
+          <div class="flex bg-moon-gray ph3 pt2 br2 br--top">
+            <div class="flex flex-column">
+              <div class="clearfix"></div>
+              <div class="labeldesigner-toolbar ba bg-moon-gray flex">
+                <button type="button" data-action="select" data-active="true" title="pointer" class='pa1 ma0 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: fa: mouse-pointer -->
+                  <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1389 1043q31 30 14 69-17 40-59 40h-382l201 476q10 25 0 49t-34 35l-177 75q-25 10-49 0t-35-34l-191-452-312 312q-19 19-45 19-12 0-24-5-40-17-40-59v-1504q0-42 40-59 12-5 24-5 27 0 45 19z"/></svg>
+                </button>
+                <button type="button" data-action="draw" data-active="false" data-draw-type="TextBox" title="Add a text box" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: zondi: text-box -->
+                  <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0h6v6H0V0zm2 2v2h2V2H2zm12-2h6v6h-6V0zm2 2v2h2V2h-2zm-2 12h6v6h-6v-6zm2 2v2h2v-2h-2zM0 14h6v6H0v-6zm2 2v2h2v-2H2zM6 2h8v2H6V2zm0 14h8v2H6v-2zM16 6h2v8h-2V6zM2 6h2v8H2V6zm5 1h6v2H7V7zm2 2h2v4H9V9z"/></svg>
+                </button>
+                <button type="button" data-action="draw" data-active="false" data-draw-type="VariableBox" title="Draw a variable box" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: brankic-1979: barcode-2 -->
+                  <svg class="cbl-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M14.879 12.124h-1.099v0.366h1.099v-0.366zM10.78 13.223v0.366h1.099v0.366h0.366v-1.465h-0.366v0.732h-1.099zM10.78 14.688h0.732v-0.366h-0.732v0.366zM11.513 14.321h0.366v-0.366h-0.366v0.366zM10.78 12.49h-0.366v0.732h0.366v-0.732zM8.75 5h-1.25v6.25h1.25v-6.25zM10 5h-0.625v6.25h0.625v-6.25zM13.781 14.688h1.099v-0.366h-1.099v0.366zM11.879 12.124h-1.099v0.366h1.099v-0.366zM15.246 14.321v-1.831h-0.366v1.831h0.366zM15.625 5h-0.625v6.25h0.625v-6.25zM7.78 13.955h-0.366v0.366h0.366v-0.366zM12.5 5h-1.25v6.25h1.25v-6.25zM13.75 5h-0.625v6.25h0.625v-6.25zM13.414 14.321h0.366v-1.831h-0.366v1.831zM4.414 14.688h1.831v-0.366h-1.465v-0.366h-0.366v0.732zM4.414 12.856h0.366v-0.366h-0.366v0.366zM5.146 13.589h0.732v-0.366h-0.732v0.366zM8.146 13.223v0.366h0.732v-0.366h-0.732zM4.78 12.124v0.366h1.099v-0.366h-1.099zM5 5h-0.625v6.25h0.625v-6.25zM18.75 2.5h-17.5c-0.69 0-1.25 0.56-1.25 1.25v12.5c0 0.69 0.56 1.25 1.25 1.25h17.5c0.69 0 1.25-0.56 1.25-1.25v-12.5c0-0.69-0.56-1.25-1.25-1.25zM18.75 16.25h-17.5v-12.5h17.5v12.5zM3.75 5h-1.25v10h1.25v-10zM4.78 13.955h0.366v-0.366h-0.366v0.366zM9.245 12.49h-0.366v0.732h0.366v-0.732zM7.78 12.124v0.366h1.099v-0.366h-1.099zM6.245 13.223v-0.733h-0.366v0.733h0.366zM7.414 12.856h0.366v-0.366h-0.366v0.366zM6.875 5h-0.625v6.25h0.625v-6.25zM9.245 13.589h-0.366v0.732h0.366v-0.732zM8.879 14.688v-0.366h-1.099v0.366h1.099zM17.5 5h-1.25v10h1.25v-10z"></path>
+                  </svg>
+                </button>
+                <button type="button" data-action="draw" data-active="false" data-image="true" title="Add image" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: fa: photo -->
+                  <svg class="cbl-icon" width="2048" height="1792" viewBox="0 0 2048 1792" xmlns="http://www.w3.org/2000/svg"><path d="M704 576q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm1024 384v448h-1408v-192l320-320 160 160 512-512zm96-704h-1600q-13 0-22.5 9.5t-9.5 22.5v1216q0 13 9.5 22.5t22.5 9.5h1600q13 0 22.5-9.5t9.5-22.5v-1216q0-13-9.5-22.5t-22.5-9.5zm160 32v1216q0 66-47 113t-113 47h-1600q-66 0-113-47t-47-113v-1216q0-66 47-113t113-47h1600q66 0 113 47t47 113z"/></svg>
+                </button>
+                <button type="button" data-action="draw" data-active="false" data-draw-type="Line" title="Draw a line" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: fa: minus -->
+                  <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-1216q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h1216q40 0 68 28t28 68z"/></svg>
+                </button>
+                <button type="button" data-action="draw" data-active="false" data-draw-type="Rect" title="Draw a rectangle" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: brankic-1979: square -->
+                  <svg class="cbl-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M17.5 15v2.5h-2.5v-0.625h-10v0.625h-2.5v-2.5h0.625v-10h-0.625v-2.5h2.5v0.625h10v-0.625h2.5v2.5h-0.625v10h0.625zM3.125 16.875h1.25v-1.25h-1.25v1.25zM4.375 3.125h-1.25v1.25h1.25v-1.25zM15 4.375h-10v0.625h-0.625v10h0.625v0.625h10v-0.625h0.625v-10h-0.625v-0.625zM16.875 3.125h-1.25v1.25h1.25v-1.25zM15.625 15.625v1.25h1.25v-1.25h-1.25z"></path>
+                  </svg>
+                </button>
+                <button type="button" data-action="draw" data-active="false" data-draw-type="Ellipse" title="Draw an ellipse" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: brankic-1979: circle 20 -->
+                  <svg class="cbl-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M18.036 11.25c-0.5 3.531-3.267 6.328-6.786 6.873v0.627h-2.5v-0.627c-3.519-0.544-6.286-3.342-6.786-6.873h-0.714v-2.5h0.742c0.578-3.433 3.308-6.131 6.758-6.665v-0.835h2.5v0.835c3.45 0.534 6.179 3.232 6.758 6.665h0.742v2.5h-0.714zM9.375 18.125h1.25v-1.25h-1.25v1.25zM1.875 9.375v1.25h1.25v-1.25h-1.25zM10.625 1.875h-1.25v1.25h1.25v-1.25zM11.25 3.033v0.717h-2.5v-0.717c-2.931 0.515-5.251 2.802-5.808 5.717h0.808v2.5h-0.841c0.484 3.014 2.841 5.399 5.841 5.926v-0.926h2.5v0.926c3.001-0.527 5.357-2.912 5.841-5.926h-0.841v-2.5h0.808c-0.558-2.916-2.876-5.202-5.808-5.717zM18.125 9.375h-1.25v1.25h1.25v-1.25z"></path>
+                  </svg>
+                </button>
+                <button type="button" data-action="remove" title="Remove" disabled=disabled class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: zondi: trash -->
+                  <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg>
+                </button>
+                <button type="button" data-action="rotate" title="Rotate" disabled=disabled class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: zondi: rotate (subdirectory-left; rotated) -->
+                  <svg class="cbl-icon" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="m12 2h1v10h5l-6 6-6-6h5v-8h-9v-2z"/></svg>
+                </button>
+                <button type="button" data-action="copy" title="Copy" disabled=disabled class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: zondi: copy -->
+                  <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 6V2c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-4v4a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h4zm2 0h4a2 2 0 0 1 2 2v4h4V2H8v4zM2 8v10h10V8H2z"/></svg>
+                </button>
+                <button type="button" data-action="paste" title="Paste" disabled=disabled class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: zondi: paste -->
+                  <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.5 20H2a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h1V3l2.03-.4a3 3 0 0 1 5.94 0L13 3v1h1a2 2 0 0 1 2 2v1h-2V6h-1v1H3V6H2v12h5v2h3.5zM8 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm2 4h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2zm0 2v8h8v-8h-8z"/></svg>
+                </button>
+                <button type="button" data-action="undo" title="Undo" disabled=disabled class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: fa: mail-reply -->
+                  <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 1120q0 166-127 451-3 7-10.5 24t-13.5 30-13 22q-12 17-28 17-15 0-23.5-10t-8.5-25q0-9 2.5-26.5t2.5-23.5q5-68 5-123 0-101-17.5-181t-48.5-138.5-80-101-105.5-69.5-133-42.5-154-21.5-175.5-6h-224v256q0 26-19 45t-45 19-45-19l-512-512q-19-19-19-45t19-45l512-512q19-19 45-19t45 19 19 45v256h224q713 0 875 403 53 134 53 333z"/></svg>
+                </button>
+                <button type="button" data-action="redo" title="Redo" disabled=disabled class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                  <!-- svg: fa: mail-forward -->
+                  <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 640q0 26-19 45l-512 512q-19 19-45 19t-45-19-19-45v-256h-224q-98 0-175.5 6t-154 21.5-133 42.5-105.5 69.5-80 101-48.5 138.5-17.5 181q0 55 5 123 0 6 2.5 23.5t2.5 26.5q0 15-8.5 25t-23.5 10q-16 0-28-17-7-9-13-22t-13.5-30-10.5-24q-127-285-127-451 0-199 53-333 162-403 875-403h224v-256q0-26 19-45t45-19 45 19l512 512q19 19 19 45z"/></svg>
+                </button>
+                &nbsp;
+                <div class="inline-flex">
+                  <button title='Set stroke width' id="stroke-width-img" disabled="" class='pa1 ma0 ml2 bg-white bn'>
+                    <!-- svg: zondi: stroke-width -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 0h20v5H0V0zm0 7h20v4H0V7zm0 6h20v3H0v-3zm0 5h20v2H0v-2z"/></svg>
+                  </button>
+                  <select title='Set stroke width' class="bg-white bn" id="stroke-width" disabled="" data-option="stroke-width" name="stroke-width">
+                    <option selected="selected" value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                    <option value=6>6</option>
+                    <option value=7>7</option>
+                    <option value=8>8</option>
+                    <option value=9>9</option>
+                    <option value=10>10</option>
+                  </select>
+                </div>
+                <button type="button" data-action="align" data-align="left" title="Align Left edges" disabled=""
+                  class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer' onclick="LabelDesigner.align('left');">
+<svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M2 2v20" stroke="#000000" stroke-width="3" stroke-miterlimit="5.759" stroke-linecap="round"/><path stroke="#000000" stroke-width="2" stroke-miterlimit="5.759" stroke-linecap="round" stroke-linejoin="round" d="M6 6h16v4H6z"/><path stroke="#000000" stroke-width="2" stroke-miterlimit="5.759" stroke-linecap="round" stroke-linejoin="round" d="M6 14h10v4H6z"/></g></svg>
+                </button>
+                <button type="button" data-action="align" data-align="top" title="Align top edges" disabled=""
+                  class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer' onclick="LabelDesigner.align('top');">
+<svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path d="M22 2H2" stroke="#000000" stroke-width="3" stroke-miterlimit="5.759" stroke-linecap="round"/><path d="M6 22V6h4v16H6z" stroke="#000000" stroke-width="2" stroke-miterlimit="5.759" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 16V6h4v10h-4z" stroke="#000000" stroke-width="2" stroke-miterlimit="5.759" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+                </button>
+              </div>
+
+              <div class="text-popup">
+                <div class="text-toolbar fl ba bg-moon-gray flex w-100">
+                  <button type="button" id="textBold" data-selected="false" disabled="" data-text="button" data-textstyle="bold" title="bold" class='pa1 ma0 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                    <!-- svg: zondi: format-bold -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3 19V1h8a5 5 0 0 1 3.88 8.16A5.5 5.5 0 0 1 11.5 19H3zm7.5-8H7v5h3.5a2.5 2.5 0 1 0 0-5zM7 4v4h3a2 2 0 1 0 0-4H7z"/></svg>
+                  </button> 
+                  <button type="button" id="textUnderline" data-selected="false" disabled="" data-text="button" data-textstyle="underline" title="underline" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                    <!-- svg: zondi: format-underline -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 9A6 6 0 1 1 4 9V1h3v8a3 3 0 0 0 6 0V1h3v8zM2 17h16v2H2v-2z"/></svg>
+                  </button>
+                  <button type="button" id="textItalic" data-selected="false" disabled="" data-text="button" data-textstyle="italic" title="italic" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                    <!-- svg: zondi: format-italic -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M8 1h9v2H8V1zm3 2h3L8 17H5l6-14zM2 17h9v2H2v-2z"/></svg>
+                  </button>
+                  <button type="button" id="textLeftJust" data-selected="true" disabled="" data-text="button" data-alignment="left" title="Left align text" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                    <!-- svg: zondi: align-left -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M1 1h18v2H1V1zm0 8h18v2H1V9zm0 8h18v2H1v-2zM1 5h12v2H1V5zm0 8h12v2H1v-2z"/></svg>
+                  </button>
+                  <button type="button" id="textCentreJust" data-selected="false" disabled="" data-text="button" data-alignment="center" title="Center align text" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                    <!-- svg: zondi: align-center -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M1 1h18v2H1V1zm0 8h18v2H1V9zm0 8h18v2H1v-2zM4 5h12v2H4V5zm0 8h12v2H4v-2z"/></svg>
+                  </button>
+                  <button type="button" id="textRightJust" data-selected="false" disabled="" data-text="button" data-alignment="right" title="Right align text" class='pa1 ma0 ml2 bg-moon-gray bn bg-animate hover-bg-light-gray pointer'>
+                    <!-- svg: zondi: align-right -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M1 1h18v2H1V1zm0 8h18v2H1V9zm0 8h18v2H1v-2zM7 5h12v2H7V5zm0 8h12v2H7v-2z"/></svg>
+                  </button>
+                  <div class="inline-flex">
+                    <button title='font size' id="font-size-img" data-text="select" disabled="" class='pa1 ma0 ml2 bg-white bn' onclick="document.getElementById('font-size').focus();">
+                      <!-- svg: zondi: format-font-size -->
+                      <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M16 9v8h-2V9h-4V7h10v2h-4zM8 5v12H6V5H0V3h15v2H8z"/></svg>
+                    </button>
+                    <select class="bg-white bn pointer" id="font-size" title='font size' disabled="" data-text="select" data-option="font-size" name="font-size">
+                    <% @font_sizes.each do |px_val, font_val| %>
+                      <% sel = (font_val == 8) ? 'selected="selected"' : '' %>
+                      <option value="<%= px_val %>" <%= sel %> ><%= font_val %></option>
+                    <% end %>
+                    </select>
+                  </div>
+                  <div class="inline-flex" style="flex-grow:1">
+                    <button title='font family' id="font-family-img" data-text="select" disabled="" class='pa1 ma0 ml2 bg-white bn pointer'>
+                      <!-- svg: fa: font -->
+                      <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M789 559l-170 450q33 0 136.5 2t160.5 2q19 0 57-2-87-253-184-452zm-725 1105l2-79q23-7 56-12.5t57-10.5 49.5-14.5 44.5-29 31-50.5l237-616 280-724h128q8 14 11 21l205 480q33 78 106 257.5t114 274.5q15 34 58 144.5t72 168.5q20 45 35 57 19 15 88 29.5t84 20.5q6 38 6 57 0 5-.5 13.5t-.5 12.5q-63 0-190-8t-191-8q-76 0-215 7t-178 8q0-43 4-78l131-28q1 0 12.5-2.5t15.5-3.5 14.5-4.5 15-6.5 11-8 9-11 2.5-14q0-16-31-96.5t-72-177.5-42-100l-450-2q-26 58-76.5 195.5t-50.5 162.5q0 22 14 37.5t43.5 24.5 48.5 13.5 57 8.5 41 4q1 19 1 58 0 9-2 27-58 0-174.5-10t-174.5-10q-8 0-26.5 4t-21.5 4q-80 14-188 14z"/></svg>
+                    </button>
+                    <select class="bg-white bn pointer" style="flex-grow:1" id="font-family" data-text="select" disabled="" title='font family' data-option="font-family">
+                      <option selected="selected" value="Arial">Arial</option>
+                      <option value="Courier New">Courier New</option>
+                      <option value="Lato Light">Lato Light</option>
+                      <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <textarea style="flex-grow:1" class="text-popup ml2 h3" id="textinput" disabled="" data-option="textinput" title="Insert text here" placeholder="Insert text here..."></textarea>
+
+            <div class="ml2 flex">
+              <div class="flex flex-column">
+                <button id="ldSave" type="button" class='f6 dim bn fl ph3 pv2 dib white bg-dark-blue' data-briefly-disable-with="Saving">
+                  <!-- svg: zondi: save-disk -->
+                  <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+                  &nbsp;Save Label
+                </button>
+                <div class="options-dropdown">
+                  <button type="button" class='w-100 f6 dim bn fl ph3 pv2 dib white bg-mid-gray'>
+                    <!-- svg: zondi: cog -->
+                    <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path d="M3.94 6.5L2.22 3.64l1.42-1.42L6.5 3.94c.52-.3 1.1-.54 1.7-.7L9 0h2l.8 3.24c.6.16 1.18.4 1.7.7l2.86-1.72 1.42 1.42-1.72 2.86c.3.52.54 1.1.7 1.7L20 9v2l-3.24.8c-.16.6-.4 1.18-.7 1.7l1.72 2.86-1.42 1.42-2.86-1.72c-.52.3-1.1.54-1.7.7L11 20H9l-.8-3.24c-.6-.16-1.18-.4-1.7-.7l-2.86 1.72-1.42-1.42 1.72-2.86c-.3-.52-.54-1.1-.7-1.7L0 11V9l3.24-.8c.16-.6.4-1.18.7-1.7zM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                    &nbsp;Options
+                  </button>
+                  <div class="options-dropdown-content">
+                    <a data-menu="off" href="#" disabled="" id="set-variable-opt">Variable settings</a>
+                    <a data-menu="off" href="#" disabled="" id="send-to-back-opt">Move to bottom</button>
+                    <a data-menu="on" class='btn-download-image' href="#" id="btn-download-image" target='_blank' download='png_example.png'>Download Image</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="ruler-placeholder fl">&nbsp;</div>
+        <div class="br b--black-20 bw1" style="width:1205px;overflow:hidden">
+          <div class="top-ruler">
+            <div class="top-marker"></div>
+      <% (0..5000).step(100).each do |counter| %>
+      <label <%= "class=first" if counter == 0 %> ><%= counter / 10 %></label>
+      <% end %>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex">
+        <div class="designer-container relative bg-gray" style="flex-shrink: 0">
+          <div class="flex">
+            <div class="left-ruler">
+              <div class="left-marker"></div>
+      <% (0..5000).step(100).each do |counter| %>
+      <label <%= "class=first" if counter == 0 %> > <%= counter / 10 %></label>
+              <br>
+      <% end %>
+            </div>
+
+            <div id="paper-wrapper" class="paper-wrapper">
+      <div id='paper' class="relative bg-gray ba" style="border-width:<%= @px_per_mm / 2.0 %>px;border-color:orange;"></div>
+            </div>
+            <div id="varMenu" style="display:none">
+              <div>
+                <button id="set-variable" data-filter="variable">Variable settings</button>
+                <button id="send-to-back" data-filter="singleSelect">Move to bottom</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div> <!-- Start of right column -->
+      <div id="ld_help_wrap" hidden> <!-- href="/help/system/rmd/rmd_properties" -->
+<a id="ld_help" href="" class="ml3 f6 link dim br2 ph3 pv2 dib white bg-blue" data-help-link="Y" target="cbf-help"><svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm2-13c0 .28-.21.8-.42 1L10 9.58c-.57.58-1 1.6-1 2.42v1h2v-1c0-.29.21-.8.42-1L13 9.42c.57-.58 1-1.6 1-2.42a4 4 0 1 0-8 0h2a2 2 0 1 1 4 0zm-3 8v2h2v-2H9z"></path></svg>
+  Help</a></div>
+        <div id="upgradeNote" class="orange ml2" hidden>
+          <p class="b">Please note: this label has been converted from an older version.</p>
+          <p>The positioning of variables has been improved to be closer to what you see in the design.<br>
+          This means that after saving, the text and barcodes might not print in exactly the same position as before &ndash; so it is important to check your previews carefully and adjust your design if required.</p>
+        </div>
+        <div id="debugSpace"></div>
+      </div>
+      </div>
+
+      <!-- HIDDEN DIALOG DEFINITIONS -->
+      <div class="dialog" aria-hidden="true" id="variable-info-dialog-form">
+        <div class="dialog-overlay" tabindex="-1"></div>
+        <div class="dialog-content" aria-labelledby="dialogTitleV" role="dialog" style="min-width:400px;min-height:400px">
+          <div role="document">
+            <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
+            <h1 id="dialogTitleV">Variable settings</h1>
+            <form class='variable-info-form'>
+              <p class='notice' style="display:none;">Please ensure that a Variable type is saved</p>
+              <fieldset class="varFieldSet">
+                <div class="varSetTypeGroup">
+                  <label for="vars">Variable type</label>
+                  <select class="form-control selectpicker" id="vars" data-live-search="true" data-style="btn-primary" data-max-options="1">
+                    <option value="">Select an option...</option>
+              <% if @allow_compound_variable %>
+                    <optgroup label="Compound">
+                      <option value="Compound Variable">Compound Variable</option>
+                    </optgroup>
+              <% end %>
+                    <optgroup label="Static text">
+                      <option value="Static Barcode">Static Barcode</option>
+                    </optgroup>
+              <% @label_variable_types.each do |opt, var_types| %>
+              <optgroup label="<%= opt %>">
+              <% var_types.each do |var_type| %>
+                <option value="<%= var_type %>"><%= var_type %></option>
+              <% end %>
+                    </optgroup>
+              <% end %>
+                  </select>
+                </div>
+
+                <div id="compound_vars" hidden>
+                  <p>
+                    Build up a compound variable here by adding variables and typed-in text.
+                  </p>
+                  <div>
+                    <label for="varsCmp">Variable</label><br>
+                    <div class="flex">
+                      <div style="flex-grow:1">
+                        <select class="form-control selectpicker" id="varsCmp" data-max-options="1">
+                  <% @label_variable_types.each do |opt, var_types| %>
+                  <% next if opt == 'Custom' %>
+                  <optgroup label="<%= opt %>">
+                  <% var_types.each do |var_type| %>
+                    <option value="<%= var_type %>"><%= var_type %></option>
+                  <% end %>
+                          </optgroup>
+                  <% end %>
+                        </select>
+                      </div>
+                      <button type="button" name="add_compound_sel" title="Add the selected variable" class='dim br2 pa2 dib white bg-silver'>
+                        <!-- svg: zondi: plus -->
+                        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-416v416q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-416h-416q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h416v-416q0-40 28-68t68-28h192q40 0 68 28t28 68v416h416q40 0 68 28t28 68z"/></svg> Add
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mt1">
+                    <label for="textCmp">Text (remember to include spaces if required)</label><br>
+                    <div class="flex">
+                      <input type="text" id="textCmp" name="text_for_compound" style="flex-grow:1" class="cbl-input"/>
+                      <button type="button" name="add_compound_txt" title="Add the entered text" class='dim br2 pa2 dib white bg-silver'>
+                        <!-- svg: zondi: plus -->
+                        <svg class="cbl-icon" width="1792" height="1792" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-416v416q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-416h-416q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h416v-416q0-40 28-68t68-28h192q40 0 68 28t28 68v416h416q40 0 68 28t28 68z"/></svg> Add
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <label>Layout of this compound variable:</label>
+                    <div class="flex">
+                      <div id="compound_display" style="flex-grow:1" class="pa2 ba dib b-gray bg-moon-gray"></div>
+                      <button type="button" name="clear_compound" title="Clear the compound variable" class='ml0 dim br2 pa2 dib white bg-silver'>
+                        <!-- svg: zondi: trash -->
+                        <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg> Clear
+                      </button>
+                    </div>
+                  </div>
+                  <input type="hidden" id="compound_result" name="compound_result">
+                </div>
+
+                <div class="varSetFieldGroup mt1" id="static_barcode">
+                  <label for="static_barcode_value">Static Barcode text</label>
+                  <input type="text" id="static_barcode_value" name="static_barcode_value" class="cbl-input"/>
+                </div>
+                <div id="white_on_black_wrapper" class="varSetFieldGroup">
+                  <input type="checkbox" name="white_on_black" id="white_on_black" value="true">
+                  <label for="white_on_black">Print white on black?</label>
+                </div>
+                <div id="barcode_bool_wrapper" class="varSetFieldGroup">
+                  <input type="checkbox" name="barcode_bool" id="barcode_bool" value="true">
+                  <label for="barcode_bool">Is this a Barcode?</label>
+                </div>
+                <div class="barcode-options" style="display:none;">
+                  <div class="varSetFieldGroup">
+                    <input type="checkbox" name="barcode_text" id="barcode_text" value="true">
+                    <label for="barcode_text">Show Barcode text at</label>
+                    <select name="barcode_top" id="barcode_top" class="third">
+                      <option selected="selected" value="true">Top</option>
+                      <option value="false">Bottom</option>
+                    </select>
+                  </div>
+                  <div class="varSetFieldGroup">
+                    <label for="barcode_width_factor">Barcode width factor</label>
+                    <input type="number" id="barcode_width_factor" name="barcode_width_factor" min="1" max="3.5" value="1.8" list="barcode_width_factor_suggest" step="0.1">
+                    <datalist id="barcode_width_factor_suggest">
+                      <option value="1.0">
+                      <option value="1.5">
+                      <option value="2.0">
+                      <option value="2.5">
+                      <option value="3.0">
+                      <option value="3.5">
+                    </datalist>
+                  </div>
+                  <p>The barcode width factor controls the width of the barcode.<br>Please ensure that the barcode scans correctly.<br>The larger this setting, the easier it scans.</p>
+                  <div class="varSetFieldGroup">
+                    <label for="barcode_symbology">Barcode Symbology</label>
+                    <select class="form-control" id="barcode_symbology" name="barcode_symbology">
+                    <% @barcode_types.each do |val, text| %>
+                    <option value="<%= val %>"<%= val == 'CODE_128' ? 'selected="selected"' : '' %>><%= text %></option>
+                    <% end %>
+                    </select>
+                  </div>
+
+                  <div class="varSetFieldGroup" id="barcode_error_level_wrap" hidden>
+                    <label for="barcode_error_level">QR Code error level</label>
+                    <select class="form-control" id="barcode_error_level" name="barcode_error_level">
+                      <option value="N">None</option>
+                      <option value="L">Low (7%)</option>
+                      <option value="M">Medium (15%)</option>
+                      <option value="Q">Quartile (25%)</option>
+                      <option value="H">High (30%)</option>
+                    </select>
+                  </div>
+                </div>
+
+              </fieldset>
+              <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 save'>
+                <!-- svg: zondi: save-disk -->
+                <svg class="cbl-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"/></svg>
+                &nbsp;Save Variable Settings</button>
+              <!-- Allow form submission with keyboard without duplicating the dialog button -->
+              <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="dialog" aria-hidden="true" id="image-dialog-form">
+        <div class="dialog-overlay" tabindex="-1" data-a11y-dialog-hide></div>
+        <div class="dialog-content" aria-labelledby="dialogTitleI" role="dialog">
+          <div role="document">
+            <button data-a11y-dialog-hide class="dialog-close" aria-label="Close this dialog window">&times;</button>
+            <h1 id="dialogTitleI">Upload an image</h1>
+            <form class="upload-image">
+              <p class='notice' style="display:none">You have not selected a file.</p>
+              <p>
+                <label for="upload-image">Please select an image file to be uploaded:</label>
+              </p>
+              <p>
+                <input type="file" name="upload-image" id="upload-image" class="ui-widget-content">
+              </p>
+
+              <button type="button" class='f6 dim bn fl ph3 pv2 dib white bg-green mt1 upload'>Upload Image</button>
+              <!-- Allow form submission with keyboard without duplicating the dialog button -->
+              <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="hidden-fonts">
+        <p class="Arial">Preload Font</p>
+        <p class="ArialB">Preload Font</p>
+        <p class="ArialBI">Preload Font</p>
+        <p class="ArialI">Preload Font</p>
+        <p class="Cour">Preload Font</p>
+        <p class="CourB">Preload Font</p>
+        <p class="CourBI">Preload Font</p>
+        <p class="CourI">Preload Font</p>
+        <p class="LatoL">Preload Font</p>
+        <p class="LatoLB">Preload Font</p>
+        <p class="LatoLBI">Preload Font</p>
+        <p class="LatoLI">Preload Font</p>
+        <p class="TNR">Preload Font</p>
+        <p class="TNRB">Preload Font</p>
+        <p class="TNRBI">Preload Font</p>
+        <p class="TNRI">Preload Font</p>
+      </div>
