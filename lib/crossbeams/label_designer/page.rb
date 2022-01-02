@@ -6,7 +6,7 @@ module Crossbeams
       end
 
       def px_per_mm
-        raise %(Pixels per mm value of "#{Config.config.pixels_mm}" is not allowed) unless [8, 12].include?(Config.config.pixels_mm)
+        raise Error, %(Pixels per mm value of "#{Config.config.pixels_mm}" is not allowed) unless [8, 12].include?(Config.config.pixels_mm)
 
         Config.config.pixels_mm
       end

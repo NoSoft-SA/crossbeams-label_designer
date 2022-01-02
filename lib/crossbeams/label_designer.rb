@@ -8,6 +8,8 @@ require 'erubi'
 
 module Crossbeams
   module LabelDesigner
+    class Error < StandardError; end
+
     class Constants
       # See https://websemantics.uk/tools/convert-pixel-point-em-rem-percent/
       # for a tool to calculate pixel/font point conversions.
