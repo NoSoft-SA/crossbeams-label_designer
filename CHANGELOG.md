@@ -7,6 +7,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Compound variables can render as barcodes.
 ### Changed
 ### Fixed
 
