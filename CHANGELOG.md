@@ -10,6 +10,11 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Changed
 ### Fixed
 
+## [2.0.0] - 2022-10-27
+### Added
+- Compound variables can render as barcodes.
+### Changed
+
 ## [1.0.0] - 2021-05-23
 
 Version 1.0. Major Konva upgrade and redesign of most aspects of designer.
