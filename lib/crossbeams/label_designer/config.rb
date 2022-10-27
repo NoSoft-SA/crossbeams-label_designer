@@ -3,19 +3,19 @@ module Crossbeams
     class Config
       extend Dry::Configurable
 
-      setting :allow_compound_variable, true
+      setting :allow_compound_variable, default: true
 
-      setting :label_sizes, [
+      setting :label_sizes, default: [
         { 'name' => '8464', 'mm_size' => { 'width': '84', 'height': '64' } },
         { 'name' => '10070', 'mm_size' => { 'width': '100', 'height': '70' } }
       ]
 
-      setting :printer_settings, [
+      setting :printer_settings, default: [
         { 'printername' => 'Low Def', 'px_per_mm' => '8' },
         { 'printername' => 'High Def', 'px_per_mm' => '12' }
       ]
 
-      setting :label_variable_types,
+      setting :label_variable_types, default: {
               'Barcodes' => ['Barcode and packline'],
               'Commodity' => ['Commodity', 'Commodity Short Description', 'Commodity Medium Description', 'Commodity Long Description', 'Commodity TM Description'],
               'Container' => ['Container ID', 'Decrypted Container ID'],
@@ -55,15 +55,16 @@ module Crossbeams
               'Variety barcode' => ['Variety barcode', 'Variety barcode Short Description', 'Variety barcode Medium Description', 'Variety barcode Long Description'],
               'Variety' => ['Variety', 'Variety Short Description', 'Variety Medium Description', 'Variety Long Description', 'Variety TM Description'],
               'Voice Code' => ['Voice Code Large digits', 'Voice Code Small digits']
+      }
 
-      setting(:save_path, nil)
-      setting(:label_name, 'test_label')
-      setting(:width, 100)
-      setting(:height, 100)
-      setting(:label_dimension, '100x100')
-      setting(:pixels_mm, 8)
-      setting(:help_url, nil)
-      setting(:label_json, nil)
+      setting(:save_path, default: nil)
+      setting(:label_name, default: 'test_label')
+      setting(:width, default: 100)
+      setting(:height, default: 100)
+      setting(:label_dimension, default: '100x100')
+      setting(:pixels_mm, default: 8)
+      setting(:help_url, default: nil)
+      setting(:label_json, default: nil)
     end
   end
 end
