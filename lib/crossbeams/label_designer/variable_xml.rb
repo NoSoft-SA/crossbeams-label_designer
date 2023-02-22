@@ -7,7 +7,7 @@ module Crossbeams
       def initialize(formatted_name, px_per_mm, label_def)
         @formatted_name = formatted_name
         @label_def = label_def
-        @var_cnt = label_def[:nodes].select { |node| node[:name] == 'variableBox' && node[:varAttrs][:staticValue].nil? }.length
+        @var_cnt = label_def[:nodes].select { |node| node[:name] == 'variableBox' }.length
         @px_per_mm = px_per_mm.to_i
         @font_sizes = @px_per_mm == 12 ? Constants::FONT_SIZES_12PXMM : Constants::FONT_SIZES_8PXMM
       end
