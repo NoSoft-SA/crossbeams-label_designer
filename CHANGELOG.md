@@ -9,6 +9,9 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ### Added
 ### Changed
 ### Fixed
+
+## [2.0.1] - 2023-02-22
+### Fixed
 - Static barcodes need to be included in the total count in the variables XML
 
 ## [2.0.0] - 2022-10-27
