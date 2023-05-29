@@ -8,6 +8,7 @@ and this project adheres roughly to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 ### Changed
+- Small changes to `Choices` selectbox handling in javascript for version 10.2.0
 ### Fixed
 
 ## [2.0.1] - 2023-02-22
